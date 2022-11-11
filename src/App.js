@@ -24,7 +24,7 @@ const people = [
     role: 'Information Systems Engineer',
     imageUrl:
       'https://lh3.googleusercontent.com/tGIMSCTk4D8X1Bpg7dk8_slmiFhtrtNyYB-aR1elQCEf0L4ZDD6Zlq8QePjnD9ALumeT3lfaziiYWrf7cbkBxDMxy-uShwCXtQsxBw4FptehWQSxQAVUY8wa7AiXKWjzWymQVtAqhFIosh-T-sIAA9x7uPFphwUFoxr_DQyU5-YvI5cT-QdvYfEfGiW_XHLTJbj89N12-YiEUe_k8ZozujBFsVJHn5__ZdAqzYO98LZP42zzDUurfCwMRYI1YzIhMgvPC2U9j1pGsAMpIQcahdvQqLlRfBlsjpynWpg0p5Jtskmgy7IMeq-DQ-EQ2AqI9KHCp0eeV5_PNvcQdYfJ1wuAjbaGlljIy6mzgLefIufNaeM9CV493mGrGkWL2wIM8Eqs6MHjTUF3RHaTeshT0TJdcKOpH1EvvwZDLOgXNpg6e3csk7EcbLXKETqLh-JSvvjbMhXocGggwYuEUq5FCGSAv6RAEgSxkMmrUd6QoK_-pSYW6t5EXafLD9EQMS4OF47qYvQ_A-dSOfnPx6cUscbcBn1ZRhEfnjc-yoGM_irFVnQpXiFYvoVwiFyrjv-_USFwmug9X8MDZqxam6df8bbqb0yOAWZt0VidD-9OVBUAsEBQtak1b5uzjwd4-nKYlaS4kg7Qxo-_zzGBKN4tMJFdR1I-bfzgx80NNK2ZcB-F7m7tHyOvs7lpuiZMLIDJdu-cvzTtKGmSkD8uglEn0tzzh3impYW2zIO9nPjJ8I1-qn1MowGVT6PfQHY5euXvPZUfu0Qd_uvWL_47noNRawtR0XBZxBRW9TWakRMVAR2X1uqsP8Eg0f2NUwOWO3O5C-4PqpgQkhNfECB81KMUjUIwfpRCRhWAbTzMnh7UmlmJu9wZBm5xtLN-BCTe6-HzMfUfY6rL_bqL7P39SJQFfdnIv9CH26FCqvTQOG2h2gFwvPQSUYUhbIxvOuGjNuKGcCjLtURT-HdCwQUgH_nh1oglKH8FXr4JhTFKhYuigKs946fWRbsg-j5QTmjoOQOzbAV0LjYBYE3qMqJ27Um2cvJ-=w557-h697-no?authuser=0',
-    githubUrl: 'https://ahusan.github.io/',
+    githubUrl: 'https://github.com/ahusan',
     linkedinUrl: 'https://www.linkedin.com/in/ahusan/',
   }
 ]
