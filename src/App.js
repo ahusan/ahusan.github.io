@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import { FolderIcon } from '@heroicons/react/24/outline'
+import { FolderIcon, LinkIcon } from '@heroicons/react/24/outline'
 
 
 const features = [
   {
-    name: 'Invite team members',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    name: 'FSM Website',
+    description: 'Custom CMS website for content management',
+    clientUrl: 'https://fsm.mv/',
   },
-  { name: 'List view', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
+  {
+    name: 'List view',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    clientUrl: 'https://fsm.mv/',
+  },
   {
     name: 'Keyboard shortcuts',
     description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    clientUrl: 'https://fsm.mv/',
   },
-  { name: 'Calendars', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
-  { name: 'Notifications', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Boards', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Reporting', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-  { name: 'Mobile app', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+  {
+    name: 'Calendars',
+    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
+    clientUrl: 'https://fsm.mv/',
+  }
 ]
+
 
 const people = [
 
@@ -27,7 +34,7 @@ const people = [
     name: 'Ahusan Mohamed',
     role: 'Information Systems Engineer',
     imageUrl:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      'https://lh3.googleusercontent.com/tGIMSCTk4D8X1Bpg7dk8_slmiFhtrtNyYB-aR1elQCEf0L4ZDD6Zlq8QePjnD9ALumeT3lfaziiYWrf7cbkBxDMxy-uShwCXtQsxBw4FptehWQSxQAVUY8wa7AiXKWjzWymQVtAqhFIosh-T-sIAA9x7uPFphwUFoxr_DQyU5-YvI5cT-QdvYfEfGiW_XHLTJbj89N12-YiEUe_k8ZozujBFsVJHn5__ZdAqzYO98LZP42zzDUurfCwMRYI1YzIhMgvPC2U9j1pGsAMpIQcahdvQqLlRfBlsjpynWpg0p5Jtskmgy7IMeq-DQ-EQ2AqI9KHCp0eeV5_PNvcQdYfJ1wuAjbaGlljIy6mzgLefIufNaeM9CV493mGrGkWL2wIM8Eqs6MHjTUF3RHaTeshT0TJdcKOpH1EvvwZDLOgXNpg6e3csk7EcbLXKETqLh-JSvvjbMhXocGggwYuEUq5FCGSAv6RAEgSxkMmrUd6QoK_-pSYW6t5EXafLD9EQMS4OF47qYvQ_A-dSOfnPx6cUscbcBn1ZRhEfnjc-yoGM_irFVnQpXiFYvoVwiFyrjv-_USFwmug9X8MDZqxam6df8bbqb0yOAWZt0VidD-9OVBUAsEBQtak1b5uzjwd4-nKYlaS4kg7Qxo-_zzGBKN4tMJFdR1I-bfzgx80NNK2ZcB-F7m7tHyOvs7lpuiZMLIDJdu-cvzTtKGmSkD8uglEn0tzzh3impYW2zIO9nPjJ8I1-qn1MowGVT6PfQHY5euXvPZUfu0Qd_uvWL_47noNRawtR0XBZxBRW9TWakRMVAR2X1uqsP8Eg0f2NUwOWO3O5C-4PqpgQkhNfECB81KMUjUIwfpRCRhWAbTzMnh7UmlmJu9wZBm5xtLN-BCTe6-HzMfUfY6rL_bqL7P39SJQFfdnIv9CH26FCqvTQOG2h2gFwvPQSUYUhbIxvOuGjNuKGcCjLtURT-HdCwQUgH_nh1oglKH8FXr4JhTFKhYuigKs946fWRbsg-j5QTmjoOQOzbAV0LjYBYE3qMqJ27Um2cvJ-=w557-h697-no?authuser=0',
     githubUrl: 'https://ahusan.github.io/',
     linkedinUrl: 'https://www.linkedin.com/in/ahusan/',
   }
@@ -49,7 +56,7 @@ function App() {
                   <li key={person.name}>
                     <div className="space-y-4">
                       <div className="aspect-w-3 aspect-h-2">
-                        <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
+                        <img className="rounded-lg" src={person.imageUrl} alt="" />
                       </div>
 
                       <div className="space-y-2">
@@ -90,7 +97,10 @@ function App() {
                 {features.map((feature) => (
                   <div key={feature.name} className="relative">
                     <dt>
-                      <FolderIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                      <a href={feature.clientUrl} className="text-gray-400 hover:text-gray-500">
+                        <span className="sr-only">LinkedIn</span>
+                        <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                      </a>
                       <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
                     </dt>
                     <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
