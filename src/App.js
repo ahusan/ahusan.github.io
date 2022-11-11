@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { FolderIcon, LinkIcon } from '@heroicons/react/24/outline'
+import { LinkIcon } from '@heroicons/react/24/outline'
 
 
 const features = [
@@ -45,6 +44,7 @@ function App() {
 
   return (
     <>
+    
       <div className='flex flex-row items-center justify-center h-screen w-screen'>
         <div className="bg-white">
           <div className="mx-auto max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
