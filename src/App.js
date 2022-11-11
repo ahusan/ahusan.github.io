@@ -5,23 +5,13 @@ import { LinkIcon } from '@heroicons/react/24/outline'
 const features = [
   {
     name: 'FSM Website',
-    description: 'Custom CMS website for content management',
+    description: 'Custom CMS website for content management for the client. ',
     clientUrl: 'https://fsm.mv/',
   },
   {
-    name: 'List view',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    clientUrl: 'https://fsm.mv/',
-  },
-  {
-    name: 'Keyboard shortcuts',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    clientUrl: 'https://fsm.mv/',
-  },
-  {
-    name: 'Calendars',
-    description: 'You can manage phone, email and chat conversations all from a single mailbox.',
-    clientUrl: 'https://fsm.mv/',
+    name: 'Travgo Maldives',
+    description: 'CMS website built using react framework. Stunning website for the tourism industry. ',
+    clientUrl: 'https://travgomaldives.com/',
   }
 ]
 
@@ -44,7 +34,7 @@ function App() {
 
   return (
     <>
-    
+
       <div className='flex flex-row items-center justify-center h-screen w-screen'>
         <div className="bg-white">
           <div className="mx-auto max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
