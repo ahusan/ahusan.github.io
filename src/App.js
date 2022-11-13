@@ -1,10 +1,8 @@
 import './App.css';
 import { LinkIcon } from '@heroicons/react/24/outline'
-import { LifebuoyIcon, CalendarIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
+import { LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon } from '@heroicons/react/24/outline'
 
 const supportLinks = [
-
-
   {
     name: 'FSM Website',
     href: 'https://fsm.mv/',
@@ -25,6 +23,27 @@ const supportLinks = [
     description:
       'Development of their online platform custom catered to Travgo Maldives. To increase their presence online and to showcase different styles of vacation availabe in the maldives.',
     icon: CalendarIcon,
+  },
+  {
+    name: 'Information Systems Engineer (2020 - now)',
+    href: 'https://bankofmaldives.com.mv/',
+    description:
+      'Currently working in Bank of maldives. Learning the best tools to utilize in this business.',
+    icon: WalletIcon,
+  },
+  {
+    name: 'Information Technology Technician (2017-2020)',
+    href: 'https://wamco.com.mv/',
+    description:
+      'Worked as a technical engineer to support to Information Technology Team at Waste Management Corporation (WAMCO). ',
+    icon: ComputerDesktopIcon,
+  },
+  {
+    name: 'Information Technology Support (2016-2017)',
+    href: 'https://villacollege.edu.mv/',
+    description:
+      'Provided services to our company staff and clients regarding Information Technology uses and implementing policies for IT systems. At Villa College',
+    icon: ComputerDesktopIcon,
   },
 ]
 
@@ -175,10 +194,10 @@ function App() {
       </div>
       <div className="bg-white">
         {/* Header */}
-        <div className="relative bg-gray-800 pb-32">
+        <div className="relative bg-gray-800 pb-96">
           <div className="absolute inset-0">
             <img
-              className="h-full w-full object-cover"
+              className="h-max w-full object-cover"
               src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
               alt=""
             />
@@ -194,10 +213,10 @@ function App() {
 
         {/* Overlapping cards */}
         <section
-          className="relative z-10 mx-auto -mt-32 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8"
+          className="relative z-10 mx-auto -mt-96 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8"
           aria-labelledby="contact-heading"
         >
-          <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+          <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-20 lg:gap-x-8">
             {supportLinks.map((link) => (
               <div key={link.name} className="flex flex-col rounded-2xl bg-white shadow-xl">
                 <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
