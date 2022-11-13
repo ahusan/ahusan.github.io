@@ -1,17 +1,61 @@
 import './App.css';
 import { LinkIcon } from '@heroicons/react/24/outline'
+import { LifebuoyIcon, CalendarIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
+
+const supportLinks = [
+
+
+  {
+    name: 'FSM Website',
+    href: 'https://fsm.mv/',
+    description:
+      'I have worked on to bring a huge change to the fsm website as a developer to bring their vision in a new rebrand of the company.',
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'Technical Support',
+    href: '',
+    description:
+      'Worked with members of my team to provide supoport all across the country. From north to the south islands. As a teacher for our applications, network engineer for setting up outlets and insights on best way to utilise our equipments budget.',
+    icon: LifebuoyIcon,
+  },
+  {
+    name: 'Travgo Maldives Platform',
+    href: 'https://travgomaldives.com/',
+    description:
+      'Development of their online platform custom catered to Travgo Maldives. To increase their presence online and to showcase different styles of vacation availabe in the maldives.',
+    icon: CalendarIcon,
+  },
+]
 
 
 const features = [
   {
-    name: 'FSM Website',
-    description: 'Custom CMS website for content management for the client. ',
-    clientUrl: 'https://fsm.mv/',
+    name: 'Degree in Computer Science',
+    period: '2017 to 2020',
+    description: 'Graduated from Maldives National University with a Bachelors Degree in Computer Science. ',
+    clientUrl: 'https://mnu.edu.mv/',
   },
   {
-    name: 'Travgo Maldives',
-    description: 'CMS website built using react framework. Stunning website for the tourism industry. ',
-    clientUrl: 'https://travgomaldives.com/',
+    name: 'Diploma in Information Technology',
+    period: '2013 to 2015',
+    description: 'Graduated from Maldives National University with a Diploma in Information Technology. ',
+    clientUrl: 'https://mnu.edu.mv/',
+  }
+]
+
+const skills = [
+  {
+    name: 'Programming Languages',
+    subskills: ['Python', 'Java', 'Javascript', 'PHP', 'HTML', 'CSS', 'SQL'],
+    description: 'Programming languages that i am proficient in.',
+    clientUrl: 'https://mnu.edu.mv/',
+  },
+  {
+    name: 'Technical',
+    subskills: ['Team Management', 'Networking', 'Active Directory Management', 'Database Administration', 'DevOps', 'Development', 'Troubleshooting', 'Technical Support'],
+    description: 'Technical skills i have aquired. ',
+    clientUrl: 'https://mnu.edu.mv/',
   }
 ]
 
@@ -22,8 +66,7 @@ const people = [
   {
     name: 'Ahusan Mohamed',
     role: 'Information Systems Engineer',
-    imageUrl:
-      'https://lh3.googleusercontent.com/tGIMSCTk4D8X1Bpg7dk8_slmiFhtrtNyYB-aR1elQCEf0L4ZDD6Zlq8QePjnD9ALumeT3lfaziiYWrf7cbkBxDMxy-uShwCXtQsxBw4FptehWQSxQAVUY8wa7AiXKWjzWymQVtAqhFIosh-T-sIAA9x7uPFphwUFoxr_DQyU5-YvI5cT-QdvYfEfGiW_XHLTJbj89N12-YiEUe_k8ZozujBFsVJHn5__ZdAqzYO98LZP42zzDUurfCwMRYI1YzIhMgvPC2U9j1pGsAMpIQcahdvQqLlRfBlsjpynWpg0p5Jtskmgy7IMeq-DQ-EQ2AqI9KHCp0eeV5_PNvcQdYfJ1wuAjbaGlljIy6mzgLefIufNaeM9CV493mGrGkWL2wIM8Eqs6MHjTUF3RHaTeshT0TJdcKOpH1EvvwZDLOgXNpg6e3csk7EcbLXKETqLh-JSvvjbMhXocGggwYuEUq5FCGSAv6RAEgSxkMmrUd6QoK_-pSYW6t5EXafLD9EQMS4OF47qYvQ_A-dSOfnPx6cUscbcBn1ZRhEfnjc-yoGM_irFVnQpXiFYvoVwiFyrjv-_USFwmug9X8MDZqxam6df8bbqb0yOAWZt0VidD-9OVBUAsEBQtak1b5uzjwd4-nKYlaS4kg7Qxo-_zzGBKN4tMJFdR1I-bfzgx80NNK2ZcB-F7m7tHyOvs7lpuiZMLIDJdu-cvzTtKGmSkD8uglEn0tzzh3impYW2zIO9nPjJ8I1-qn1MowGVT6PfQHY5euXvPZUfu0Qd_uvWL_47noNRawtR0XBZxBRW9TWakRMVAR2X1uqsP8Eg0f2NUwOWO3O5C-4PqpgQkhNfECB81KMUjUIwfpRCRhWAbTzMnh7UmlmJu9wZBm5xtLN-BCTe6-HzMfUfY6rL_bqL7P39SJQFfdnIv9CH26FCqvTQOG2h2gFwvPQSUYUhbIxvOuGjNuKGcCjLtURT-HdCwQUgH_nh1oglKH8FXr4JhTFKhYuigKs946fWRbsg-j5QTmjoOQOzbAV0LjYBYE3qMqJ27Um2cvJ-=w557-h697-no?authuser=0',
+    imageUrl:'/MyPortrait.png',
     githubUrl: 'https://github.com/ahusan',
     linkedinUrl: 'https://www.linkedin.com/in/ahusan/',
   }
@@ -39,22 +82,22 @@ function App() {
         <div className="bg-white">
           <div className="mx-auto max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
             <div>
-              <ul
-                role="list"
-              >
+              <ul>
                 {people.map((person) => (
                   <li key={person.name}>
                     <div className="space-y-4">
                       <div className="aspect-w-3 aspect-h-2">
-                        <img className="rounded-lg" src={person.imageUrl} alt="" />
+                        <img className="rounded-lg" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
                       </div>
 
                       <div className="space-y-2">
                         <div className="space-y-1 text-lg font-medium leading-6">
                           <h3>{person.name}</h3>
+                          <h5 className='text-gray-600'>+960 9855168</h5>
+                          <h5 className='text-gray-600'>ahusan5657@gmail.com</h5>
                           <p className="text-indigo-600">{person.role}</p>
                         </div>
-                        <ul role="list" className="flex space-x-5">
+                        <ul className="flex space-x-5">
                           <li>
                             <a href={person.githubUrl} className="text-gray-400 hover:text-gray-500">
                               <span className="sr-only">GitHub</span>
@@ -82,24 +125,102 @@ function App() {
                 ))}
               </ul>
             </div>
-            <div className="mt-12 lg:col-span-2 lg:mt-0">
-              <dl className="space-y-10 sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4 sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative">
-                    <dt>
-                      <a href={feature.clientUrl} className="text-gray-400 hover:text-gray-500">
-                        <span className="sr-only">LinkedIn</span>
-                        <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
-                      </a>
-                      <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
-                    </dt>
-                    <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
+            <div className="mt-12 w-full lg:col-span-2 lg:mt-0">
+              <div className='w-full'>
+                <h2 className='my-4 text-black text-2xl'>About me..</h2>
+                <p className="text-gray-500">I have been working in technology industry since 2015. My key feature is adaptability in this ever changing industry. I have aquired different experiences. Met different people working in this country. Explored the tech culture in Maldives. </p>
+              </div>
+              <div className='w-full mt-10'>
+                <h2 className='my-4 text-black text-2xl'>Educational Qualifications</h2>
+                <dl className="space-y-10 sm:grid sm:grid-flow-row  sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
+                  {features.map((feature) => (
+                    <div key={feature.name} className="relative">
+                      <dt>
+                        <a href={feature.clientUrl} className="text-gray-400 hover:text-gray-500">
+                          <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                        </a>
+                        <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
+                      </dt>
+                      <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <div className='w-full lg:col-span-2 lg:mt-0'>
+                <h2 className='my-4 text-black text-2xl'>Skills</h2>
+                <dl className="space-y-10 sm:grid sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
+
+                  {skills.map((skills) => (
+                    <div key={skills.name} className="relative">
+                      <dt>
+                        <a href={skills.clientUrl} className="text-gray-400 hover:text-gray-500">
+                          <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                        </a>
+                        <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{skills.name}</p>
+                      </dt>
+                      <dd className="mt-2 ml-9 text-base text-gray-500">{skills.description}</dd>
+
+                      {skills.subskills.map(element => (
+                        <dd className='mt-2 ml-9 text-base text-gray-500'>
+                          {element}
+                        </dd>
+                      ))}
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-white">
+        {/* Header */}
+        <div className="relative bg-gray-800 pb-32">
+          <div className="absolute inset-0">
+            <img
+              className="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+              alt=""
+            />
+            <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
+          </div>
+          <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Work Experience</h1>
+            <p className="mt-6 max-w-3xl text-xl text-gray-300">
+              I have worked with multiple big corporations in the country to aquire the skills required to perform in my chosen field. I am mentioning my most recent experiences below.
+            </p>
+          </div>
+        </div>
+
+        {/* Overlapping cards */}
+        <section
+          className="relative z-10 mx-auto -mt-32 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8"
+          aria-labelledby="contact-heading"
+        >
+          <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+            {supportLinks.map((link) => (
+              <div key={link.name} className="flex flex-col rounded-2xl bg-white shadow-xl">
+                <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+                  <div className="absolute top-0 inline-block -translate-y-1/2 transform rounded-xl bg-indigo-600 p-5 shadow-lg">
+                    <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
+                  <p className="mt-4 text-base text-gray-500">{link.description}</p>
+                </div>
+                <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
+                  {link.href === '' ?
+                    ''
+                    :
+                    <a href={link.href} className="text-base font-medium text-indigo-700 hover:text-indigo-600">
+                      Link here<span aria-hidden="true"> &rarr;</span>
+                    </a>
+                  }
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );
