@@ -99,7 +99,7 @@ function App() {
 
       <div className='flex flex-row items-center justify-center lg:h-screen w-screen'>
         <div className="bg-white">
-          <div className="mx-auto mt-20 lg:mt-0 lg:max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+          <div className="mx-auto lg:max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
             <div>
               <ul>
                 {people.map((person) => (
