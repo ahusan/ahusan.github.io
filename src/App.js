@@ -1,6 +1,5 @@
 import './App.css';
-import { LinkIcon } from '@heroicons/react/24/outline'
-import { LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon } from '@heroicons/react/24/outline'
+import { AcademicCapIcon, LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon, CommandLineIcon } from '@heroicons/react/24/outline'
 
 const supportLinks = [
   {
@@ -106,10 +105,10 @@ function App() {
                   <li key={person.name}>
                     <div className="space-y-4">
                       <div className="aspect-w-3 aspect-h-2">
-                        <img className="rounded-lg" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
+                        <img className="rounded-lg shadow-md" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-2  shadow-md rounded-md p-2">
                         <div className="space-y-1 text-lg font-medium leading-6">
                           <h3>{person.name}</h3>
                           <h5 className='text-gray-600'>+960 9855168</h5>
@@ -144,7 +143,7 @@ function App() {
                 ))}
               </ul>
             </div>
-            <div className="mt-12 w-full lg:col-span-2 lg:mt-0">
+            <div className="mt-12 w-full lg:col-span-2 lg:mt-0  shadow-md rounded-md p-2">
               <h1 className='text-3xl my-4 mx-auto'>My Portfolio</h1>
               <div className='w-full'>
                 <h2 className='my-4 text-black text-2xl'>About me..</h2>
@@ -157,7 +156,7 @@ function App() {
                     <div key={feature.name} className="relative">
                       <dt>
                         <a href={feature.clientUrl} className="text-gray-400 hover:text-gray-500">
-                          <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                          <AcademicCapIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
                         </a>
                         <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
                       </dt>
@@ -174,7 +173,7 @@ function App() {
                     <div key={skills.name} className="relative">
                       <dt>
                         <a href={skills.clientUrl} className="text-gray-400 hover:text-gray-500">
-                          <LinkIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
+                          <CommandLineIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
                         </a>
                         <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{skills.name}</p>
                       </dt>
