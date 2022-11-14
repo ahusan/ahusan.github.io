@@ -85,7 +85,7 @@ const people = [
   {
     name: 'Ahusan Mohamed',
     role: 'Information Systems Engineer',
-    imageUrl:'/MyPortrait.png',
+    imageUrl: '/MyPortrait.png',
     githubUrl: 'https://github.com/ahusan',
     linkedinUrl: 'https://www.linkedin.com/in/ahusan/',
   }
@@ -145,6 +145,7 @@ function App() {
               </ul>
             </div>
             <div className="mt-12 w-full lg:col-span-2 lg:mt-0">
+              <h1 className='text-3xl my-4 mx-auto'>My Portfolio</h1>
               <div className='w-full'>
                 <h2 className='my-4 text-black text-2xl'>About me..</h2>
                 <p className="text-gray-500">I have been working in technology industry since 2015. My key feature is adaptability in this ever changing industry. I have aquired different experiences. Met different people working in this country. Explored the tech culture in Maldives. </p>
