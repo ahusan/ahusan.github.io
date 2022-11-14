@@ -104,7 +104,7 @@ function App() {
                 {people.map((person) => (
                   <li key={person.name}>
                     <div className="space-y-4">
-                      <div className="aspect-w-3 aspect-h-2">
+                      <div className="aspect-w-3 aspect-h-2 sm:mb-10 sm:mt-10">
                         <img className="rounded-lg shadow-md" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
                       </div>
 
