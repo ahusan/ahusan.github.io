@@ -102,7 +102,7 @@ function App() {
 
       <div className='flex flex-row items-center justify-center w-screen'>
         <div className="bg-white">
-          <div className="mx-auto sm:max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+          <div className="mx-auto sm:max-w-screen-2xl max-w-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
             <div>
               <ul>
                 {people.map((person) => (
@@ -210,7 +210,7 @@ function App() {
             />
             <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
           </div>
-          <div className="relative mx-auto  sm:max-w-screen-2xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+          <div className="relative mx-auto max-w-2xl sm:max-w-screen-2xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Work Experience</h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
               I have worked with multiple big corporations in the country to aquire the skills required to perform in my chosen field. I am mentioning my most recent experiences below.
@@ -220,7 +220,7 @@ function App() {
 
         {/* Overlapping cards */}
         <section
-          className="relative z-10 mx-auto -mt-96  sm:max-w-screen-2xl px-4 pb-32 sm:px-6 lg:px-8"
+          className="relative z-10 mx-auto -mt-96 max-w-2xl sm:max-w-screen-2xl px-4 pb-32 sm:px-6 lg:px-8"
           aria-labelledby="contact-heading"
         >
           <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-20 lg:gap-x-8">
