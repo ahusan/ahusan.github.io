@@ -112,11 +112,11 @@ function App() {
                         <img className="rounded-lg shadow-md" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
                       </div>
 
-                      <div className="space-y-2  shadow-md rounded-md p-2">
-                        <div className="space-y-1 text-lg font-medium leading-6">
+                      <div className="space-y-2  shadow-md rounded-md p-2 px-4">
+                        <div className="space-y-2 text-lg font-medium leading-8">
                           <h3>{person.name}</h3>
-                          <h5 className='text-gray-600'>+960 9855168</h5>
-                          <h5 className='text-gray-600'>ahusan5657@gmail.com</h5>
+                          <a href='tel:+9609855168'><h5 className='text-gray-600 hover:text-indigo-700'>+960 9855168</h5></a>
+                          <a href='mailto:ahusan5657@gmail.com'><h5 className='text-gray-600 hover:text-indigo-700'>ahusan5657@gmail.com</h5></a>
                           <p className="text-indigo-600">{person.role}</p>
                         </div>
                         <ul className="flex space-x-5">
@@ -147,7 +147,7 @@ function App() {
                 ))}
               </ul>
             </div>
-            <div className="mt-12 w-full lg:col-span-2 lg:mt-0  shadow-md rounded-md p-2">
+            <div className="mt-12 w-full lg:col-span-2 lg:mt-0  shadow-md rounded-md p-4 px-6">
               <h1 className='text-3xl my-4 mx-auto'>My Portfolio</h1>
               <div className='w-full'>
                 <h2 className='my-4 text-black text-2xl'>About me..</h2>
@@ -155,7 +155,7 @@ function App() {
               </div>
               <div className='w-full mt-10'>
                 <h2 className='my-4 text-black text-2xl'>Educational Qualifications</h2>
-                <dl className="space-y-10 sm:grid sm:grid-flow-row  sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
+                <dl className="space-y-4">
                   {features.map((feature) => (
                     <div key={feature.name} className="relative">
                       <dt>
@@ -165,12 +165,12 @@ function App() {
                         <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
                         <p className='ml-9 text-md font-light leading-6'>( {feature.period} )</p>
                       </dt>
-                      <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
+                      <dd className="ml-9 text-base text-gray-500">{feature.description}</dd>
                     </div>
                   ))}
                 </dl>
               </div>
-              <div className='w-full lg:col-span-2 lg:mt-0'>
+              <div className='w-full lg:col-span-2 lg:mt-0 py-4 pt-8'>
                 <h2 className='my-4 text-black text-2xl'>Skills</h2>
                 <dl className="space-y-10 sm:grid sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
 
@@ -185,7 +185,7 @@ function App() {
                       <dd className="mt-2 ml-9 text-base text-gray-500">{skills.description}</dd>
 
                       {skills.subskills.map(element => (
-                        <dd className='mt-2 ml-9 text-base text-gray-500'>
+                        <dd className='mt-0 ml-16 text-base text-gray-500'>
                           <li>
                             {element}
                           </li>
