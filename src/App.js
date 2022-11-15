@@ -4,41 +4,39 @@ import { AcademicCapIcon, LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesk
 const supportLinks = [
   {
     name: 'FSM Website',
+    period: 'July 2021 to Dec 2021',
     href: 'https://fsm.mv/',
     description:
       'I have worked on to bring a huge change to the fsm website as a developer to bring their vision in a new rebrand of the company.',
     icon: GlobeAltIcon,
   },
   {
-    name: 'Technical Support',
-    href: '',
-    description:
-      'Worked with members of my team to provide supoport all across the country. From north to the south islands. As a teacher for our applications, network engineer for setting up outlets and insights on best way to utilise our equipments budget.',
-    icon: LifebuoyIcon,
-  },
-  {
     name: 'Travgo Maldives Platform',
+    period: 'Oct 2020 to Feb 2021',
     href: 'https://travgomaldives.com/',
     description:
       'Development of their online platform custom catered to Travgo Maldives. To increase their presence online and to showcase different styles of vacation availabe in the maldives.',
     icon: CalendarIcon,
   },
   {
-    name: 'Information Systems Engineer (2020 - now)',
+    name: 'Information Systems Engineer',
+    period: 'June 2020 to Now',
     href: 'https://bankofmaldives.com.mv/',
     description:
       'Currently working in Bank of maldives. Learning the best tools to utilize in this business.',
     icon: WalletIcon,
   },
   {
-    name: 'Information Technology Technician (2017-2020)',
+    name: 'Information Technology Technician',
+    period: 'Aug 2017 to June 2020',
     href: 'https://wamco.com.mv/',
     description:
       'Worked as a technical engineer to support to Information Technology Team at Waste Management Corporation (WAMCO). ',
     icon: ComputerDesktopIcon,
   },
   {
-    name: 'Information Technology Support (2016-2017)',
+    name: 'Information Technology Support',
+    period: 'Feb 2016 to Aug 2017',
     href: 'https://villacollege.edu.mv/',
     description:
       'Provided services to our company staff and clients regarding Information Technology uses and implementing policies for IT systems. At Villa College',
@@ -65,14 +63,20 @@ const features = [
 const skills = [
   {
     name: 'Programming Languages',
-    subskills: ['Python', 'Java', 'Javascript', 'PHP', 'HTML', 'CSS', 'SQL'],
+    subskills: ['Python', 'GO', 'Java', 'Javascript', 'PHP', 'HTML', 'CSS', 'SQL', 'C++'],
     description: 'Programming languages that i am proficient in.',
     clientUrl: 'https://mnu.edu.mv/',
   },
   {
+    name: 'Frameworks',
+    subskills: ['React JS', 'Vue JS', 'Express JS', 'Laravel', 'Tailwind CSS', 'ASP .NET', 'Fast API'],
+    description: 'Development frameworks that i have worked with on different projects. ',
+    clientUrl: 'https://mnu.edu.mv/',
+  },
+  {
     name: 'Technical',
-    subskills: ['Team Management', 'Networking', 'Active Directory Management', 'Database Administration', 'DevOps', 'Development', 'Troubleshooting', 'Technical Support'],
-    description: 'Technical skills i have aquired. ',
+    subskills: ['Team Management', 'Networking', 'Active Directory Management', 'Database Administration', 'DevOps', 'Development', 'Troubleshooting', 'Technical Support', 'Server Management'],
+    description: 'Different experiences and technical skills i have acquired. ',
     clientUrl: 'https://mnu.edu.mv/',
   }
 ]
@@ -96,9 +100,9 @@ function App() {
   return (
     <>
 
-      <div className='flex flex-row items-center justify-center lg:h-screen w-screen'>
+      <div className='flex flex-row items-center justify-center w-screen'>
         <div className="bg-white">
-          <div className="mx-auto lg:max-w-screen-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+          <div className="mx-auto lg:max-w-screen-3xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
             <div>
               <ul>
                 {people.map((person) => (
@@ -159,6 +163,7 @@ function App() {
                           <AcademicCapIcon className="absolute h-6 w-6 text-blue-800" aria-hidden="true" />
                         </a>
                         <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
+                        <p className='ml-9 text-md font-light leading-6'>( {feature.period} )</p>
                       </dt>
                       <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
                     </div>
@@ -181,7 +186,9 @@ function App() {
 
                       {skills.subskills.map(element => (
                         <dd className='mt-2 ml-9 text-base text-gray-500'>
-                          {element}
+                          <li>
+                            {element}
+                          </li>
                         </dd>
                       ))}
                     </div>
@@ -224,6 +231,7 @@ function App() {
                     <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
+                  <p className='text-lg font-medium text-gray-600'>( {link.period} )</p>
                   <p className="mt-4 text-base text-gray-500">{link.description}</p>
                 </div>
                 <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
