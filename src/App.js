@@ -1,5 +1,6 @@
 import './App.css';
 import { AcademicCapIcon, LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon, CommandLineIcon } from '@heroicons/react/24/outline'
+import Person from './component/person';
 
 const supportLinks = [
   {
@@ -7,7 +8,7 @@ const supportLinks = [
     period: 'July 2021 to Dec 2021',
     href: 'https://fsm.mv/',
     description:
-      'I have worked on to bring a huge change to the fsm website as a developer to bring their vision in a new rebrand of the company.',
+      "As a developer, I was instrumental in driving the transformation of the FSM website during a recent company rebrand. Working closely with the FSM team, I leveraged my technical expertise and creative problem-solving skills to bring their vision to life, resulting in a complete overhaul of the company's online presence. Through careful planning and meticulous attention to detail, I was able to deliver a modern, user-friendly website that accurately represented the company's new brand identity. My contributions to this project were essential in helping FSM achieve its business objectives and establish a strong online presence in its industry.",
     icon: GlobeAltIcon,
   },
   {
@@ -15,15 +16,22 @@ const supportLinks = [
     period: 'Oct 2020 to Feb 2021',
     href: 'https://travgomaldives.com/',
     description:
-      'Development of their online platform custom catered to Travgo Maldives. To increase their presence online and to showcase different styles of vacation availabe in the maldives.',
+      "I was responsible for developing a custom online platform specifically tailored to meet the needs of Travgo Maldives, with the objective of boosting their online presence and showcasing the various styles of vacations available in the Maldives. Leveraging my technical expertise and in-depth knowledge of web development best practices, I worked closely with the Travgo Maldives team to understand their requirements and deliver a high-quality, user-friendly online platform that effectively highlighted their offerings. This project required extensive collaboration, attention to detail, and a strong commitment to meeting deadlines and exceeding expectations. The resulting platform was an essential component of Travgo Maldives' online marketing strategy, contributing significantly to their success in the highly competitive travel industry.",
     icon: CalendarIcon,
   },
   {
     name: 'Information Systems Engineer',
     period: 'June 2020 to Now',
     href: 'https://bankofmaldives.com.mv/',
-    description:
-      'Currently working in Bank of maldives. Learning the best tools to utilize in this business.',
+    description: (
+      <p>
+        As a current employee of Bank of Maldives, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. This involves a deep understanding of the banking industry and its unique requirements, as well as ongoing research and analysis of emerging trends and best practices.
+        <br /><br />
+        In my role, I have taken a proactive approach to learning and experimenting with various tools and software applications, always seeking out the most effective solutions to improve the bank's operations. I collaborate closely with colleagues across different departments and business functions to understand their needs and identify areas where technology can be leveraged to increase efficiency and productivity.
+        <br /><br />
+        Some of the tools that I have been exploring and utilizing in my work at Bank of Maldives include data analytics and visualization software, cloud-based infrastructure and services, cybersecurity solutions, and automation tools for streamlining repetitive processes. Through ongoing learning and experimentation, I am able to apply these tools in new and innovative ways to help drive the bank's continued success in an increasingly digital business landscape.
+      </p>
+    ),
     icon: WalletIcon,
   },
   {
@@ -31,7 +39,7 @@ const supportLinks = [
     period: 'Aug 2017 to June 2020',
     href: 'https://wamco.com.mv/',
     description:
-      'Worked as a technical engineer to support to Information Technology Team at Waste Management Corporation (WAMCO). ',
+      "In my previous role, I served as a technical engineer providing critical support to the Information Technology (IT) team at Waste Management Corporation (WAMCO). Drawing on my extensive technical knowledge and troubleshooting expertise, I worked collaboratively with the IT team to resolve complex issues related to hardware, software, and network infrastructure. Additionally, I played a key role in the development and implementation of new IT systems and processes, working closely with colleagues to identify opportunities for optimization and improvement. Through my efforts, I helped ensure that WAMCO's IT systems were fully operational and aligned with the company's overall business objectives, contributing to increased efficiency, productivity, and customer satisfaction.",
     icon: ComputerDesktopIcon,
   },
   {
@@ -39,7 +47,7 @@ const supportLinks = [
     period: 'Feb 2016 to Aug 2017',
     href: 'https://villacollege.edu.mv/',
     description:
-      'Provided services to our company staff and clients regarding Information Technology uses and implementing policies for IT systems. At Villa College',
+      "During my tenure at Villa College, I provided comprehensive IT services to both staff and clients, leveraging my technical expertise and communication skills to ensure that all users were able to effectively utilize the college's IT systems. I also played a key role in developing and implementing IT policies and procedures, working closely with stakeholders across the organization to identify areas for improvement and ensure that best practices were followed. Through my efforts, I was able to help create a more streamlined and efficient IT infrastructure that supported the needs of both internal and external stakeholders, contributing to the overall success of the organization.",
     icon: ComputerDesktopIcon,
   },
 ]
@@ -83,10 +91,12 @@ const skills = [
 
 
 const people = [
-
-
   {
     name: 'Ahusan Mohamed',
+    work: '+9609855168',
+    personal: '+9607955168',
+    email: 'ahusan5657@gmail.com',
+    company: 'Bank of Maldives',
     role: 'Information Systems Engineer',
     imageUrl: '/MyPortrait.png',
     githubUrl: 'https://github.com/ahusan',
@@ -94,66 +104,26 @@ const people = [
   }
 ]
 
+const aboutme = 'As a highly adaptable professional with a passion for the ever-changing technology industry, I have spent the last 6 years building a diverse skill set through various experiences and encounters with industry leaders. Through my work, I have had the opportunity to immerse myself in the unique tech culture of Maldives and connect with a wide range of individuals who share my passion for innovation. With each new challenge, I have been able to leverage my adaptability to quickly pivot and find effective solutions, all while staying ahead of the curve in this rapidly evolving industry.'
+const qualities = 'As a developer, my best desirable qualities include my strong problem-solving skills, attention to detail, and adaptability. I understand the importance of effective communication and have developed strong interpersonal skills, allowing me to work effectively with team members, stakeholders, and clients. I approach each challenge with a creative mindset and am always willing to learn new technologies and programming languages. Most importantly, I take pride in my strong work ethic and am committed to delivering high-quality results on time, every time.'
+
+
 
 function App() {
 
   return (
     <>
-
+      <div className='w-screen text-center bg-white my-10'>
+        <h1 className='text-4xl my-4'>My Portfolio</h1>
+      </div>
       <div className='flex flex-row items-center justify-center w-screen'>
-        <div className="bg-white">
-          <div className="mx-auto sm:max-w-screen-2xl max-w-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+        <div className="w-full bg-white">
+          <div className="mx-auto sm:max-w-screen-2xl max-w-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-12 lg:px-8">
             <div>
-              <ul>
-                {people.map((person) => (
-                  <li key={person.name}>
-                    <div className="space-y-4">
-                      <div className="aspect-w-3 aspect-h-2 sm:mb-10 sm:mt-10">
-                        <img className="rounded-lg shadow-md" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
-                      </div>
-
-                      <div className="space-y-2  shadow-md rounded-md p-2 px-4">
-                        <div className="space-y-2 text-lg font-medium leading-8">
-                          <h3>{person.name}</h3>
-                          <a href='tel:+9609855168'><h5 className='text-gray-600 hover:text-indigo-700'>+960 9855168</h5></a>
-                          <a href='mailto:ahusan5657@gmail.com'><h5 className='text-gray-600 hover:text-indigo-700'>ahusan5657@gmail.com</h5></a>
-                          <p className="text-indigo-600">{person.role}</p>
-                        </div>
-                        <ul className="flex space-x-5">
-                          <li>
-                            <a href={person.githubUrl} className="text-gray-400 hover:text-gray-500">
-                              <span className="sr-only">GitHub</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                              </svg>
-                            </a>
-                          </li>
-                          <li>
-                            <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500">
-                              <span className="sr-only">LinkedIn</span>
-                              <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                  fillRule="evenodd"
-                                  d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <Person people={people} aboutme={aboutme} qualities={qualities} />
             </div>
             <div className="mt-12 w-full lg:col-span-2 lg:mt-0  shadow-md rounded-md p-4 px-6">
-              <h1 className='text-3xl my-4 mx-auto'>My Portfolio</h1>
               <div className='w-full'>
-                <h2 className='my-4 text-black text-2xl'>About me..</h2>
-                <p className="text-gray-500">I have been working in technology industry since 2015. My key feature is adaptability in this ever changing industry. I have aquired different experiences. Met different people working in this country. Explored the tech culture in Maldives. </p>
-              </div>
-              <div className='w-full mt-10'>
                 <h2 className='my-4 text-black text-2xl'>Educational Qualifications</h2>
                 <dl className="space-y-4">
                   {features.map((feature) => (
@@ -202,18 +172,22 @@ function App() {
       <div className="bg-white">
         {/* Header */}
         <div className="relative bg-gray-800 pb-96">
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <img
               className="h-max w-full object-cover"
               src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
               alt=""
             />
             <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
-          </div>
+          </div> */}
           <div className="relative mx-auto max-w-2xl sm:max-w-screen-2xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Work Experience</h1>
-            <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              I have worked with multiple big corporations in the country to aquire the skills required to perform in my chosen field. I am mentioning my most recent experiences below.
+            <p className="mt-6 max-w-full text-xl text-gray-300">
+              Throughout my career, I have had the opportunity to work with several major corporations in the country, each providing unique challenges and opportunities for professional growth. These experiences have allowed me to hone the skills and expertise necessary to excel in my chosen field, as well as to develop a deep understanding of the industry landscape and its evolving trends.
+
+              Most recently, I have been fortunate to work with a number of highly respected organizations, including Bank of Maldives, Waste Management Corporation, and Villa College. Through these engagements, I have had the opportunity to work alongside top talent in the field, gaining valuable insights into their strategies and approaches, and applying these lessons to my own work. Additionally, I have been able to leverage these experiences to develop and refine my skills in areas such as technical engineering, IT policy development, and IT support services, enabling me to take on increasingly complex and demanding projects.
+
+              As I continue to progress in my career, I am committed to building on these experiences and to pursuing new opportunities for growth and development, both within the organizations I work with and through ongoing learning and exploration.
             </p>
           </div>
         </div>

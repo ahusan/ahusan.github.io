@@ -29,6 +29,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run deploy`
+
+Push the built app for production from the `build` folder to github-pages.\
+It correctly bundles React in production mode and optimizes the build for the best performance. And it will be live on [production](https://ahusan.github.io) 
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
