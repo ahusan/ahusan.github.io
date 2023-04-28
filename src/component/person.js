@@ -21,14 +21,20 @@ function Person(props) {
                                 <div>
                                     <h3>Current Job: </h3>
                                     <p className="text-indigo-600">{person.role}</p>
-                                    <a className="text-indigo-600 hover:text-indigo-700" href="https://bankofmaldives.com.mv/">{person.company}</a>
+                                    <a className="text-indigo-600 hover:text-indigo-700" href="https://bankofmaldives.com.mv/"> At {person.company}</a>
                                 </div>
                             </div>
                             <div className='w-full py-6'>
                                 <h2 className='my-4 text-black text-2xl'>About me...</h2>
-                                <p className="text-gray-500">{aboutme}</p>
+                                <ul>
+                                    {aboutme.map((item, index)=>(
+                                        <li className="text-gray-500" key={index}>
+                                            <label className="text-black">{item.name} :</label>
+                                            <p>{item.text}</p>
+                                        </li>
+                                    ))}
+                                </ul>
                                 <br></br>
-                                <p className="text-gray-500">{qualities}</p>
                             </div>
                             <ul className="flex space-x-5">
                                 <li>

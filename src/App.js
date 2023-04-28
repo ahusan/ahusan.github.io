@@ -104,8 +104,37 @@ const people = [
   }
 ]
 
-const aboutme = 'As a highly adaptable professional with a passion for the ever-changing technology industry, I have spent the last 6 years building a diverse skill set through various experiences and encounters with industry leaders. Through my work, I have had the opportunity to immerse myself in the unique tech culture of Maldives and connect with a wide range of individuals who share my passion for innovation. With each new challenge, I have been able to leverage my adaptability to quickly pivot and find effective solutions, all while staying ahead of the curve in this rapidly evolving industry.'
-const qualities = 'As a developer, my best desirable qualities include my strong problem-solving skills, attention to detail, and adaptability. I understand the importance of effective communication and have developed strong interpersonal skills, allowing me to work effectively with team members, stakeholders, and clients. I approach each challenge with a creative mindset and am always willing to learn new technologies and programming languages. Most importantly, I take pride in my strong work ethic and am committed to delivering high-quality results on time, every time.'
+const aboutme = [
+  {
+    name : "Profession",
+    text : "Highly adaptable developer with 6 years of experience in the technology industry"
+  },
+  {
+    name : "Location",
+    text : "Based in the Maldives"
+  },
+  {
+    name : "Passion",
+    text : "Driven by a passion for innovation and the ever-changing technology industry"
+  },
+  {
+    name : "Skills",
+    text : "Strong problem-solving skills, attention to detail, and adaptability; possesses strong interpersonal skills and understands the importance of effective communication; approaches each challenge with a creative mindset; willing to learn new technologies and programming languages"
+  },
+  {
+    name : "Work Ethic",
+    text : "Takes pride in a strong work ethic and is committed to delivering high-quality results on time, every time"
+  },
+  {
+    name : "Industry",
+    text : "Committed to staying ahead of the curve in the rapidly evolving technology industry"
+  },
+  {
+    name : "Networking",
+    text : "Connected with a wide range of professionals in the industry"
+  },
+]
+
 
 
 
@@ -120,7 +149,7 @@ function App() {
         <div className="w-full bg-white">
           <div className="mx-auto sm:max-w-screen-2xl max-w-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-12 lg:px-8">
             <div>
-              <Person people={people} aboutme={aboutme} qualities={qualities} />
+              <Person people={people} aboutme={aboutme} />
             </div>
             <div className="mt-12 w-full lg:col-span-2 lg:mt-0  shadow-md rounded-md p-4 px-6">
               <div className='w-full'>
