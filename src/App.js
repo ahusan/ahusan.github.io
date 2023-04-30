@@ -1,20 +1,27 @@
 import './App.css';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import Dashboard from './component/dashboard';
+import Article from './component/article';
+import Error404 from './component/error404';
 
 function App(){
-  const routes = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<Dashboard />}>
-        {/* <Route path='/' element={<Dashboard />} /> */}
-      </Route>
-    )
-  )
+  const routes = createBrowserRouter([
+    {
+      path:"/",
+      element: <Dashboard/>
+    },
+    {
+      path:"/article/:id",
+      element: <Article />
+    },
+    {
+      path:"*",
+      element: <Error404 />
+    }
+  ])
   return(
-    <>
       <RouterProvider router={routes} />
-    </>
   )
 }
 export default App;

@@ -7,29 +7,29 @@ function Person(props) {
         <ul>
             {people.map((person, index) => (
                 <li key={index}>
-                    <div className="space-y-4">
+                    <div className="space-y-4 p-4">
                         {/* <div className="aspect-w-3 aspect-h-2 sm:mb-10 sm:mt-10">
                         <img className="rounded-lg shadow-md" src={process.env.PUBLIC_URL + person.imageUrl} alt="" />
                       </div> */}
 
-                        <div className="space-y-2  shadow-md rounded-md p-2 px-4">
+                        <div className="space-y-2 rounded-md p-2 px-4">
                             <div className="space-y-2 text-lg font-medium leading-8">
-                                <h3 className="text-2xl font-semibold font-mono">{person.name}</h3>
-                                <a href={`tel:${person.work}`}><h5 className='text-gray-600 hover:text-indigo-700'>{person.work}</h5></a>
-                                <a href={`tel:${person.personal}`}><h5 className='text-gray-600 hover:text-indigo-700'>{person.personal}</h5></a>
-                                <a href={`mailto:${person.email}`}><h5 className='text-gray-600 hover:text-indigo-700'>{person.email}</h5></a>
+                                <h3 className="text-2xl font-semibold font-mono text-white">{person.name}</h3>
+                                <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a>
+                                <a href={`tel:${person.personal}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.personal}</h5></a>
+                                <a href={`mailto:${person.email}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.email}</h5></a>
                                 <div>
-                                    <h3>Current Job: </h3>
-                                    <p className="text-indigo-600">{person.role}</p>
-                                    <a className="text-indigo-600 hover:text-indigo-700" href="https://bankofmaldives.com.mv/"> At {person.company}</a>
+                                    <h3 className="text-white">Current Job: </h3>
+                                    <p className="text-indigo-300">{person.role}</p>
+                                    <a className="text-indigo-300 hover:text-indigo-500" href="https://bankofmaldives.com.mv/"> At {person.company}</a>
                                 </div>
                             </div>
                             <div className='w-full py-6'>
-                                <h2 className='my-4 text-black text-2xl'>About me...</h2>
+                                <h2 className='my-4 text-white text-2xl'>About me...</h2>
                                 <ul>
                                     {aboutme.map((item, index)=>(
-                                        <li className="text-gray-500" key={index}>
-                                            <label className="text-black">{item.name} :</label>
+                                        <li className="text-gray-300 pt-2" key={index}>
+                                            <label className="text-white font-bold">{item.name} :</label>
                                             <p>{item.text}</p>
                                         </li>
                                     ))}
@@ -38,15 +38,15 @@ function Person(props) {
                             </div>
                             <ul className="flex space-x-5">
                                 <li>
-                                    <a href={person.githubUrl} className="text-gray-400 hover:text-gray-500">
+                                    <a href={person.githubUrl} className="text-gray-400 hover:text-indigo-500">
                                         <span className="sr-only">GitHub</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                                         </svg>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500">
+                                    <a href={person.linkedinUrl} className="text-gray-400 hover:text-indigo-500">
                                         <span className="sr-only">LinkedIn</span>
                                         <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                             <path
