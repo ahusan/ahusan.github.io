@@ -10,14 +10,6 @@ function App(){
     {
       path:"/",
       element: <Dashboard/>
-    },
-    {
-      path:"/article/:id",
-      element: <Article />
-    },
-    {
-      path:"*",
-      element: <Error404 />
     }
   ])
   return(

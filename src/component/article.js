@@ -1,16 +1,7 @@
-import {
-    AcademicCapIcon,
-    HandRaisedIcon,
-    RocketLaunchIcon,
-    SparklesIcon,
-    SunIcon,
-    UserGroupIcon,
-} from '@heroicons/react/20/solid'
-import { useParams } from 'react-router'
 import Error404 from './error404';
 
-function Article() {
-    const { id } = useParams();
+function Article(props) {
+    const id = props.article;
 
     const articles = [
         {

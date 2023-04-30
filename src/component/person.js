@@ -1,7 +1,7 @@
+import Aboutme from "./aboutme";
+
 function Person(props) {
     const people = props.people;
-    const aboutme = props.aboutme;
-    const qualities = props.qualities;
 
     return (
         <ul>
@@ -18,22 +18,10 @@ function Person(props) {
                                 <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a>
                                 <a href={`tel:${person.personal}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.personal}</h5></a>
                                 <a href={`mailto:${person.email}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.email}</h5></a>
-                                <div>
-                                    <h3 className="text-white">Current Job: </h3>
-                                    <p className="text-indigo-300">{person.role}</p>
-                                    <a className="text-indigo-300 hover:text-indigo-500" href="https://bankofmaldives.com.mv/"> At {person.company}</a>
-                                </div>
                             </div>
                             <div className='w-full py-6'>
-                                <h2 className='my-4 text-white text-2xl'>About me...</h2>
-                                <ul>
-                                    {aboutme.map((item, index)=>(
-                                        <li className="text-gray-300 pt-2" key={index}>
-                                            <label className="text-white font-bold">{item.name} :</label>
-                                            <p>{item.text}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h2 className='my-4 text-white text-2xl'>Timeline</h2>
+                                <Aboutme />
                                 <br></br>
                             </div>
                             <ul className="flex space-x-5">
