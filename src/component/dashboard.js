@@ -244,12 +244,12 @@ function Dashboard() {
                       </div>
                       :
                       ''
-                    
+
                   }
                   <p className="mt-4 text-base text-gray-300">{link.description}</p>
                 </div>
                 <div className="rounded-bl-2xl rounded-br-2xl p-6 md:px-8">
-                  <a href={process.env.PUBLIC_URL + link.href} className="text-base font-medium text-indigo-500 hover:text-indigo-300">
+                  <a href={link.href} className="text-base font-medium text-indigo-500 hover:text-indigo-300">
                     Read More<span aria-hidden="true"> &rarr;</span>
                   </a>
 
