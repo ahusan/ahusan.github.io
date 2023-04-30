@@ -4,7 +4,7 @@ import { AcademicCapIcon, BriefcaseIcon, BuildingLibraryIcon, ChevronDoubleRight
 const timeline = [
     {
         id: 1,
-        content: 'Developmetn of Website for ',
+        content: 'Development of Website for ',
         target: 'Matcon Pvt Ltd',
         href: '#',
         date: 'Jan 2022',
