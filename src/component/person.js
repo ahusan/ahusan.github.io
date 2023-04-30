@@ -18,13 +18,7 @@ function Person(props) {
                                 <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a>
                                 <a href={`tel:${person.personal}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.personal}</h5></a>
                                 <a href={`mailto:${person.email}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.email}</h5></a>
-                            </div>
-                            <div className='w-full py-6'>
-                                <h2 className='my-4 text-white text-2xl'>Timeline</h2>
-                                <Aboutme />
-                                <br></br>
-                            </div>
-                            <ul className="flex space-x-5">
+                                <ul className="flex space-x-5">
                                 <li>
                                     <a href={person.githubUrl} className="text-gray-400 hover:text-indigo-500">
                                         <span className="sr-only">GitHub</span>
@@ -46,6 +40,13 @@ function Person(props) {
                                     </a>
                                 </li>
                             </ul>
+                            </div>
+                            <div className='w-full my-4'>
+                                <h2 className='my-4 text-white text-2xl'>Timeline</h2>
+                                <Aboutme />
+                                <br></br>
+                            </div>
+                            
                         </div>
                     </div>
                 </li>

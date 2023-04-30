@@ -4,7 +4,7 @@ import { AcademicCapIcon, BriefcaseIcon, BuildingLibraryIcon, ChevronDoubleRight
 const timeline = [
     {
         id: 1,
-        content: 'Devlopmetn of Website for ',
+        content: 'Developmetn of Website for ',
         target: 'Matcon Pvt Ltd',
         href: '#',
         date: 'Jan 2022',
@@ -130,7 +130,7 @@ function classNames(...classes) {
 
 export default function Aboutme() {
     return (
-        <div className="flow-root">
+        <div className="flow-root sm:max-h-[450px] w-full overflow-auto">
             <ul role="list" className="-mb-8">
                 {timeline.map((event, eventIdx) => (
                     <li key={event.id}>
@@ -143,7 +143,7 @@ export default function Aboutme() {
                                     <span
                                         className={classNames(
                                             event.iconBackground,
-                                            'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-gray-900'
+                                            'h-8 w-8 rounded-full flex items-center justify-center'
                                         )}
                                     >
                                         <event.icon className="h-5 w-5 text-gray-900" aria-hidden="true" />

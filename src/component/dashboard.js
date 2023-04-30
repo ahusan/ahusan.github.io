@@ -91,18 +91,56 @@ const features = [
 const skills = [
   {
     name: 'Programming Languages',
-    subskills: ['Python', 'Java', 'Javascript', 'PHP', 'HTML', 'CSS', 'SQL', 'C#'],
-    description: 'Programming languages that i am proficient in.',
+    subskills: [
+      'https://shields.io/badge/-javascript-111827?style=for-the-badge&logo=javascript',
+      'https://img.shields.io/badge/python-111827?style=for-the-badge&logo=python&logoColor=ffdd54',
+      'https://shields.io/badge/-php-111827?style=for-the-badge&logo=php',
+      'https://shields.io/badge/-Csharp-111827?style=for-the-badge&logo=c',
+    ],
   },
   {
     name: 'Frameworks',
-    subskills: ['React JS', 'Vue JS', 'Inertia JS', 'Laravel', 'Tailwind CSS', 'ASP .NET', 'Fast API'],
-    description: 'Development frameworks that i have worked with on different projects. ',
+    subskills: [
+      'https://shields.io/badge/-express.js-111827?style=for-the-badge&logo=express',
+      'https://shields.io/badge/-laravel-111827?style=for-the-badge&logo=laravel',
+      'https://shields.io/badge/-Next-111827?style=for-the-badge&logo=next.js',
+      'https://img.shields.io/badge/node.js-111827?style=for-the-badge&logo=node.js&logoColor=white',
+      'https://shields.io/badge/-npm-111827?style=for-the-badge&logo=npm',
+      'https://shields.io/badge/-react-111827?style=for-the-badge&logo=react',
+      'https://shields.io/badge/-vue-111827?style=for-the-badge&logo=vue.js',
+    ],
+  },
+  {
+    name: 'Others',
+    subskills: [
+      'https://shields.io/badge/-docker-111827?style=for-the-badge&logo=docker',
+      'https://shields.io/badge/-firebase-111827?style=for-the-badge&logo=firebase',
+      'https://shields.io/badge/-github-111827?style=for-the-badge&logo=github',
+      'https://shields.io/badge/-git-111827?style=for-the-badge&logo=git',
+      'https://shields.io/badge/-bitbucket-111827?style=for-the-badge&logo=bitbucket',
+      'https://shields.io/badge/-github%20pages-111827?style=for-the-badge&logo=github',
+      'https://shields.io/badge/-Google%20Cloud-111827?style=for-the-badge&logo=google-cloud',
+      'https://shields.io/badge/-figma-111827?style=for-the-badge&logo=figma',
+      'https://shields.io/badge/-portainer-111827?style=for-the-badge&logo=portainer',
+      'https://shields.io/badge/-Microsoft%20SQL%20Sever-111827?style=for-the-badge&logo=microsoft%20sql%20server',
+      'https://shields.io/badge/-tailwind css-111827?style=for-the-badge&logo=tailwind-css',
+      'https://shields.io/badge/-Azure-111827?style=for-the-badge&logo=microsoftazure',
+      'https://shields.io/badge/-AWS-111827?style=for-the-badge&logo=amazon',
+      'https://shields.io/badge/-digital%20ocean-111827?style=for-the-badge&logo=digitalocean',
+    ]
   },
   {
     name: 'Technical',
-    subskills: ['Team Management', 'Networking', 'Active Directory Management', 'Database Administration', 'DevOps', 'Development', 'Troubleshooting', 'Technical Support', 'Server Management'],
-    description: 'Different experiences and technical skills i have acquired. ',
+    subskills: [
+      'https://shields.io/badge/-Team%20Management-111827?style=for-the-badge', 
+      'https://shields.io/badge/-Networking-111827?style=for-the-badge', 
+      'https://shields.io/badge/-Active%20Directory%20Management-111827?style=for-the-badge&logo=microsoft', 
+      'https://shields.io/badge/-DB%20administration-111827?style=for-the-badge&logo=mysql&logoColor=white', 
+      'https://shields.io/badge/-devops-111827?style=for-the-badge&logo=devops',
+      'https://shields.io/badge/-Troubleshooting-111827?style=for-the-badge&logo=devops', 
+      'https://shields.io/badge/-Technical%20Support-111827?style=for-the-badge&logo=devops', 
+      'https://shields.io/badge/-Server%20Management-111827?style=for-the-badge&logo=linux'
+    ],
   }
 ]
 
@@ -162,28 +200,26 @@ function Dashboard() {
                   ))}
                 </dl>
               </div>
-              <div className='w-full lg:col-span-2 lg:mt-0 py-4 pt-8'>
+              <div className='w-full lg:mt-0 py-4 pt-8'>
                 <h2 className='my-4 text-white text-2xl'>Skills</h2>
-                <dl className="space-y-10 sm:grid sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
+                <div className="w-full">
 
                   {skills.map((skills) => (
-                    <div key={skills.name} className="relative">
-                      <dt>
+                    <div key={skills.name} className='my-4'>
+                      <div className='my-2'>
                         <CommandLineIcon className="absolute h-6 w-6 text-blue-500" aria-hidden="true" />
                         <p className="ml-9 text-lg font-medium leading-6 text-gray-200">{skills.name}</p>
-                      </dt>
-                      <dd className="mt-2 ml-9 text-base text-gray-500">{skills.description}</dd>
-
-                      {skills.subskills.map((element, index) => (
-                        <dd className='mt-0 ml-16 text-base text-gray-500' key={index}>
-                          <li>
-                            {element}
-                          </li>
-                        </dd>
-                      ))}
+                      </div>
+                      <div className='flex flex-row flex-wrap'>
+                        {skills.subskills.map((element, index) => (
+                          <div className='mt-1 ml-2 text-base text-gray-500' key={index}>
+                            <img src={element} />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
-                </dl>
+                </div>
               </div>
             </div>
           </div>
@@ -195,7 +231,7 @@ function Dashboard() {
           <div className="relative mx-auto max-w-2xl sm:max-w-screen-2xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Projects</h1>
             <p className="mt-6 max-w-full text-xl text-gray-300">
-              Browse through my portfolio to get a glimpse of my capabilities and see the impact i've made on my client's businesses.
+              Browse through my portfolio to get a glimpse of my capabilities and see the impact I've made on my client's businesses.
             </p>
           </div>
         </div>
