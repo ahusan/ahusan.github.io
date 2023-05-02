@@ -130,7 +130,7 @@ function classNames(...classes) {
 
 export default function Aboutme() {
     return (
-        <div className="flow-root sm:max-h-[450px] w-full overflow-auto">
+        <div className="flow-root w-full">
             <ul role="list" className="-mb-8">
                 {timeline.map((event, eventIdx) => (
                     <li key={event.id}>
