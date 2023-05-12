@@ -1,15 +1,17 @@
 
-import { AcademicCapIcon, LifebuoyIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon, CommandLineIcon } from '@heroicons/react/24/outline'
+import { AcademicCapIcon, LifebuoyIcon, ArrowLeftIcon, ArrowRightIcon, CalendarIcon, GlobeAltIcon, ComputerDesktopIcon, WalletIcon, CommandLineIcon } from '@heroicons/react/24/outline'
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Person from './person';
 import Modal from './modal';
 import { useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
 
 const supportLinks = [
   {
     name: 'FSM Website',
     period: 'July 2021 to Dec 2021',
     article: 1,
-    image: '/fsm-front.png',
+    images: ['/fsm-front.png', '/fsm-cms.png'],
     description:
       "As a developer, I was instrumental in driving the transformation of the FSM website during a recent company rebrand.",
     icon: GlobeAltIcon,
@@ -19,27 +21,27 @@ const supportLinks = [
     name: 'Travgo Maldives Platform',
     period: 'Oct 2020 to Feb 2021',
     article: 2,
-    image: '/travgo-front.png',
+    images: ['/travgo-front.png', '/travgo-pms.png'],
     description:
       "I was responsible for developing a custom online platform specifically tailored to meet the needs of Travgo Maldives, with the objective of boosting their online presence and showcasing the various styles of vacations available in the Maldives.",
     icon: CalendarIcon,
-    stack: ['Figma', 'React', 'Firebase', 'Tailwind CSS','Github']
+    stack: ['Figma', 'React', 'Firebase', 'Tailwind CSS', 'Github']
   },
   {
     name: 'Ecommerce Platform',
     period: 'July 2021 to Jan 2022',
     article: 3,
-    image: '/ecom-front.png',
+    images: ['/ecom-front.png', '/ecom-cms.png', '/ecom-cms2.png'],
     description:
       "The use of an ecommerce delivery platform is to provide an online platform for businesses to sell their products and manage their deliveries efficiently. This platform can be used by customers to browse products, place orders, make payments, and track their deliveries.",
     icon: CalendarIcon,
-    stack: ['Figma', 'React', 'Fast API', 'Tailwind CSS', 'Postgres', 'JWT', 'Python','Github']
+    stack: ['Figma', 'React', 'Fast API', 'Tailwind CSS', 'Postgres', 'JWT', 'Python', 'Github']
   },
   {
     name: 'Matcon Website',
     period: 'Mar 2023 to Ongoing',
     article: 4,
-    image: '/matcon-front.png',
+    images: ['/matcon-front.png', '/matcon-front2.png'],
     description:
       "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, and Firebase.",
     icon: CalendarIcon,
@@ -55,23 +57,23 @@ const workexperience = [
     image: '/bml-logo.jpg',
     description: 'As a current employee of Bank of Maldives, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. ',
     icon: WalletIcon,
-    stack: 
-    [
-      'DevOps', 
-      'Laravel', 
-      'Vue JS', 
-      'PHP', 
-      'Javascript',
-      'Bit Bucket',
-      'Digital Ocean',
-      'Azure',
-      'Docker',
-      'Portainer',
-      'Technical Support',
-      'Server Management',
-      'Bug Fixing',
-      'MS SQL Server'
-    ]
+    stack:
+      [
+        'DevOps',
+        'Laravel',
+        'Vue JS',
+        'PHP',
+        'Javascript',
+        'Bit Bucket',
+        'Digital Ocean',
+        'Azure',
+        'Docker',
+        'Portainer',
+        'Technical Support',
+        'Server Management',
+        'Bug Fixing',
+        'MS SQL Server'
+      ]
   },
   {
     name: 'Information Technology Technician',
@@ -81,19 +83,19 @@ const workexperience = [
     description:
       "In my previous role, I served as a technical engineer providing critical support to the Information Technology (IT) team at Waste Management Corporation (WAMCO).",
     icon: ComputerDesktopIcon,
-    stack: 
-    [
-      'Networking', 
-      'DB Admin', 
-      'Google Cloud', 
-      'PHP', 
-      'Javascript',
-      'Github Pages',
-      'Digital Ocean',
-      'AWS',
-      'Technical Support',
-      'Server Management'
-    ]
+    stack:
+      [
+        'Networking',
+        'DB Admin',
+        'Google Cloud',
+        'PHP',
+        'Javascript',
+        'Github Pages',
+        'Digital Ocean',
+        'AWS',
+        'Technical Support',
+        'Server Management'
+      ]
   },
   {
     name: 'Information Technology Support',
@@ -103,13 +105,13 @@ const workexperience = [
     description:
       "During my tenure at Villa College, I provided comprehensive IT services to both staff and clients, leveraging my technical expertise and communication skills to ensure that all users were able to effectively utilize the college's IT systems.",
     icon: ComputerDesktopIcon,
-    stack: 
-    [
-      'Networking', 
-      'DB Admin', 
-      'Technical Support',
-      'Server Management'
-    ]
+    stack:
+      [
+        'Networking',
+        'DB Admin',
+        'Technical Support',
+        'Server Management'
+      ]
   },
 ]
 
@@ -212,6 +214,7 @@ function Dashboard() {
     setArticle(x);
   }
 
+
   return (
     <>
       <div className='w-screen text-center bg-gray-900 py-10 pt-14 sm:pt-10 text-white'>
@@ -299,9 +302,19 @@ function Dashboard() {
                   <h3 className="text-xl font-medium text-gray-200">{link.name}</h3>
                   <p className='text-lg font-medium text-gray-500'>( {link.period} )</p>
                   {
-                    link.image ?
-                      <div className=" sm:mb-10 sm:mt-10 border-8 rounded-xl shadow-md border-indigo-900 overflow-hidden bg-indigo-900">
-                        <img className="w-[400px] h-[250px] object-cover object-center rounded-lg" src={process.env.PUBLIC_URL + link.image} alt="" />
+                    link.images ?
+                      <div className='overflow-hidden'>
+                        <Carousel showArrows={true} className='h-[350px]'>
+                          {
+                            link.images.map((item) => (
+
+                              <div className='w-full h-full'>
+                                <img className="w-[400px] h-[250px]  sm:mb-10 sm:mt-10 border-8 rounded-xl shadow-md border-indigo-900 overflow-hidden bg-indigo-900" src={process.env.PUBLIC_URL + item} alt="" />
+                              </div>
+
+                            ))
+                          }
+                        </Carousel>
                       </div>
                       :
                       ''
