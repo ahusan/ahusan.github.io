@@ -119,7 +119,7 @@ function Article(props) {
                 'Deployment: Deploy the website to Firebase hosting and configure any necessary settings, such as domain mapping and SSL certificates.',
                 'Maintenance and support: Provide ongoing maintenance and support for the website, ensuring that it remains up-to-date and secure.'
             ],
-            link: 'https://matcon1.web.app/',
+            link: 'https://matcon.mv/',
             para: [
                 'Firstly, start by gathering the client\'s requirements and goals for the website. It\'s important to understand what they want to achieve, and what features and functionality they require. This will help you to create a plan for the website\'s architecture, including the user interface, data models, and technology stack.',
                 'Next, design the website\'s user interface, create wireframes, and develop interactive prototypes. This will allow you to visualize the website\'s layout and functionality, and make any necessary changes before development begins.',
@@ -140,7 +140,7 @@ function Article(props) {
     ]
 
 
-    const article = articles.filter(item => item.id == id);
+    const article = articles.filter(item => item.id === id);
 
     if (article.length < 1) {
         return (
