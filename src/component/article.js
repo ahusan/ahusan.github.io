@@ -134,8 +134,92 @@ function Article(props) {
                 'Javascript',
                 'Git',
                 'Nginx',
-                'Google Cloud Platform'
+                'Google Cloud Platform',
+                'Vercel'
             ],
+        },
+        {
+            id: 5,
+            images: [
+                '/matcon-front.png',
+                '/matcon-front2.png',
+            ],
+            heading: 'Matcon Mail Migration',
+            details: 'MATCON provides project management and engineering design consultancy services for civil, structural, transport, and coastal engineering projects.',
+            services: [
+                'Requirements gathering: Gather the client\'s requirements and goals for the website, including design, functionality, and features.',
+                'Planning: Create a plan for the website\'s architecture, including the user interface, data models, and technology stack.',
+                'Backup: Design the website\'s user interface, create wireframes, and develop interactive prototypes.',
+                'Migrating: Develop the website using React JS, implementing features such as user authentication, database integration, and real-time updates.',
+            ],
+            link: 'https://matcon.mv/',
+            para: [
+                'Firstly, start by gathering the client\'s requirements and goals for the website. It\'s important to understand what they want to achieve, and what features and functionality they require. This will help you to create a plan for the website\'s architecture, including the user interface, data models, and technology stack.',
+                'Next, design the website\'s user interface, create wireframes, and develop interactive prototypes. This will allow you to visualize the website\'s layout and functionality, and make any necessary changes before development begins.',
+                'Once the design is finalized, start developing the website using React JS. Implement features such as user authentication, database integration, and real-time updates, to create a responsive and functional website.',
+                'Test the website thoroughly to ensure that it functions as expected, and is compatible with different devices and browsers. This step is crucial to ensure that the website meets the client\'s requirements and provides a positive user experience.',
+                'After testing, deploy the website to Firebase hosting, and configure any necessary settings, such as domain mapping and SSL certificates. Firebase provides a scalable and reliable platform for hosting web applications, and is easy to set up and manage.',
+                'Finally, once the website is deployed, provide ongoing maintenance and support. This will ensure that the website remains secure, up-to-date, and continues to meet the client\'s requirements.',
+                'Throughout the process, make sure to communicate with the client regularly, to ensure that their requirements are being met, and that the website is meeting their expectations. This will help to ensure a successful outcome, and a website that meets the client\'s goals and objectives.'
+            ],
+            stack: [
+                'Google Mail',
+                'Google Workspace',
+                'Google Backup and Sync',
+            ],
+        },
+        {
+            id: 6,
+            images: [
+                '/matcon-front.png',
+                '/matcon-front2.png',
+            ],
+            heading: 'MCG Networking',
+            details: 'Strategy-led communications and creative consultancy harnessing data and patterns of behaviour in people and organisations.',
+            services: [
+                'Requirements gathering: Gather the client\'s requirements and goals for the project, including design.',
+                'Planning: Create a plan for the project\'s architecture, including the user interface, data models, and technology stack.',
+                'Backup: Design the website\'s user interface, create wireframes, and develop interactive prototypes.',
+                'Migrating: Develop the website using React JS, implementing features such as user authentication, database integration, and real-time updates.',
+            ],
+            link: 'https://matcon.mv/',
+            para: [
+                'Firstly, start by gathering the client\'s requirements and goals for the website. It\'s important to understand what they want to achieve, and what features and functionality they require. This will help you to create a plan for the website\'s architecture, including the user interface, data models, and technology stack.',
+                'Next, design the website\'s user interface, create wireframes, and develop interactive prototypes. This will allow you to visualize the website\'s layout and functionality, and make any necessary changes before development begins.',
+                'Once the design is finalized, start developing the website using React JS. Implement features such as user authentication, database integration, and real-time updates, to create a responsive and functional website.',
+                'Test the website thoroughly to ensure that it functions as expected, and is compatible with different devices and browsers. This step is crucial to ensure that the website meets the client\'s requirements and provides a positive user experience.',
+                'After testing, deploy the website to Firebase hosting, and configure any necessary settings, such as domain mapping and SSL certificates. Firebase provides a scalable and reliable platform for hosting web applications, and is easy to set up and manage.',
+                'Finally, once the website is deployed, provide ongoing maintenance and support. This will ensure that the website remains secure, up-to-date, and continues to meet the client\'s requirements.',
+                'Throughout the process, make sure to communicate with the client regularly, to ensure that their requirements are being met, and that the website is meeting their expectations. This will help to ensure a successful outcome, and a website that meets the client\'s goals and objectives.'
+            ],
+            stack: [
+                'Google Mail',
+                'Google Workspace',
+                'Google Backup and Sync',
+            ],
+        },
+        {
+            id: 7,
+            images: ['/bespoke-1.png', '/bespoke-2.png', '/bespoke-3.png'],
+            heading: 'Bespoke Maldives Website',
+            details: 'Strategy-led communications and creative consultancy harnessing data and patterns of behaviour in people and organisations.',
+            services: [
+                'Requirements gathering: Gather the client\'s requirements and goals for the project, including design.',
+                'Planning: Create a plan for the project\'s architecture, including the user interface, data models, and technology stack.',
+                'Backup: Design the website\'s user interface, create wireframes, and develop interactive prototypes.',
+                'Migrating: Develop the website using React JS, implementing features such as user authentication, database integration, and real-time updates.',
+            ],
+            link: 'https://bespoke-main.web.app/',
+            para: [
+                'Firstly, start by gathering the client\'s requirements and goals for the website. It\'s important to understand what they want to achieve, and what features and functionality they require. This will help you to create a plan for the website\'s architecture, including the user interface, data models, and technology stack.',
+                'Next, design the website\'s user interface, create wireframes, and develop interactive prototypes. This will allow you to visualize the website\'s layout and functionality, and make any necessary changes before development begins.',
+                'Once the design is finalized, start developing the website using React JS. Implement features such as user authentication, database integration, and real-time updates, to create a responsive and functional website.',
+                'Test the website thoroughly to ensure that it functions as expected, and is compatible with different devices and browsers. This step is crucial to ensure that the website meets the client\'s requirements and provides a positive user experience.',
+                'After testing, deploy the website to Firebase hosting, and configure any necessary settings, such as domain mapping and SSL certificates. Firebase provides a scalable and reliable platform for hosting web applications, and is easy to set up and manage.',
+                'Finally, once the website is deployed, provide ongoing maintenance and support. This will ensure that the website remains secure, up-to-date, and continues to meet the client\'s requirements.',
+                'Throughout the process, make sure to communicate with the client regularly, to ensure that their requirements are being met, and that the website is meeting their expectations. This will help to ensure a successful outcome, and a website that meets the client\'s goals and objectives.'
+            ],
+            stack: ['Figma', 'React', 'Next JS', 'Tailwind CSS', 'Firebase', 'Vercel', 'Github']
         },
     ]
 

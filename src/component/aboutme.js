@@ -1,9 +1,18 @@
-import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
 import { AcademicCapIcon, BriefcaseIcon, BuildingLibraryIcon, ChevronDoubleRightIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
 
 const timeline = [
     {
         id: 1,
+        content: 'Started Working as a Software Developer at ',
+        target: 'SME Development Finance Corporation',
+        href: '#',
+        date: 'Since July 2023',
+        datetime: '2023-07-15',
+        icon: BriefcaseIcon,
+        iconBackground: 'bg-lime-500',
+    },
+    {
+        id: 2,
         content: 'Development of Website for ',
         target: 'Matcon Pvt Ltd',
         href: '#',
@@ -13,17 +22,17 @@ const timeline = [
         iconBackground: 'bg-amber-500',
     },
     {
-        id: 2,
-        content: 'Currently Working as an Information Systems Engineer at ',
+        id: 3,
+        content: 'Joined as an Information Systems Engineer at ',
         target: 'Bank of Maldives',
         href: '#',
-        date: 'Since June 2020',
+        date: 'June 2020',
         datetime: '2020-06-07',
         icon: BriefcaseIcon,
-        iconBackground: 'bg-lime-500',
+        iconBackground: 'bg-lime-700',
     },
     {
-        id: 3,
+        id: 4,
         content: 'Graduated with a Degree in Computer Science from ',
         target: 'Maldives National University',
         href: '#',
@@ -33,7 +42,7 @@ const timeline = [
         iconBackground: 'bg-cyan-500',
     },
     {
-        id: 4,
+        id: 5,
         content: 'Development of Delivery Platform for ',
         target: 'Lubaba Maldives',
         href: '#',
@@ -43,7 +52,7 @@ const timeline = [
         iconBackground: 'bg-yellow-500',
     },
     {
-        id: 5,
+        id: 6,
         content: 'Development of Smart Farming for ',
         target: 'Degree Project',
         href: '#',
@@ -53,7 +62,7 @@ const timeline = [
         iconBackground: 'bg-yellow-500',
     },
     {
-        id: 6,
+        id: 7,
         content: 'Development of Website for ',
         target: 'Fuel Supply Maldives',
         href: '#',
@@ -63,7 +72,7 @@ const timeline = [
         iconBackground: 'bg-yellow-500',
     },
     {
-        id: 7,
+        id: 8,
         content: 'Development of Website for ',
         target: 'Travgo Maldives Pvt Ltd',
         href: '#',
@@ -73,7 +82,7 @@ const timeline = [
         iconBackground: 'bg-yellow-500',
     },
     {
-        id: 8,
+        id: 9,
         content: 'Started my own company as ',
         target: 'Aveon Consulting Pvt Ltd',
         href: '#',
@@ -83,7 +92,7 @@ const timeline = [
         iconBackground: 'bg-lime-500',
     },
     {
-        id: 9,
+        id: 10,
         content: 'Joined as an IT Technician at ',
         target: 'Waste Management Corporation',
         href: '#',
@@ -93,7 +102,7 @@ const timeline = [
         iconBackground: 'bg-lime-700',
     },
     {
-        id: 10,
+        id: 11,
         content: 'Networking Projects for ',
         target: 'Freelance',
         href: '#',
@@ -103,7 +112,7 @@ const timeline = [
         iconBackground: 'bg-amber-600',
     },
     {
-        id: 11,
+        id: 12,
         content: 'Joined as an IT Technician at ',
         target: 'Villa College',
         href: '#',
@@ -113,7 +122,7 @@ const timeline = [
         iconBackground: 'bg-lime-700',
     },
     {
-        id: 12,
+        id: 13,
         content: 'Graduated with a Diploma in IT from',
         target: 'Maldives National University',
         href: '#',
@@ -131,7 +140,7 @@ function classNames(...classes) {
 export default function Aboutme() {
     return (
         <div className="flow-root w-full">
-            <ul role="list" className="-mb-8">
+            <ul className="-mb-8">
                 {timeline.map((event, eventIdx) => (
                     <li key={event.id}>
                         <div className="relative pb-8">

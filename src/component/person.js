@@ -16,7 +16,7 @@ function Person(props) {
                         <div className="space-y-2 rounded-md p-2 px-4">
                             <div className="space-y-2 text-lg font-medium leading-8">
                                 <h3 className="text-2xl font-semibold font-mono text-white">{person.name}</h3>
-                                <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a>
+                                {/* <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a> */}
                                 <a href={`tel:${person.personal}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.personal}</h5></a>
                                 <a href={`mailto:${person.email}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.email}</h5></a>
                                 <ul className="flex space-x-5 space-y-0">

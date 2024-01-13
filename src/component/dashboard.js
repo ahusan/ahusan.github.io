@@ -39,7 +39,7 @@ const supportLinks = [
   },
   {
     name: 'Matcon Website',
-    period: 'Mar 2023 to Ongoing',
+    period: 'Mar 2023 to Oct 2023',
     article: 4,
     images: ['/matcon-front.png', '/matcon-front2.png'],
     description:
@@ -47,15 +47,67 @@ const supportLinks = [
     icon: CalendarIcon,
     stack: ['Figma', 'React', 'Next JS', 'Tailwind CSS', 'Firebase', 'Github']
   },
+  {
+    name: 'Bespoke Maldives Website',
+    period: 'July 2023 to Nov 2023',
+    article: 7,
+    images: ['/bespoke-1.png', '/bespoke-2.png', '/bespoke-3.png'],
+    description:
+      "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, Vercel and Firebase.",
+    icon: CalendarIcon,
+    stack: ['Figma', 'React', 'Next JS', 'Tailwind CSS', 'Firebase', 'Vercel', 'Github']
+  },
+  {
+    name: 'Matcon Mail Migration',
+    period: 'Oct 2023 to Oct 2023',
+    article: 5,
+    images: ['/matcon-home.webp'],
+    description:
+      "The mail migration was done using a specific technology stack tailored to the client's requirements and including Google Workspace, Google Mail, and Google Drive.",
+    icon: CalendarIcon,
+    stack: ['Google Workspace', 'Google Mail', 'Google Drive', 'Server Management']
+  },
+  {
+    name: 'Maldives Consulting Group Networking',
+    period: 'Aug 2023 to Sep 2023',
+    article: 6,
+    images: ['/mcg-1.jpg'],
+    description:
+      "The project included of setting up and improving their current technologies and network infrastructure.",
+    icon: CalendarIcon,
+    stack: ['Ubiquity', 'UniFi', 'Core Network', 'Full Office Wifi', 'WAN Setup', 'Network Attached Stoprage (NAS)', 'Server Management', 'Technical Support', 'Network Management', 'Network Security', 'Network Monitoring']
+  },
 ]
 
 const workexperience = [
   {
+    name: 'Software Developer',
+    period: 'July 2023 to Now',
+    href: 'https://sdfc.mv/',
+    image: '/SDFC_Logo_B.png',
+    description: 'As a current employee of Bank of Maldives, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. ',
+    icon: WalletIcon,
+    stack:
+      [
+        'Remix JS',
+        'React JS',
+        'Vercel',
+        'Tailwind CSS',
+        'Mantine UI',
+        'REST API',
+        'Github',
+        'Prisma ORM',
+        'Amazon OCR',
+        'Docker',
+        'Postgres SQL',
+      ]
+  },
+  {
     name: 'Information Systems Engineer',
-    period: 'June 2020 to Now',
+    period: 'June 2020 to July 2023',
     href: 'https://bankofmaldives.com.mv/',
     image: '/bml-logo.jpg',
-    description: 'As a current employee of Bank of Maldives, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. ',
+    description: 'Bank of Maldives employee dedicated to leveraging technology for business growth. Post-employment, I\'ll pursue certifications and explore entrepreneurial opportunities for continued growth.',
     icon: WalletIcon,
     stack:
       [
@@ -137,6 +189,7 @@ const skills = [
     subskills: [
       'https://shields.io/badge/-javascript-111827?style=for-the-badge&logo=javascript',
       'https://img.shields.io/badge/python-111827?style=for-the-badge&logo=python&logoColor=ffdd54',
+      'https://shields.io/badge/-typescript-111827?style=for-the-badge&logo=typescript',
       'https://shields.io/badge/-php-111827?style=for-the-badge&logo=php',
       'https://shields.io/badge/-Csharp-111827?style=for-the-badge&logo=c',
     ],
@@ -151,6 +204,7 @@ const skills = [
       'https://shields.io/badge/-npm-111827?style=for-the-badge&logo=npm',
       'https://shields.io/badge/-react-111827?style=for-the-badge&logo=react',
       'https://shields.io/badge/-vue-111827?style=for-the-badge&logo=vue.js',
+      'https://shields.io/badge/-remix-111827?style=for-the-badge&logo=remix',
     ],
   },
   {
@@ -170,6 +224,24 @@ const skills = [
       'https://shields.io/badge/-Azure-111827?style=for-the-badge&logo=microsoftazure',
       'https://shields.io/badge/-AWS-111827?style=for-the-badge&logo=amazon',
       'https://shields.io/badge/-digital%20ocean-111827?style=for-the-badge&logo=digitalocean',
+      'https://shields.io/badge/-fastapi-111827?style=for-the-badge&logo=fastapi',
+      'https://shields.io/badge/-mantine ui-111827?style=for-the-badge&logo=mantine',
+      'https://shields.io/badge/-prisma-111827?style=for-the-badge&logo=prisma',
+      'https://shields.io/badge/-postman-111827?style=for-the-badge&logo=postman',
+      'https://shields.io/badge/-jwt-111827?style=for-the-badge&logo=json-web-tokens',
+      'https://shields.io/badge/-ubuntu-111827?style=for-the-badge&logo=ubuntu',
+      'https://shields.io/badge/-windows-111827?style=for-the-badge&logo=windows',
+      'https://shields.io/badge/-linux-111827?style=for-the-badge&logo=linux',
+      'https://shields.io/badge/-nginx-111827?style=for-the-badge&logo=nginx',
+      'https://shields.io/badge/-mysql-111827?style=for-the-badge&logo=mysql',
+      'https://shields.io/badge/-postgres-111827?style=for-the-badge&logo=postgresql',
+      'https://shields.io/badge/-sqlite-111827?style=for-the-badge&logo=sqlite',
+      'https://shields.io/badge/-wordpress-111827?style=for-the-badge&logo=wordpress',
+      'https://shields.io/badge/-html-111827?style=for-the-badge&logo=html5',
+      'https://shields.io/badge/-css-111827?style=for-the-badge&logo=css3',
+      'https://shields.io/badge/-sass-111827?style=for-the-badge&logo=sass',
+      'https://shields.io/badge/-bootstrap-111827?style=for-the-badge&logo=bootstrap',
+      'https://shields.io/badge/-tailwind-111827?style=for-the-badge&logo=tailwind-css',
     ]
   },
   {
@@ -191,8 +263,7 @@ const skills = [
 const people = [
   {
     name: 'Ahusan Mohamed',
-    work: '+9609855168',
-    personal: '+9607955168',
+    personal: '+9609855168',
     email: 'email@ahusan.dev',
     company: 'Bank of Maldives',
     role: 'Information Systems Engineer',
@@ -217,12 +288,12 @@ function Dashboard() {
 
   return (
     <>
-      <div className='w-screen text-center bg-gray-900 py-10 pt-14 sm:pt-10 text-white'>
+      <div className='w-full text-center bg-gray-900 py-10 pt-14 sm:pt-10 text-white'>
         <h1 className='text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl'>My Portfolio</h1>
       </div>
-      <div className='flex flex-row items-center justify-center w-screen'>
+      <div className='flex flex-row items-center justify-center w-full'>
         <div className="w-full bg-gray-900">
-          <div className="mx-auto sm:max-w-screen-2xl max-w-2xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-12 lg:px-8">
+          <div className="mx-auto sm:max-w-screen max-w-7xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-12 lg:px-8 overflow-hidden">
             <div className='backdrop-brightness-125 drop-shadow-lg rounded-lg'>
               <Person people={people} />
             </div>
