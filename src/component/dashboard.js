@@ -85,7 +85,7 @@ const workexperience = [
     period: 'July 2023 to Now',
     href: 'https://sdfc.mv/',
     image: '/SDFC_Logo_B.png',
-    description: 'As a current employee of Bank of Maldives, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. ',
+    description: 'As a current employee of SME Finance Development Corporation, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth. ',
     icon: WalletIcon,
     stack:
       [
