@@ -46,12 +46,12 @@ function Person(props) {
                                             <DocumentArrowDownIcon className="w-5 h-5" />
                                         </a>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a href="https://blog.ahusan.dev/" className="text-gray-400 hover:text-indigo-500">
                                             <span className="sr-only">Ahusan's Blog</span>
                                             <BookmarkSquareIcon className="w-5 h-5" />
                                         </a>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                             <div className='w-full my-4'>
