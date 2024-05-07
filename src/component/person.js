@@ -41,7 +41,7 @@ function Person(props) {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={process.env.PUBLIC_URL + 'resume.pdf'} download={process.env.PUBLIC_URL + 'New-Resume.pdf'} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-indigo-500">
+                                        <a href={process.env.PUBLIC_URL + 'New-Resume.pdf'} download={process.env.PUBLIC_URL + 'New-Resume.pdf'} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-indigo-500">
                                             <span className="sr-only">Download Resume</span>
                                             <DocumentArrowDownIcon className="w-5 h-5" />
                                         </a>
