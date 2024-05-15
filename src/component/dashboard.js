@@ -288,9 +288,9 @@ function Dashboard() {
 
   return (
     <>
-      <div className='w-full text-center bg-gray-900 py-10 pt-14 sm:pt-10 text-white'>
+      {/* <div className='w-full text-center bg-gray-900 py-10 pt-14 sm:pt-10 text-white'>
         <h1 className='text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl'>My Portfolio</h1>
-      </div>
+      </div> */}
       <div className='flex flex-row items-center justify-center w-full'>
         <div className="w-full bg-gray-900">
           <div className="mx-auto sm:max-w-screen max-w-7xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-12 lg:px-8 overflow-hidden">
