@@ -15,6 +15,9 @@ function Person(props) {
 
                         <div className="space-y-2 rounded-md p-2 px-4">
                             <div className="space-y-2 text-lg font-medium leading-8">
+                            <div className='w-full h-full'>
+                                <img className="w-[400px] h-[400px] object-cover sm:mb-10 sm:mt-10 border-8 rounded-xl shadow-md border-indigo-900 overflow-hidden bg-indigo-900" src={process.env.PUBLIC_URL + 'portrait.jpg'} alt="" />
+                              </div>
                                 <h3 className="text-2xl font-semibold font-mono text-white">{person.name}</h3>
                                 {/* <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a> */}
                                 <a href={`tel:${person.personal}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.personal}</h5></a>
