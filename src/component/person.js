@@ -1,8 +1,6 @@
-import {
-  BookmarkSquareIcon,
-  DocumentArrowDownIcon,
-} from "@heroicons/react/24/outline";
-import Aboutme from "./aboutme";
+import { BookmarkSquareIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline';
+import Aboutme from './aboutme';
+import PropTypes from 'prop-types';
 
 function Person(props) {
   const people = props.people;
@@ -21,30 +19,21 @@ function Person(props) {
                 <div className="w-full h-full">
                   <img
                     className="w-[400px] h-[400px] object-cover sm:mb-10 sm:mt-10 border-8 rounded-xl shadow-md border-indigo-900 overflow-hidden bg-indigo-900"
-                    src={process.env.PUBLIC_URL + "portrait.jpg"}
+                    src={process.env.PUBLIC_URL + 'portrait-selfie.jpg'}
                     alt=""
                   />
                 </div>
-                <h3 className="text-2xl font-semibold font-mono text-white">
-                  {person.name}
-                </h3>
+                <h3 className="text-2xl font-semibold font-mono text-white">{person.name}</h3>
                 {/* <a href={`tel:${person.work}`}><h5 className='text-gray-400 hover:text-indigo-500'>{person.work}</h5></a> */}
                 <a href={`tel:${person.personal}`}>
-                  <h5 className="text-gray-400 hover:text-indigo-500">
-                    {person.personal}
-                  </h5>
+                  <h5 className="text-gray-400 hover:text-indigo-500">{person.personal}</h5>
                 </a>
                 <a href={`mailto:${person.email}`}>
-                  <h5 className="text-gray-400 hover:text-indigo-500">
-                    {person.email}
-                  </h5>
+                  <h5 className="text-gray-400 hover:text-indigo-500">{person.email}</h5>
                 </a>
                 <ul className="flex space-x-5 space-y-0">
                   <li>
-                    <a
-                      href={person.githubUrl}
-                      className="text-gray-400 hover:text-indigo-500"
-                    >
+                    <a href={person.githubUrl} className="text-gray-400 hover:text-indigo-500">
                       <span className="sr-only">GitHub</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -63,10 +52,7 @@ function Person(props) {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href={person.linkedinUrl}
-                      className="text-gray-400 hover:text-indigo-500"
-                    >
+                    <a href={person.linkedinUrl} className="text-gray-400 hover:text-indigo-500">
                       <span className="sr-only">LinkedIn</span>
                       <svg
                         className="h-5 w-5"
@@ -84,8 +70,8 @@ function Person(props) {
                   </li>
                   <li>
                     <a
-                      href={process.env.PUBLIC_URL + "New-Resume.pdf"}
-                      download={process.env.PUBLIC_URL + "New-Resume.pdf"}
+                      href={process.env.PUBLIC_URL + 'New-Resume.pdf'}
+                      download={process.env.PUBLIC_URL + 'New-Resume.pdf'}
                       target="_blank"
                       rel="noreferrer"
                       className="text-gray-400 hover:text-indigo-500"
@@ -117,4 +103,9 @@ function Person(props) {
     </ul>
   );
 }
+
+Person.propTypes = {
+  people: PropTypes.array.isRequired,
+};
+
 export default Person;

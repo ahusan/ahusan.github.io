@@ -4,19 +4,17 @@ import React from 'react';
 import Dashboard from './component/dashboard';
 import Error404 from './component/error404';
 
-function App(){
+function App() {
   const routes = createBrowserRouter([
     {
-      path:"*",
-      element: <Error404/>
+      path: '/',
+      element: <Dashboard />,
     },
     {
-      path:"/",
-      element: <Dashboard/>
-    }
-  ])
-  return(
-      <RouterProvider router={routes} />
-  )
+      path: '*',
+      element: <Error404 />,
+    },
+  ]);
+  return <RouterProvider router={routes} />;
 }
 export default App;
