@@ -171,7 +171,7 @@ const Hero = ({ person }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="relative md:bottom-8 bottom-0 mt-10 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
         <span className="text-gray-400 text-sm mb-2">Scroll Down</span>
         <ArrowDownIcon className="h-5 w-5 text-gray-400" />
       </div>

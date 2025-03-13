@@ -31,12 +31,8 @@ const Experience = ({ workExperience }) => {
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-600 border-4 border-gray-900 z-10"></div>
 
                 {/* Content */}
-                <div className="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right space-y-4">
-                  <div
-                    className={`${
-                      index % 2 === 0 ? 'md:pl-12 md:text-left' : 'md:pr-12 md:text-right'
-                    }`}
-                  >
+                <div className="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-left space-y-4">
+                  <div className={`${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
                     <h3 className="text-2xl font-bold text-white">{job.name}</h3>
                     <p className="text-indigo-400">{job.period}</p>
 
