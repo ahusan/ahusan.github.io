@@ -50,20 +50,37 @@ const Experience = ({ workExperience }) => {
 
                       <p className="text-gray-300">{job.description}</p>
 
-                      {/* Tech stack */}
+                      {/* Tech stack - Updated to display images similar to Skills component */}
                       <div className="mt-4">
                         <h4 className="text-sm font-semibold text-gray-400 mb-2">
                           Technologies & Skills:
                         </h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-3">
                           {job.stack &&
                             job.stack.map((tech, techIndex) => (
-                              <span
+                              <div
                                 key={techIndex}
-                                className="inline-flex items-center rounded-md bg-purple-500/10 px-2 py-1 text-xs font-medium text-purple-400 ring-1 ring-inset ring-purple-500/20"
+                                className="group"
+                                style={{
+                                  transition: 'all 0.3s ease',
+                                  animation: `float ${
+                                    2 + Math.random() * 2
+                                  }s ease-in-out infinite alternate`,
+                                }}
                               >
-                                {tech}
-                              </span>
+                                {job.stackImages && job.stackImages[tech] ? (
+                                  <img
+                                    src={job.stackImages[tech]}
+                                    alt={tech}
+                                    title={tech}
+                                    className="h-8 w-auto object-contain transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-indigo-500/20"
+                                  />
+                                ) : (
+                                  <span className="inline-flex items-center rounded-md bg-purple-500/10 px-2 py-1 text-xs font-medium text-purple-400 ring-1 ring-inset ring-purple-500/20 transition-all duration-300 group-hover:bg-purple-500/20 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                                    {tech}
+                                  </span>
+                                )}
+                              </div>
                             ))}
                         </div>
                       </div>
@@ -104,6 +121,18 @@ const Experience = ({ workExperience }) => {
           </div>
         </div>
       </div>
+
+      {/* Add keyframes for floating animation */}
+      <style>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          100% {
+            transform: translateY(-5px);
+          }
+        }
+      `}</style>
     </section>
   );
 };

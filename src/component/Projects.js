@@ -38,7 +38,7 @@ const Projects = ({ projects }) => {
           {projects.map((project, index) => (
             <div
               key={project.name}
-              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2"
+              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 flex flex-col"
             >
               {/* Project Image Carousel */}
               <div className="h-48 overflow-hidden">
@@ -71,7 +71,7 @@ const Projects = ({ projects }) => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-white">{project.name}</h3>
                   <span className="text-sm text-gray-400">{project.period}</span>
@@ -79,28 +79,43 @@ const Projects = ({ projects }) => {
 
                 <p className="text-gray-400 mb-6 line-clamp-3">{project.description}</p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.stack &&
-                    project.stack.slice(0, 5).map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="inline-flex items-center rounded-md bg-indigo-500/10 px-2 py-1 text-xs font-medium text-indigo-400 ring-1 ring-inset ring-indigo-500/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  {project.stack && project.stack.length > 5 && (
-                    <span className="inline-flex items-center rounded-md bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-500/20">
-                      +{project.stack.length - 5} more
-                    </span>
-                  )}
+                {/* Tech Stack - Updated to be similar to Skills component */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium text-indigo-400 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {project.stack &&
+                      project.stack.map((tech, techIndex) => (
+                        <div
+                          key={techIndex}
+                          className="group"
+                          style={{
+                            transition: 'all 0.3s ease',
+                            animation: `float ${
+                              2 + Math.random() * 2
+                            }s ease-in-out infinite alternate`,
+                          }}
+                        >
+                          {project.stackImages && project.stackImages[tech] ? (
+                            <img
+                              src={project.stackImages[tech]}
+                              alt={tech}
+                              title={tech}
+                              className="h-8 w-auto object-contain transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-indigo-500/20"
+                            />
+                          ) : (
+                            <span className="inline-flex items-center rounded-md bg-indigo-500/10 px-2 py-1 text-xs font-medium text-indigo-400 ring-1 ring-inset ring-indigo-500/20 transition-all duration-300 group-hover:bg-indigo-500/20 group-hover:shadow-lg group-hover:shadow-indigo-500/20">
+                              {tech}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                  </div>
                 </div>
 
                 {/* View Details Button */}
                 <button
                   onClick={e => handleProjectClick(e, project)}
-                  className="relative z-20 w-full py-2 rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                  className="relative z-20 w-full py-2 mt-auto rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
                   type="button"
                 >
                   View Details
@@ -134,6 +149,18 @@ const Projects = ({ projects }) => {
         setStatus={handleCloseModal}
         article={selectedProject ? selectedProject.article : null}
       />
+
+      {/* Add keyframes for floating animation */}
+      <style>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          100% {
+            transform: translateY(-5px);
+          }
+        }
+      `}</style>
     </section>
   );
 };
