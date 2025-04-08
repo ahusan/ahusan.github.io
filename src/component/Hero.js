@@ -115,7 +115,7 @@ const Hero = ({ person }) => {
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 blur-lg opacity-30 animate-pulse"></div>
             <img
-              src={process.env.PUBLIC_URL + '/portrait.jpg'}
+              src={process.env.PUBLIC_URL + '/15189738.jpg'}
               alt="Ahusan Mohamed"
               className="relative w-64 h-64 md:w-96 md:h-96 object-cover rounded-full border-4 border-gray-800"
             />
