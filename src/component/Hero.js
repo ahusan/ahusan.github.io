@@ -168,6 +168,15 @@ const Hero = ({ person }) => {
             />
           </svg>
         </a>
+        <a
+          href="/blog"
+          className="text-gray-400 hover:text-white transition-colors duration-300"
+          aria-label="Blog"
+        >
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 20H5a1 1 0 01-1-1V5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1zM5 5v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" />
+          </svg>
+        </a>
       </div>
 
       {/* Scroll indicator */}
