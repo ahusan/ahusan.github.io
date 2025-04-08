@@ -169,7 +169,7 @@ const Hero = ({ person }) => {
           </svg>
         </a>
         <a
-          href="/blog"
+          href="https://blog.ahusan.dev"
           className="text-gray-400 hover:text-white transition-colors duration-300"
           aria-label="Blog"
         >
