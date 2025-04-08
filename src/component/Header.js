@@ -113,12 +113,12 @@ const Header = () => {
                 </button>
               )
             )}
-            <a
+            {/* <a
               href="/blog"
               className="text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer relative"
             >
               Blog
-            </a>
+            </a> */}
             <a
               href="/resume.pdf"
               target="_blank"
