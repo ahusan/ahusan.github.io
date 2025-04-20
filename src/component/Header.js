@@ -150,36 +150,18 @@ const Header = () => {
               </button>
             ))}
             {/* Projects Button */}
-            {isHomePage ? (
-              <button
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Button clicked for section: projects`);
-                  scrollToSection('projects');
-                }}
-                className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
-                  activeSection === 'projects' ? 'text-white font-medium' : ''
-                }`}
-              >
-                projects
-                {activeSection === 'projects' && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
-                )}
-              </button>
-            ) : (
-              <Link
-                to="/projects"
-                className={`text-gray-300 pt-2 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
-                  activeSection === 'projects' ? 'text-white font-medium' : ''
-                }`}
-              >
-                projects
-                {activeSection === 'projects' && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
-                )}
-              </Link>
-            )}
+
+            <Link
+              to="/projects"
+              className={`text-gray-300 pt-2 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'projects' ? 'text-white font-medium' : ''
+              }`}
+            >
+              projects
+              {activeSection === 'projects' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
             <Link
               to="/blog"
               className={`text-gray-300 pt-2 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
