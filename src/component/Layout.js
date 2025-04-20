@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpIcon } from '@heroicons/react/24/outline';
+import Header from './Header';
 
 const Layout = ({ children }) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -27,7 +28,10 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-0">{children}</div>
+      <Header />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-0 pt-32">
+        {children}
+      </div>
 
       {/* Scroll to top button */}
       {showScrollTop && (

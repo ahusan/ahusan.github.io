@@ -20,6 +20,11 @@ const certificates = [
     type: 'pdf',
   },
   {
+    name: 'CISCO - Python Essentials 2',
+    file: '/certificates/CISCO - Python Essentials 2.pdf',
+    type: 'pdf',
+  },
+  {
     name: 'IBM Data Science Methodology',
     file: '/certificates/IBM DS0103EN Certificate _ Data Science Methodologies.pdf',
     type: 'pdf',
@@ -66,6 +71,11 @@ const credlyBadges = [
   {
     id: 'd9c7a312-5ae3-476b-86ee-0efd900cba5b',
     name: 'Python Essentials 1',
+    issuer: 'Cisco',
+  },
+  {
+    id: '3bd675e6-6a74-4334-a1c8-cd68e30dc713',
+    name: 'Python Essentials 2',
     issuer: 'Cisco',
   },
 ];

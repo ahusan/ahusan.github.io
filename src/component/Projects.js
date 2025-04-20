@@ -1,27 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Modal from './Modal';
+import { Link } from 'react-router-dom';
 
 const Projects = ({ projects }) => {
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleProjectClick = (event, project) => {
-    console.log('Project clicked:', project);
-    event.preventDefault();
-    event.stopPropagation();
-    setSelectedProject(project);
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-    setTimeout(() => {
-      setSelectedProject(null);
-    }, 300);
-  };
-
   return (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,10 +95,9 @@ const Projects = ({ projects }) => {
                 </div>
 
                 {/* View Details Button */}
-                <button
-                  onClick={e => handleProjectClick(e, project)}
+                <Link
+                  to={`/project/${project.name.toLowerCase().replace(/\s+/g, '-')}`}
                   className="relative z-20 w-full py-2 mt-auto rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
-                  type="button"
                 >
                   View Details
                   <svg
@@ -133,7 +114,7 @@ const Projects = ({ projects }) => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </button>
+                </Link>
               </div>
 
               {/* Hover Overlay - Modified to not capture clicks */}
@@ -142,13 +123,6 @@ const Projects = ({ projects }) => {
           ))}
         </div>
       </div>
-
-      {/* Project Modal - Always render the Modal but control visibility with the status prop */}
-      <Modal
-        status={openModal}
-        setStatus={handleCloseModal}
-        article={selectedProject ? selectedProject.article : null}
-      />
 
       {/* Add keyframes for floating animation */}
       <style>{`

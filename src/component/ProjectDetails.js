@@ -1,18 +1,29 @@
-import Error404 from './error404';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Layout from './Layout';
+import Header from './Header';
+import ArticleComponent from './article';
 
-export default function Article(props) {
-  const navigate = useNavigate();
+const ProjectDetails = ({ projects }) => {
+  const { projectId } = useParams();
+  const [project, setProject] = useState(null);
+  const [articleData, setArticleData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Handle null or undefined article prop
-  if (props.article === null || props.article === undefined) {
-    return <Error404 />;
-  }
+  useEffect(() => {
+    // Find the project with matching name (converted to URL-friendly format)
+    if (projects) {
+      const foundProject = projects.find(
+        p => p.name.toLowerCase().replace(/\s+/g, '-') === projectId
+      );
+      setProject(foundProject);
+      setLoading(false);
+    }
+  }, [projectId, projects]);
 
-  // Convert string ID to number if it's a string
-  const id = typeof props.article === 'string' ? parseInt(props.article, 10) : props.article;
-
+  // These are the exact same articles from article.js
   const articles = [
     {
       id: 1,
@@ -271,152 +282,327 @@ export default function Article(props) {
     },
   ];
 
-  const article = articles.filter(item => item.id === id);
+  useEffect(() => {
+    if (project && project.article) {
+      const foundArticle = articles.find(article => article.id === project.article);
+      if (foundArticle) {
+        setArticleData(foundArticle);
+      }
+    }
+  }, [project]);
 
-  if (article.length < 1) {
-    return <Error404 />;
+  if (loading) {
+    return (
+      <Layout>
+        <Header />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-pulse flex space-x-4">
+            <div className="h-12 w-12 bg-indigo-500 rounded-full"></div>
+            <div className="space-y-4">
+              <div className="h-4 bg-indigo-500 rounded w-36"></div>
+              <div className="h-4 bg-indigo-400 rounded w-80"></div>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (!project) {
+    return (
+      <Layout>
+        <Header />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Project Not Found</h2>
+            <p className="text-gray-400 mb-8">
+              The project you&apos;re looking for doesn&apos;t exist.
+            </p>
+            <Link
+              to="/"
+              className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            >
+              Back to Home
+            </Link>
+          </div>
+        </div>
+      </Layout>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <main className="relative isolate">
-        {/* Background gradient */}
-        <div
-          className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl"
-          aria-hidden="true"
+    <Layout>
+      <Header />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Back Button */}
+        <Link
+          to="/projects"
+          className="inline-flex items-center mb-8 text-indigo-400 hover:text-indigo-300 transition-colors"
         >
-          <div
-            className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-indigo-500 to-purple-600 opacity-20"
-            style={{
-              clipPath:
-                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-            }}
-          />
-        </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Back to Projects
+        </Link>
 
-        {/* Header section */}
-        <div className="px-6 py-8 lg:px-8">
-          <div className="mx-auto max-w-6xl pt-24 text-center sm:pt-40">
-            <a
-              href={article[0].link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-block"
-            >
-              <h2 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 sm:text-6xl group-hover:opacity-80 transition-opacity duration-300">
-                {article[0].heading}
-              </h2>
-            </a>
-            <p className="mt-10 text-lg leading-8 text-gray-300">{article[0].details}</p>
-            {article[0].services.length > 0 && (
-              <div className="mt-8 glass rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">Services</h3>
-                <ol className="text-gray-300 list-decimal text-left leading-8 list-inside">
-                  {article[0].services.map((item, index) => (
-                    <li key={index} className="ml-4 mb-2">
-                      {item}
-                    </li>
-                  ))}
-                </ol>
-              </div>
+        {/* Project Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start mb-12">
+          <div>
+            <h1 className="text-4xl font-bold text-white mb-2">{project.name}</h1>
+            <p className="text-lg text-gray-400">{project.period}</p>
+          </div>
+          <div className="mt-4 md:mt-0">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors mr-4"
+              >
+                Live Demo
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                GitHub
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
             )}
           </div>
         </div>
 
-        {/* Tech stack section */}
-        <div className="mx-auto my-16 max-w-7xl px-6 sm:my-20 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 sm:text-4xl">
-              Tech Stack
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Technologies used in this project.
-            </p>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:gap-8">
-            {article[0].stack.map((value, index) => (
-              <div
-                key={index}
-                className="glass rounded-lg p-4 hover:bg-gray-800 transition-all duration-300 animate-float"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <span className="font-semibold text-white">{value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Image section */}
-        <div className="mt-16 sm:mt-20 xl:mx-auto xl:max-w-7xl xl:px-8">
-          <div className="overflow-hidden rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-[1.01]">
-            <img
-              src={process.env.PUBLIC_URL + article[0].images[0]}
-              alt={article[0].heading}
-              className="w-full object-cover border-4 border-indigo-900/50"
-            />
-          </div>
-        </div>
-
-        {/* Content section */}
-        <div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl lg:mx-0 lg:max-w-none">
-            <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 lg:max-w-none">
-              {article[0].para.map((item, index) => (
-                <p
-                  key={index}
-                  className="w-full glass p-6 rounded-xl hover:bg-gray-800/50 transition-all duration-300"
-                >
-                  {item}
-                </p>
+        {/* Project Images */}
+        {project.images && project.images.length > 0 && (
+          <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700">
+            <Carousel
+              showArrows={true}
+              showStatus={false}
+              showThumbs={true}
+              infiniteLoop={true}
+              autoPlay={false}
+              className="project-carousel"
+            >
+              {project.images.map((image, imgIndex) => (
+                <div key={imgIndex} className="h-[400px] md:h-[600px]">
+                  <img
+                    src={process.env.PUBLIC_URL + image}
+                    alt={`${project.name} screenshot ${imgIndex + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               ))}
+            </Carousel>
+          </div>
+        )}
+
+        {/* Project Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            {/* Description Section */}
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <h2 className="text-2xl font-bold text-white mb-6">Overview</h2>
+              <div className="prose prose-invert max-w-none">
+                <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+
+                {/* Render article content when available */}
+                {articleData && articleData.para && articleData.para.length > 0 && (
+                  <div className="text-gray-300 leading-relaxed mt-6">
+                    <h3 className="text-xl font-semibold text-white mb-4">Detailed Description</h3>
+                    <div className="space-y-4">
+                      {articleData.para.map((paragraph, index) => (
+                        <p key={index} className="text-gray-300">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Features Section */}
+            {project.features && (
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+                <h2 className="text-2xl font-bold text-white mb-6">Key Features</h2>
+                <ul className="list-disc list-inside space-y-3 text-gray-300">
+                  {project.features.map((feature, index) => (
+                    <li key={index} className="pl-2">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Services Section from Article */}
+            {articleData && articleData.services && articleData.services.length > 0 && (
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+                <h2 className="text-2xl font-bold text-white mb-6">Services</h2>
+                <ul className="list-disc list-inside space-y-3 text-gray-300">
+                  {articleData.services.map((service, index) => (
+                    <li key={index} className="pl-2">
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Challenges & Solutions */}
+            {project.challenges && (
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+                <h2 className="text-2xl font-bold text-white mb-6">Challenges & Solutions</h2>
+                <div className="space-y-6">
+                  {project.challenges.map((item, index) => (
+                    <div key={index} className="bg-gray-700/30 rounded-lg p-6">
+                      <h3 className="text-xl font-semibold text-indigo-400 mb-3">
+                        {item.challenge}
+                      </h3>
+                      <p className="text-gray-300">{item.solution}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Outcomes Section */}
+            {project.outcomes && (
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+                <h2 className="text-2xl font-bold text-white mb-6">Outcomes & Impact</h2>
+                <div className="prose prose-invert max-w-none text-gray-300">
+                  <p>{project.outcomes}</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="md:col-span-1">
+            {/* Tech Stack - Removed sticky positioning */}
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>
+              <div className="space-y-4">
+                {project.stack &&
+                  project.stack.map((tech, techIndex) => (
+                    <div key={techIndex} className="flex items-center space-x-3">
+                      {project.stackImages && project.stackImages[tech] ? (
+                        <img
+                          src={project.stackImages[tech]}
+                          alt={tech}
+                          className="h-8 w-auto object-contain"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 bg-indigo-500/20 rounded-full flex items-center justify-center text-indigo-400">
+                          <span>{tech.charAt(0)}</span>
+                        </div>
+                      )}
+                      <span className="text-gray-300">{tech}</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* Live Website Link */}
+            {articleData && articleData.link && articleData.link !== '#' && (
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+                <h2 className="text-2xl font-bold text-white mb-6">Visit Website</h2>
+                <a
+                  href={articleData.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                >
+                  Visit Live Site
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              </div>
+            )}
+
+            {/* Project Details */}
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <h2 className="text-2xl font-bold text-white mb-6">Project Details</h2>
+              <div className="space-y-4">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Type</span>
+                  <span className="text-gray-300">{project.type || 'Website Development'}</span>
+                </div>
+                <div className="border-t border-gray-700"></div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Duration</span>
+                  <span className="text-gray-300">{project.period}</span>
+                </div>
+                <div className="border-t border-gray-700"></div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Role</span>
+                  <span className="text-gray-300">{project.role || 'Developer'}</span>
+                </div>
+                <div className="border-t border-gray-700"></div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Client</span>
+                  <span className="text-gray-300">{project.client || project.name}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Additional images section */}
-        <div className="mt-16 sm:mt-20 xl:mx-auto xl:max-w-7xl xl:px-8 mb-20">
-          <div className="grid grid-cols-1 gap-8">
-            {article[0].images.slice(1).map((item, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-[1.01]"
-              >
-                <img
-                  src={process.env.PUBLIC_URL + item}
-                  alt={`${article[0].heading} ${index + 2}`}
-                  className="w-full object-cover border-4 border-indigo-900/50"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Visit website button */}
-        {article[0].link && article[0].link !== '#' && (
-          <div className="text-center mb-20">
-            <a
-              href={article[0].link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 shadow-lg text-lg font-medium"
-            >
-              Visit Website
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          </div>
-        )}
-      </main>
-    </div>
+      </div>
+    </Layout>
   );
-}
+};
+
+export default ProjectDetails;

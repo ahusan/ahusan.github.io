@@ -11,11 +11,43 @@ import Experience from './Experience';
 import Header from './Header';
 import Hero from './Hero';
 import Layout from './Layout';
-import Projects from './Projects';
 import Skills from './Skills';
 import Certifications from './Certifications';
+import { Link } from 'react-router-dom';
 
-const supportLinks = [
+export const supportLinks = [
+  {
+    name: 'SSR Reservation System',
+    period: 'September 2024 to March 2025',
+    article: 9,
+    images: ['/compass-1.png', '/compass-2.png'],
+    description:
+      'Developed a reservation system for Sun Siyam Resorts to enable staff and resellers to automatically check availability, manage bookings, and update pricing across their resort properties. Integrated with Opera PMS and Meili search for seamless operations.',
+    icon: GlobeAltIcon,
+    stack: [
+      'Next.js',
+      'Prisma',
+      'Mantine UI',
+      'Opera PMS',
+      'Meili Search',
+      'Digital Ocean',
+      'Docker',
+      'CI/CD',
+    ],
+    stackImages: {
+      'Next.js': 'https://shields.io/badge/-next.js-111827?style=for-the-badge&logo=next.js',
+      Prisma: 'https://shields.io/badge/-prisma-111827?style=for-the-badge&logo=prisma',
+      'Mantine UI':
+        'https://shields.io/badge/-mantine%20ui-111827?style=for-the-badge&logo=mantine',
+      'Opera PMS': 'https://shields.io/badge/-opera%20pms-111827?style=for-the-badge&logo=oracle',
+      'Meili Search':
+        'https://shields.io/badge/-meili%20search-111827?style=for-the-badge&logo=algolia',
+      'Digital Ocean':
+        'https://shields.io/badge/-digital%20ocean-111827?style=for-the-badge&logo=digitalocean',
+      Docker: 'https://shields.io/badge/-docker-111827?style=for-the-badge&logo=docker',
+      'CI/CD': 'https://shields.io/badge/-ci/cd-111827?style=for-the-badge&logo=github-actions',
+    },
+  },
   {
     name: 'Maldives.com Website',
     period: 'March 2023 to Present',
@@ -650,7 +682,6 @@ function Dashboard() {
       <Header />
       <Hero person={people[0]} />
       <Skills skills={skills} />
-      <Projects projects={supportLinks} />
       <Experience workExperience={workexperience} />
       <Education education={features} />
       <Certifications />
