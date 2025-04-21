@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowDownIcon } from '@heroicons/react/24/outline';
 
-const Hero = ({ person }) => {
-  const [typedText, setTypedText] = useState('');
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+interface Person {
+  name?: string;
+  personal?: string;
+  email?: string;
+  company?: string;
+  role?: string;
+  imageUrl?: string;
+  githubUrl?: string;
+  linkedinUrl?: string;
+}
 
-  const phrases = [
+interface HeroProps {
+  person: Person;
+}
+
+const Hero: React.FC<HeroProps> = ({ person }) => {
+  const [typedText, setTypedText] = useState<string>('');
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [typingSpeed, setTypingSpeed] = useState<number>(150);
+
+  const phrases: string[] = [
     'Software Developer',
     'Frontend Engineer',
     'Backend Developer',
@@ -76,7 +91,7 @@ const Hero = ({ person }) => {
         <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Hi, I&apos;m{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-600">
               Ahusan Mohamed
             </span>
           </h1>
@@ -95,7 +110,7 @@ const Hero = ({ person }) => {
 
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <a
-              href="mailto:email@ahusan.dev"
+              href={`mailto:${person.email || 'email@ahusan.dev'}`}
               className="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-all duration-300 shadow-lg hover:shadow-indigo-500/20"
             >
               Contact Me
@@ -113,9 +128,9 @@ const Hero = ({ person }) => {
         {/* Profile image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 blur-lg opacity-30 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full bg-linear-to-r from-indigo-500 to-purple-600 blur-lg opacity-30 animate-pulse"></div>
             <img
-              src={process.env.PUBLIC_URL + '/15189738.jpg'}
+              src={'/15189738.jpg'}
               alt="Ahusan Mohamed"
               className="relative w-64 h-64 md:w-96 md:h-96 object-cover rounded-full border-4 border-gray-800"
             />
@@ -129,7 +144,7 @@ const Hero = ({ person }) => {
       {/* Social links */}
       <div className="mt-12 flex justify-center md:justify-start space-x-6">
         <a
-          href="https://github.com/ahusan"
+          href={person.githubUrl || 'https://github.com/ahusan'}
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -144,7 +159,7 @@ const Hero = ({ person }) => {
           </svg>
         </a>
         <a
-          href="https://www.linkedin.com/in/ahusan/"
+          href={person.linkedinUrl || 'https://www.linkedin.com/in/ahusan/'}
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -155,7 +170,7 @@ const Hero = ({ person }) => {
           </svg>
         </a>
         <a
-          href="mailto:email@ahusan.dev"
+          href={`mailto:${person.email || 'email@ahusan.dev'}`}
           className="text-gray-400 hover:text-white transition-colors duration-300"
           aria-label="Email"
         >

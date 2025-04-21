@@ -1,12 +1,31 @@
 import React, { useState } from 'react';
 import { CommandLineIcon } from '@heroicons/react/24/outline';
 
-const Skills = ({ skills }) => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+interface Subskill {
+  url: string;
+  proficiency: number;
+}
+
+interface Skill {
+  name: string;
+  subskills: Subskill[];
+}
+
+interface EnhancedSubskill extends Subskill {
+  name: string;
+  category: string;
+}
+
+interface SkillsProps {
+  skills: Skill[];
+}
+
+const Skills: React.FC<SkillsProps> = ({ skills }) => {
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [hoveredSkill, setHoveredSkill] = useState<EnhancedSubskill | null>(null);
 
   // Extract all skills from all categories with the new data structure
-  const allSkills = skills.flatMap(category =>
+  const allSkills: EnhancedSubskill[] = skills.flatMap(category =>
     category.subskills.map(skill => {
       // Extract skill name from shield.io URL
       const nameMatch = skill.url.match(/badge\/-?([^-]+)-/);
@@ -27,11 +46,11 @@ const Skills = ({ skills }) => {
       : allSkills.filter(skill => skill.category === activeCategory);
 
   // Handle skill hover
-  const handleSkillHover = skill => {
+  const handleSkillHover = (skill: EnhancedSubskill): void => {
     setHoveredSkill(skill);
   };
 
-  const handleSkillLeave = () => {
+  const handleSkillLeave = (): void => {
     setHoveredSkill(null);
   };
 
@@ -79,7 +98,7 @@ const Skills = ({ skills }) => {
 
         {/* Proficiency Legend - Moved outside the skills display */}
         <div className="flex justify-end mb-4">
-          <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 border border-gray-700 shadow-lg">
+          <div className="bg-gray-800/90 backdrop-blur-xs rounded-lg p-3 border border-gray-700 shadow-lg">
             <div className="flex items-center gap-2 mb-2">
               <CommandLineIcon className="h-4 w-4 text-indigo-400" />
               <span className="text-xs font-medium text-gray-300">Proficiency Level</span>
@@ -111,7 +130,7 @@ const Skills = ({ skills }) => {
         </div>
 
         {/* Skills Display */}
-        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 overflow-hidden">
+        <div className="relative bg-gray-900/50 backdrop-blur-xs rounded-xl p-8 border border-gray-800 overflow-hidden">
           {/* Skills Grid */}
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-8 mt-2">
             {filteredSkills.map((skill, index) => (
@@ -138,7 +157,7 @@ const Skills = ({ skills }) => {
 
                 {/* Skill Icon */}
                 <div
-                  className="relative z-10 bg-gray-800/80 backdrop-blur-sm rounded-lg p-1.5 border border-gray-700/50 transition-all duration-300"
+                  className="relative z-10 bg-gray-800/80 backdrop-blur-xs rounded-lg p-1.5 border border-gray-700/50 transition-all duration-300"
                   style={{
                     transform: hoveredSkill === skill ? 'scale(1.12)' : 'scale(1)',
                     boxShadow: hoveredSkill === skill ? '0 0 12px rgba(99, 102, 241, 0.3)' : 'none',

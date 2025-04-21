@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Layout from './Layout';
-import Header from './Header';
+import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
 import ArticleComponent from './article';
 
 const ProjectDetails = ({ projects }) => {
@@ -299,8 +299,8 @@ const ProjectDetails = ({ projects }) => {
           <div className="animate-pulse flex space-x-4">
             <div className="h-12 w-12 bg-indigo-500 rounded-full"></div>
             <div className="space-y-4">
-              <div className="h-4 bg-indigo-500 rounded w-36"></div>
-              <div className="h-4 bg-indigo-400 rounded w-80"></div>
+              <div className="h-4 bg-indigo-500 rounded-sm w-36"></div>
+              <div className="h-4 bg-indigo-400 rounded-sm w-80"></div>
             </div>
           </div>
         </div>
@@ -416,7 +416,7 @@ const ProjectDetails = ({ projects }) => {
 
         {/* Project Images */}
         {project.images && project.images.length > 0 && (
-          <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700">
+          <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl overflow-hidden shadow-xl border border-gray-700">
             <Carousel
               showArrows={true}
               showStatus={false}
@@ -442,7 +442,7 @@ const ProjectDetails = ({ projects }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             {/* Description Section */}
-            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
               <h2 className="text-2xl font-bold text-white mb-6">Overview</h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
@@ -465,7 +465,7 @@ const ProjectDetails = ({ projects }) => {
 
             {/* Features Section */}
             {project.features && (
-              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
                 <h2 className="text-2xl font-bold text-white mb-6">Key Features</h2>
                 <ul className="list-disc list-inside space-y-3 text-gray-300">
                   {project.features.map((feature, index) => (
@@ -479,7 +479,7 @@ const ProjectDetails = ({ projects }) => {
 
             {/* Services Section from Article */}
             {articleData && articleData.services && articleData.services.length > 0 && (
-              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
                 <h2 className="text-2xl font-bold text-white mb-6">Services</h2>
                 <ul className="list-disc list-inside space-y-3 text-gray-300">
                   {articleData.services.map((service, index) => (
@@ -493,7 +493,7 @@ const ProjectDetails = ({ projects }) => {
 
             {/* Challenges & Solutions */}
             {project.challenges && (
-              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
                 <h2 className="text-2xl font-bold text-white mb-6">Challenges & Solutions</h2>
                 <div className="space-y-6">
                   {project.challenges.map((item, index) => (
@@ -510,7 +510,7 @@ const ProjectDetails = ({ projects }) => {
 
             {/* Outcomes Section */}
             {project.outcomes && (
-              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
                 <h2 className="text-2xl font-bold text-white mb-6">Outcomes & Impact</h2>
                 <div className="prose prose-invert max-w-none text-gray-300">
                   <p>{project.outcomes}</p>
@@ -521,7 +521,7 @@ const ProjectDetails = ({ projects }) => {
 
           <div className="md:col-span-1">
             {/* Tech Stack - Removed sticky positioning */}
-            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
               <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>
               <div className="space-y-4">
                 {project.stack &&
@@ -546,7 +546,7 @@ const ProjectDetails = ({ projects }) => {
 
             {/* Live Website Link */}
             {articleData && articleData.link && articleData.link !== '#' && (
-              <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+              <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
                 <h2 className="text-2xl font-bold text-white mb-6">Visit Website</h2>
                 <a
                   href={articleData.link}
@@ -574,7 +574,7 @@ const ProjectDetails = ({ projects }) => {
             )}
 
             {/* Project Details */}
-            <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
+            <div className="mb-12 bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700">
               <h2 className="text-2xl font-bold text-white mb-6">Project Details</h2>
               <div className="space-y-4">
                 <div className="flex justify-between">

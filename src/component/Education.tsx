@@ -1,7 +1,18 @@
 import React from 'react';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
 
-const Education = ({ education }) => {
+interface EducationItem {
+  name: string;
+  period: string;
+  description: string;
+  clientUrl: string;
+}
+
+interface EducationProps {
+  education: EducationItem[];
+}
+
+const Education: React.FC<EducationProps> = ({ education }) => {
   return (
     <section id="education" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +29,7 @@ const Education = ({ education }) => {
           {education.map((edu, index) => (
             <div
               key={edu.name}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2"
+              className="group bg-gray-800/50 backdrop-blur-xs rounded-xl p-8 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2"
             >
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-full bg-indigo-600/20 mr-4">
@@ -81,14 +92,14 @@ const Education = ({ education }) => {
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-white text-center mb-8">GitHub Stats</h3>
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
+            <div className="bg-gray-800/50 backdrop-blur-xs rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
                 src="https://readme.ahusan.dev/api?username=ahusan&amp;show_icons=true&theme=aura&include_all_commits=true&count_private=true"
                 alt="GitHub Stats"
                 className="max-w-full h-auto rounded-lg"
               />
             </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
+            <div className="bg-gray-800/50 backdrop-blur-xs rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
                 src="https://readme.ahusan.dev/api/top-langs/?username=ahusan&layout=compact&theme=aura&langs_count=10"
                 alt="GitHub Top Languages"

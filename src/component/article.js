@@ -278,7 +278,7 @@ export default function Article(props) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-gray-800 to-gray-900">
       <main className="relative isolate">
         {/* Background gradient */}
         <div
@@ -286,7 +286,7 @@ export default function Article(props) {
           aria-hidden="true"
         >
           <div
-            className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-indigo-500 to-purple-600 opacity-20"
+            className="aspect-1108/632 w-[69.25rem] flex-none bg-linear-to-r from-indigo-500 to-purple-600 opacity-20"
             style={{
               clipPath:
                 'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
@@ -303,7 +303,7 @@ export default function Article(props) {
               rel="noopener noreferrer"
               className="group inline-block"
             >
-              <h2 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 sm:text-6xl group-hover:opacity-80 transition-opacity duration-300">
+              <h2 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-600 sm:text-6xl group-hover:opacity-80 transition-opacity duration-300">
                 {article[0].heading}
               </h2>
             </a>
@@ -326,7 +326,7 @@ export default function Article(props) {
         {/* Tech stack section */}
         <div className="mx-auto my-16 max-w-7xl px-6 sm:my-20 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-600 sm:text-4xl">
               Tech Stack
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">

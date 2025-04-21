@@ -1,0 +1,15 @@
+export { default as Dashboard } from './dashboard';
+export { default as Blog } from './Blog';
+export { default as ProjectDetails } from './ProjectDetails';
+export { default as ProjectsPage } from './ProjectsPage';
+export { default as Certifications } from './Certifications';
+export { default as Education } from './Education';
+export { default as Experience } from './Experience';
+export { default as Hero } from './Hero';
+export { default as Projects } from './Projects';
+export { default as Skills } from './Skills';
+export { default as AboutMe } from './aboutme';
+export { default as Article } from './article';
+export { default as Error404 } from './error404';
+export { default as Modal } from './modal';
+export { default as Person } from './person';

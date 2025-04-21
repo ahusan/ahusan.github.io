@@ -20,7 +20,7 @@ const Projects = ({ projects }) => {
           {projects.map((project, index) => (
             <div
               key={project.name}
-              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 flex flex-col"
+              className="group relative bg-gray-800/50 backdrop-blur-xs rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 flex flex-col"
             >
               {/* Project Image Carousel */}
               <div className="h-48 overflow-hidden">
@@ -46,14 +46,14 @@ const Projects = ({ projects }) => {
                     ))}
                   </Carousel>
                 ) : (
-                  <div className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                  <div className="h-full bg-linear-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
                     <span className="text-white text-xl font-bold">{project.name}</span>
                   </div>
                 )}
               </div>
 
               {/* Project Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-white">{project.name}</h3>
                   <span className="text-sm text-gray-400">{project.period}</span>
@@ -118,7 +118,7 @@ const Projects = ({ projects }) => {
               </div>
 
               {/* Hover Overlay - Modified to not capture clicks */}
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>

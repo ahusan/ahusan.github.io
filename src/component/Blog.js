@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from './Layout';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import Layout from '../components/layout/Layout';
 
 const Blog = () => {
   return (
@@ -18,7 +18,7 @@ const Blog = () => {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-600">
             My Blog
           </span>
         </h1>

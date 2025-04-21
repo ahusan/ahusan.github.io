@@ -1,6 +1,8 @@
 import React from 'react';
-import Layout from './Layout';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Layout from '../components/layout/Layout';
+
 import {
   CalendarIcon,
   ComputerDesktopIcon,
@@ -27,7 +29,7 @@ const ProjectsPage = ({ projects }) => {
             <Link
               key={project.name}
               to={`/project/${project.name.toLowerCase().replace(/\s+/g, '-')}`}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 flex flex-col"
+              className="group bg-gray-800/50 backdrop-blur-xs rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2 flex flex-col"
             >
               {/* Project Image */}
               <div className="h-48 overflow-hidden">
@@ -38,19 +40,19 @@ const ProjectsPage = ({ projects }) => {
                     className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                  <div className="h-full bg-linear-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
                     <span className="text-white text-xl font-bold">{project.name}</span>
                   </div>
                 )}
               </div>
 
               {/* Project Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex items-center gap-2">
                     {/* Project Icon */}
                     {/* {project.icon && (
-                      <project.icon className="h-6 w-6 text-indigo-400 flex-shrink-0" />
+                      <project.icon className="h-6 w-6 text-indigo-400 shrink-0" />
                     )} */}
                     <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors duration-300">
                       {project.name}
@@ -115,6 +117,19 @@ const ProjectsPage = ({ projects }) => {
       </div>
     </Layout>
   );
+};
+
+ProjectsPage.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      period: PropTypes.string,
+      description: PropTypes.string,
+      images: PropTypes.arrayOf(PropTypes.string),
+      stack: PropTypes.arrayOf(PropTypes.string),
+      stackImages: PropTypes.object,
+    })
+  ).isRequired,
 };
 
 export default ProjectsPage;

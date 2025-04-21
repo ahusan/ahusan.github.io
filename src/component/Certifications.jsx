@@ -172,7 +172,7 @@ function Certifications() {
               </button>
               <button
                 onClick={() => setShowBadges(true)}
-                className={`px-4 py-2 rounded ${showBadges ? 'bg-indigo-600' : 'bg-gray-800'}`}
+                className={`px-4 py-2 rounded-sm ${showBadges ? 'bg-indigo-600' : 'bg-gray-800'}`}
               >
                 <span className="text-sm text-white">Badges</span>
               </button>
@@ -248,45 +248,57 @@ function Certifications() {
           <div className="lg:col-span-2 bg-gray-900 p-4 rounded-lg">
             {!showBadges ? (
               // PDF Viewer
-              <div className="flex justify-center">
+              <>
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold text-white">
+                    {certificates[activeCert].name}
+                  </h3>
+                  <div className="flex space-x-2">
+                    <button
+                      onClick={() =>
+                        setActiveCert(prev => (prev > 0 ? prev - 1 : certificates.length - 1))
+                      }
+                      className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full text-gray-400"
+                    >
+                      <ArrowLeftIcon className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() =>
+                        setActiveCert(prev => (prev < certificates.length - 1 ? prev + 1 : 0))
+                      }
+                      className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full text-gray-400"
+                    >
+                      <ArrowRightIcon className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+
                 <iframe
                   src={certificates[activeCert].file}
                   title={certificates[activeCert].name}
-                  className="w-full h-[600px] border-0 rounded"
-                />
-              </div>
+                  className="w-full h-[calc(100vh-200px)] border-none rounded"
+                  style={{ minHeight: '500px' }}
+                ></iframe>
+              </>
             ) : (
-              // Badges Grid View
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-6">My Digital Credentials</h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                  {filteredBadges.map((badge, index) => (
-                    <div
-                      key={index}
-                      className="bg-gray-800 p-5 rounded-lg flex flex-col items-center"
-                    >
-                      <CredlyBadge badgeId={badge.id} width="200" height="200" />
-                      <div className="mt-4 text-center">
-                        <h4 className="text-lg font-semibold text-white">{badge.name}</h4>
-                        <p className="text-indigo-400">{badge.issuer}</p>
+              // Badges Display Grid
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-6 text-white text-center">My Badges</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filteredBadges.map(badge => (
+                    <div key={badge.id} className="bg-gray-800 p-4 rounded-lg shadow-md">
+                      <CredlyBadge badgeId={badge.id} width="100%" height="200" />
+                      <div className="mt-3 text-center">
+                        <p className="text-md text-white font-medium">{badge.name}</p>
+                        <p className="text-sm text-indigo-400">Issuer: {badge.issuer}</p>
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="bg-gray-800 p-5 rounded-lg mt-6">
-                  <h4 className="text-xl font-semibold text-white mb-3">About Digital Badges</h4>
-                  <p className="text-gray-300 mb-3">
-                    Digital badges are verified credentials that represent my skills and
-                    achievements in various technology domains. Each badge contains verified
-                    metadata that describes my qualifications and the process required to earn them.
-                  </p>
-                  <p className="text-gray-300">
-                    These badges are issued by reputable organizations like Cisco, IBM, and others
-                    through Credly&apos;s secure platform. You can click on any badge to verify its
-                    authenticity and learn more about the skills it represents.
-                  </p>
+                  {filteredBadges.length === 0 && (
+                    <p className="text-sm text-gray-400 text-center col-span-full">
+                      No badges match the selected issuer.
+                    </p>
+                  )}
                 </div>
               </div>
             )}

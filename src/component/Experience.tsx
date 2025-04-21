@@ -1,6 +1,25 @@
 import React from 'react';
 
-const Experience = ({ workExperience }) => {
+interface StackImage {
+  [key: string]: string;
+}
+
+interface WorkExperience {
+  name: string;
+  period: string;
+  href: string;
+  image: string;
+  description: string;
+  icon: React.ElementType;
+  stack: string[];
+  stackImages: StackImage;
+}
+
+interface ExperienceProps {
+  workExperience: WorkExperience[];
+}
+
+const Experience: React.FC<ExperienceProps> = ({ workExperience }) => {
   return (
     <section id="experience" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +55,7 @@ const Experience = ({ workExperience }) => {
                     <h3 className="text-2xl font-bold text-white">{job.name}</h3>
                     <p className="text-indigo-400">{job.period}</p>
 
-                    <div className="mt-4 bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/10">
+                    <div className="mt-4 bg-gray-800/50 backdrop-blur-xs rounded-xl p-6 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/10">
                       {/* Company logo */}
                       <div className="flex justify-center mb-4">
                         <div className="w-32 h-32 rounded-full bg-white p-2 shadow-lg">
