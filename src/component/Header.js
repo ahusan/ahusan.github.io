@@ -11,7 +11,7 @@ const Header = () => {
   const isProjectsPage = location.pathname === '/projects';
   const isBlogPage = location.pathname === '/blog';
 
-  // Handle scroll to change header appearance and track active section
+  // Handle scroll to change header appearance
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -19,47 +19,11 @@ const Header = () => {
       } else {
         setScrolled(false);
       }
-
-      // Only track sections on homepage
-      if (isHomePage) {
-        // Determine which section is currently in view
-        const sections = [
-          'about',
-          'skills',
-          'projects',
-          'experience',
-          'education',
-          'certifications',
-        ];
-
-        // Find the section that is currently most visible in the viewport
-        let currentSection = '';
-        let maxVisibility = 0;
-
-        sections.forEach(sectionId => {
-          const element = document.getElementById(sectionId);
-          if (element) {
-            const rect = element.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-
-            // Calculate how much of the section is visible in the viewport
-            const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-            const visibilityRatio = visibleHeight > 0 ? visibleHeight / element.offsetHeight : 0;
-
-            if (visibilityRatio > maxVisibility) {
-              maxVisibility = visibilityRatio;
-              currentSection = sectionId;
-            }
-          }
-        });
-
-        setActiveSection(currentSection);
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, []);
 
   // Set active section based on current page
   useEffect(() => {
@@ -67,31 +31,43 @@ const Header = () => {
       setActiveSection('projects');
     } else if (isBlogPage) {
       setActiveSection('blog');
-    } else if (!isHomePage) {
+    } else if (isHomePage) {
+      setActiveSection('about'); // Default to about when first loading homepage
+    } else {
       setActiveSection('');
     }
   }, [isProjectsPage, isBlogPage, isHomePage]);
 
+  // Handle scroll detection for sections on homepage
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const handleSectionScroll = () => {
+      const sections = ['about', 'skills', 'experience', 'education', 'certifications'];
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (!element) continue;
+
+        const rect = element.getBoundingClientRect();
+        const isInView = rect.top <= 150 && rect.bottom >= 150;
+
+        if (isInView) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleSectionScroll);
+    // Run once initially to set the correct active section
+    handleSectionScroll();
+
+    return () => window.removeEventListener('scroll', handleSectionScroll);
+  }, [isHomePage]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const scrollToSection = id => {
-    if (isHomePage) {
-      console.log(`Attempting to scroll to section: ${id}`);
-      const element = document.getElementById(id);
-      console.log(`Element found:`, element);
-
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setIsMenuOpen(false);
-      } else {
-        console.error(`Element with id "${id}" not found`);
-      }
-    } else {
-      // If not on homepage, navigate to homepage and then scroll
-      window.location.href = `/#${id}`;
-    }
   };
 
   return (
@@ -111,49 +87,70 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {['about', 'skills'].map(item => (
-              <button
-                key={item}
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Button clicked for section: ${item}`);
-                  scrollToSection(item);
-                }}
-                className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
-                  activeSection === item ? 'text-white font-medium' : ''
-                }`}
-              >
-                {item}
-                {activeSection === item && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
-                )}
-              </button>
-            ))}
-            {['experience', 'education', 'certifications'].map(item => (
-              <button
-                key={item}
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Button clicked for section: ${item}`);
-                  scrollToSection(item);
-                }}
-                className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
-                  activeSection === item ? 'text-white font-medium' : ''
-                }`}
-              >
-                {item}
-                {activeSection === item && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
-                )}
-              </button>
-            ))}
-            {/* Projects Button */}
+            <Link
+              to="/#about"
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'about' ? 'text-white font-medium' : ''
+              }`}
+            >
+              about
+              {activeSection === 'about' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
 
             <Link
+              to="/#skills"
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'skills' ? 'text-white font-medium' : ''
+              }`}
+            >
+              skills
+              {activeSection === 'skills' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
+
+            <Link
+              to="/#experience"
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'experience' ? 'text-white font-medium' : ''
+              }`}
+            >
+              experience
+              {activeSection === 'experience' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
+
+            <Link
+              to="/#education"
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'education' ? 'text-white font-medium' : ''
+              }`}
+            >
+              education
+              {activeSection === 'education' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
+
+            <Link
+              to="/#certifications"
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+                activeSection === 'certifications' ? 'text-white font-medium' : ''
+              }`}
+            >
+              certifications
+              {activeSection === 'certifications' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
+              )}
+            </Link>
+
+            {/* Projects Link */}
+            <Link
               to="/projects"
-              className={`text-gray-300 pt-2 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
                 activeSection === 'projects' ? 'text-white font-medium' : ''
               }`}
             >
@@ -162,9 +159,10 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
               )}
             </Link>
+
             <Link
               to="/blog"
-              className={`text-gray-300 pt-2 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
+              className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
                 activeSection === 'blog' ? 'text-white font-medium' : ''
               }`}
             >
@@ -173,12 +171,12 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></span>
               )}
             </Link>
+
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-colors duration-300 cursor-pointer"
-              onClick={e => console.log('Resume link clicked')}
             >
               Resume
             </a>
@@ -201,71 +199,72 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-gray-800 shadow-xl">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['about', 'skills'].map(item => (
-              <button
-                key={item}
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Mobile button clicked for section: ${item}`);
-                  scrollToSection(item);
-                }}
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === item
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-            {/* Mobile Projects Button */}
-            {isHomePage ? (
-              <button
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Mobile button clicked for section: projects`);
-                  scrollToSection('projects');
-                }}
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === 'projects'
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                projects
-              </button>
-            ) : (
-              <Link
-                to="/projects"
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === 'projects'
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                projects
-              </Link>
-            )}
-            {['experience', 'education', 'certifications'].map(item => (
-              <button
-                key={item}
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Mobile button clicked for section: ${item}`);
-                  scrollToSection(item);
-                }}
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === item
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
+            <Link
+              to="/#about"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'about'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              about
+            </Link>
+
+            <Link
+              to="/#skills"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'skills'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              skills
+            </Link>
+
+            <Link
+              to="/projects"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'projects'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              projects
+            </Link>
+
+            <Link
+              to="/#experience"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'experience'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              experience
+            </Link>
+
+            <Link
+              to="/#education"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'education'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              education
+            </Link>
+
+            <Link
+              to="/#certifications"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'certifications'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              certifications
+            </Link>
+
             <Link
               to="/blog"
               className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
@@ -276,12 +275,12 @@ const Header = () => {
             >
               Blog
             </Link>
+
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-300 cursor-pointer"
-              onClick={e => console.log('Mobile resume link clicked')}
             >
               Resume
             </a>

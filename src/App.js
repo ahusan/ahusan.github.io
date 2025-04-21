@@ -9,28 +9,38 @@ import ProjectsPage from './component/ProjectsPage';
 import { supportLinks } from './component/dashboard';
 
 function App() {
-  const routes = createBrowserRouter([
-    {
-      path: '/',
-      element: <Dashboard />,
-    },
-    {
-      path: '/blog',
-      element: <Blog />,
-    },
-    {
-      path: '/projects',
-      element: <ProjectsPage projects={supportLinks} />,
-    },
-    {
-      path: '/project/:projectId',
-      element: <ProjectDetails projects={supportLinks} />,
-    },
-    {
-      path: '*',
-      element: <Error404 />,
-    },
-  ]);
+  // Determine if we're in production (GitHub Pages) or development
+  const isGitHubPages = window.location.hostname === 'ahusan.github.io';
+
+  // Use basename for GitHub Pages, empty string for local development
+  const basename = isGitHubPages ? '' : '';
+
+  const routes = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <Dashboard />,
+      },
+      {
+        path: '/blog',
+        element: <Blog />,
+      },
+      {
+        path: '/projects',
+        element: <ProjectsPage projects={supportLinks} />,
+      },
+      {
+        path: '/project/:projectId',
+        element: <ProjectDetails projects={supportLinks} />,
+      },
+      {
+        path: '*',
+        element: <Error404 />,
+      },
+    ],
+    { basename }
+  );
+
   return <RouterProvider router={routes} />;
 }
 export default App;
