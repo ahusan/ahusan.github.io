@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Styling Guidelines
+
+This document outlines the styling approach and best practices for this project.
+
+## Tailwind CSS
+
+This project uses [Tailwind CSS v4](mdc:https:/tailwindcss.com) for styling. The configuration can be found in [tailwind.config.js](mdc:tailwind.config.js).
+
+### Custom Extensions
+
+The project extends Tailwind with:
+
+- Custom animations: `blink`, `float`, `pulse-slow`
+- Custom gradients: `gradient-radial`
+- Custom shadows: `glow`
+- Custom font configuration with Inter as the primary font
+
+## Best Practices
+
+1. **Use Utility Classes**: Prefer Tailwind utility classes over custom CSS
+2. **Responsive Design**: Use Tailwind's responsive prefixes (`sm:`, `md:`, `lg:`, etc.)
+3. **Dark Mode**: Support dark mode using Tailwind's dark variant
+4. **Hover/Focus States**: Include proper hover/focus states for interactive elements
+5. **Component Consistency**: Maintain consistent spacing, colors, and typography
+
+## Common Patterns
+
+### Button Styles
+```jsx
+<button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+  Button Text
+</button>
+```
+
+### Card Styles
+```jsx
+<div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+  Card Content
+</div>
+```
+
+### Section Styles
+```jsx
+<section className="py-12 px-4 max-w-7xl mx-auto">
+  Section Content
+</section>
+```
+
+## Colors
+
+Use the project's color palette consistently:
+- Primary: Indigo (`bg-indigo-600`, `text-indigo-600`)
+- Secondary: Gray (`bg-gray-200`, `text-gray-700`)
+- Accent: Purple (`bg-purple-500`, `text-purple-500`)
+- Success: Green (`bg-green-500`, `text-green-500`)
+- Warning: Yellow (`bg-yellow-500`, `text-yellow-500`)
+- Error: Red (`bg-red-500`, `text-red-500`)
+

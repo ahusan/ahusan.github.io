@@ -1,0 +1,28 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Structure
+
+This document outlines the structure of the personal portfolio website.
+
+## Main Directories
+
+- `src/`: Contains all source code for the application
+  - `src/component/`: React components that make up the UI
+  - `src/api/`: API integrations (e.g., Google Blogger API)
+  - `src/stories/`: Storybook stories for component documentation
+- `public/`: Static assets and HTML template
+- `build/`: Production build output (generated)
+- `.cursor/`: Cursor editor configuration
+- `.storybook/`: Storybook configuration
+
+## Key Files
+
+- [src/index.js](mdc:src/index.js): Application entry point
+- [src/App.js](mdc:src/App.js): Main application component with routing
+- [package.json](mdc:package.json): Project dependencies and scripts
+- [tailwind.config.js](mdc:tailwind.config.js): Tailwind CSS configuration
+- [README.md](mdc:README.md): Project documentation
+

@@ -1,0 +1,74 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Deployment Guide
+
+This document outlines the deployment process for this project.
+
+## GitHub Pages Deployment
+
+This project is configured for deployment to GitHub Pages using the `gh-pages` package.
+
+### Deployment Process
+
+1. Make sure all changes are committed to the repository
+2. Run the deployment script:
+
+```bash
+npm run deploy
+```
+
+This will:
+- Build the project with `npm run build`
+- Push the built files to the `gh-pages` branch
+- Deploy the site to GitHub Pages
+
+## Firebase Deployment (Alternative)
+
+The project also supports deployment to Firebase Hosting, as indicated by the presence of [firebase.json](mdc:firebase.json) and [.firebaserc](mdc:.firebaserc).
+
+### Firebase Deployment Process
+
+1. Ensure you have the Firebase CLI installed:
+
+```bash
+npm install -g firebase-tools
+```
+
+2. Log in to Firebase:
+
+```bash
+firebase login
+```
+
+3. Build the project:
+
+```bash
+npm run build
+```
+
+4. Deploy to Firebase:
+
+```bash
+firebase deploy
+```
+
+## Environment Variables
+
+Ensure that all required environment variables are properly set for the deployment environment:
+
+- For GitHub Pages: Set secrets in the GitHub repository settings
+- For Firebase: Set environment variables using Firebase CLI
+
+## Pre-Deployment Checklist
+
+1. All tests pass (`npm test`)
+2. Build succeeds locally (`npm run build`)
+3. All environment variables are properly configured
+4. Performance optimizations are in place
+5. SEO metadata is up to date
+6. Service worker is properly configured (if applicable)
+7. Analytics are properly set up (if applicable)
+

@@ -1,0 +1,58 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# API Integration Guide
+
+This document outlines how API integrations are handled in this project.
+
+## Google Blogger API
+
+This project integrates with the Google Blogger API to fetch blog posts. The integration is implemented in [src/api/get-blogger-token.js](mdc:src/api/get-blogger-token.js).
+
+### Authentication
+
+Two authentication methods are supported:
+
+1. **API Key** (Basic): Simpler but less secure, suitable for public blog data
+2. **Service Account** (Enhanced): More secure, can access private blog data
+
+### Environment Variables
+
+Required environment variables for the Blogger API:
+
+```
+# Basic setup with API Key
+REACT_APP_BLOGGER_API_KEY=your_api_key_here
+REACT_APP_BLOGGER_BLOG_ID=your_blog_id_here
+
+# Enhanced setup with Service Account
+GOOGLE_SERVICE_ACCOUNT_KEY={"type":"service_account","project_id":"..."}
+# OR
+GOOGLE_SERVICE_ACCOUNT_KEY_PATH=./path/to/service-account-key.json
+```
+
+## API Usage
+
+The blog posts are fetched in the [src/component/Blog.js](mdc:src/component/Blog.js) component.
+
+## Adding New API Integrations
+
+When adding new API integrations:
+
+1. Create a new file in the `src/api/` directory
+2. Use async/await for API requests
+3. Implement proper error handling
+4. Add required environment variables to the project documentation
+5. Consider implementing request caching for performance
+
+## Best Practices
+
+1. **Error Handling**: Always handle API errors gracefully
+2. **Loading States**: Show loading indicators during API requests
+3. **Fallbacks**: Provide fallback content when API data is unavailable
+4. **Pagination**: Implement pagination for large datasets
+5. **Caching**: Cache API responses when appropriate
+6. **Rate Limiting**: Be mindful of API rate limits
+
