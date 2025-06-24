@@ -1,0 +1,39 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Component Architecture
+
+This document provides guidance on the component architecture used in this project.
+
+## Main Components
+
+- [src/component/Layout.js](mdc:src/component/Layout.js): Main layout wrapper
+- [src/component/Header.js](mdc:src/component/Header.js): Site navigation header
+- [src/component/Hero.js](mdc:src/component/Hero.js): Hero section for landing page
+- [src/component/dashboard.js](mdc:src/component/dashboard.js): Main dashboard/homepage component
+- [src/component/Projects.js](mdc:src/component/Projects.js): Projects showcase component
+- [src/component/ProjectDetails.js](mdc:src/component/ProjectDetails.js): Detailed project view
+- [src/component/Skills.js](mdc:src/component/Skills.js): Skills and expertise section
+- [src/component/Experience.js](mdc:src/component/Experience.js): Work experience section
+- [src/component/Education.js](mdc:src/component/Education.js): Education background section
+- [src/component/Blog.js](mdc:src/component/Blog.js): Blog integration component
+
+## Component Design Patterns
+
+1. **Functional Components**: All components are functional components using React Hooks.
+2. **Prop Destructuring**: Use destructuring for component props.
+3. **Component Organization**: Components are organized by feature/purpose.
+4. **Tailwind Styling**: Components use Tailwind CSS for styling.
+5. **Responsive Design**: All components should be responsive for different screen sizes.
+
+## Adding New Components
+
+When adding new components:
+1. Create a new file in the `src/component/` directory
+2. Use PascalCase for component file names (e.g., `NewComponent.js`)
+3. Follow the project's code style (2-space indentation, ES6+ features)
+4. Import and use Tailwind classes for styling
+5. Consider creating a corresponding Storybook story in `src/stories/`
+

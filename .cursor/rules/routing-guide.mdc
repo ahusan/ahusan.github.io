@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Routing Guide
+
+This document explains the routing structure used in this project.
+
+## React Router Setup
+
+This project uses [React Router v7](mdc:https:/reactrouter.com) for handling client-side routing. The main routing configuration is defined in [src/App.js](mdc:src/App.js).
+
+## Route Structure
+
+The application uses the following routes:
+
+| Path | Component | Description |
+|------|-----------|-------------|
+| `/` | `Dashboard` | Main landing page/homepage |
+| `/blog` | `Blog` | Blog section with articles |
+| `/projects` | `ProjectsPage` | Projects overview page |
+| `/project/:projectId` | `ProjectDetails` | Individual project details |
+| `*` | `Error404` | Catch-all for non-existent routes |
+
+## Navigation
+
+Navigation between routes should be handled using the `Link` component from React Router:
+
+```jsx
+import { Link } from 'react-router-dom';
+
+<Link to="/projects" className="hover:text-indigo-600">Projects</Link>
+```
+
+## Route Parameters
+
+Route parameters (like `:projectId`) can be accessed using the `useParams` hook:
+
+```jsx
+import { useParams } from 'react-router-dom';
+
+function ProjectDetails() {
+  const { projectId } = useParams();
+  // Use projectId to fetch project data
+}
+```
+
+## Adding New Routes
+
+When adding new routes:
+
+1. Update the router configuration in [src/App.js](mdc:src/App.js)
+2. Create corresponding components in the `src/component/` directory
+3. Add navigation links to the new routes where appropriate
+4. Ensure that the route is properly linked from other parts of the application
+
