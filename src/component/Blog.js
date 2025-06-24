@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from './Layout';
-import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Layout from './Layout';
 
 const Blog = () => {
   return (

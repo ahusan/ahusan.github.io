@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // We'll use an iframe approach for PDF rendering
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 // Certificate data
 const certificates = [

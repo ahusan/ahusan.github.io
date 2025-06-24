@@ -83,14 +83,14 @@ const Education = ({ education }) => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
-                src="https://readme.ahusan.dev/api?username=ahusan&amp;show_icons=true&theme=aura&include_all_commits=true&count_private=true"
+                src="https://readme.ahusan.dev/api?username=ahusan&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&theme=aura&show_icons=true"
                 alt="GitHub Stats"
                 className="max-w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
-                src="https://readme.ahusan.dev/api/top-langs/?username=ahusan&layout=compact&theme=aura&langs_count=10"
+                src="https://readme.ahusan.dev/api/top-langs?username=ahusan&langs_count=20&layout=compact&size_weight=0.5&count_weight=0.5&show_icons=true&theme=aura"
                 alt="GitHub Top Languages"
                 className="max-w-full h-auto rounded-lg"
               />

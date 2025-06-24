@@ -1,12 +1,7 @@
 import React from 'react';
 import Layout from './Layout';
 import { Link } from 'react-router-dom';
-import {
-  CalendarIcon,
-  ComputerDesktopIcon,
-  GlobeAltIcon,
-  WalletIcon,
-} from '@heroicons/react/24/outline';
+// Icons are not used in this component as project icons are commented out
 
 const ProjectsPage = ({ projects }) => {
   return (

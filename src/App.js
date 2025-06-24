@@ -1,12 +1,11 @@
-import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
-import Dashboard from './component/dashboard';
-import Error404 from './component/error404';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
 import Blog from './component/Blog';
+import Dashboard, { supportLinks } from './component/dashboard';
+import Error404 from './component/error404';
 import ProjectDetails from './component/ProjectDetails';
 import ProjectsPage from './component/ProjectsPage';
-import { supportLinks } from './component/dashboard';
 
 function App() {
   const routes = createBrowserRouter([

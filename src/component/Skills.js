@@ -3,7 +3,7 @@ import { CommandLineIcon } from '@heroicons/react/24/outline';
 
 const Skills = ({ skills }) => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [hoveredSkillUrl, setHoveredSkillUrl] = useState(null);
 
   // Extract all skills from all categories with the new data structure
   const allSkills = skills.flatMap(category =>
@@ -28,11 +28,11 @@ const Skills = ({ skills }) => {
 
   // Handle skill hover
   const handleSkillHover = skill => {
-    setHoveredSkill(skill);
+    setHoveredSkillUrl(skill.url);
   };
 
   const handleSkillLeave = () => {
-    setHoveredSkill(null);
+    setHoveredSkillUrl(null);
   };
 
   return (
@@ -111,7 +111,7 @@ const Skills = ({ skills }) => {
         </div>
 
         {/* Skills Display */}
-        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 overflow-hidden">
+        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800">
           {/* Skills Grid */}
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-8 mt-2">
             {filteredSkills.map((skill, index) => (
@@ -132,7 +132,7 @@ const Skills = ({ skills }) => {
                     })`,
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                     // Only transform on hover
-                    transform: hoveredSkill === skill ? 'scale(1.15)' : 'scale(1)',
+                    transform: hoveredSkillUrl === skill.url ? 'scale(1.15)' : 'scale(1)',
                   }}
                 ></div>
 
@@ -140,10 +140,13 @@ const Skills = ({ skills }) => {
                 <div
                   className="relative z-10 bg-gray-800/80 backdrop-blur-sm rounded-lg p-1.5 border border-gray-700/50 transition-all duration-300"
                   style={{
-                    transform: hoveredSkill === skill ? 'scale(1.12)' : 'scale(1)',
-                    boxShadow: hoveredSkill === skill ? '0 0 12px rgba(99, 102, 241, 0.3)' : 'none',
+                    transform: hoveredSkillUrl === skill.url ? 'scale(1.12)' : 'scale(1)',
+                    boxShadow:
+                      hoveredSkillUrl === skill.url ? '0 0 12px rgba(99, 102, 241, 0.3)' : 'none',
                     borderColor:
-                      hoveredSkill === skill ? 'rgba(99, 102, 241, 0.5)' : 'rgba(55, 65, 81, 0.5)',
+                      hoveredSkillUrl === skill.url
+                        ? 'rgba(99, 102, 241, 0.5)'
+                        : 'rgba(55, 65, 81, 0.5)',
                   }}
                 >
                   <img
@@ -161,7 +164,7 @@ const Skills = ({ skills }) => {
                       key={i}
                       className={`w-1 h-1 rounded-full transition-all duration-300 ${
                         i < skill.proficiency
-                          ? hoveredSkill === skill
+                          ? hoveredSkillUrl === skill.url
                             ? 'bg-indigo-400 scale-125'
                             : 'bg-indigo-500'
                           : 'bg-gray-700'
@@ -169,47 +172,49 @@ const Skills = ({ skills }) => {
                     ></div>
                   ))}
                 </div>
+
+                {/* Skill Name Tooltip - positioned above this specific skill */}
+                {hoveredSkillUrl === skill.url && (
+                  <div
+                    className="absolute bottom-full mb-4 left-1/2 transform -translate-x-1/2 bg-gray-800/95 backdrop-blur-lg rounded-xl p-4 border border-indigo-500/20 shadow-xl z-50 pointer-events-none whitespace-nowrap"
+                    style={{
+                      animation: 'fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-1">{skill.name}</h3>
+                    <p className="text-sm text-gray-300">{skill.category}</p>
+                    <div className="mt-2 flex items-center">
+                      <div className="text-xs text-gray-400 mr-2">Proficiency:</div>
+                      <div className="flex space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <div
+                            key={i}
+                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                              i < skill.proficiency ? 'bg-indigo-500 scale-110' : 'bg-gray-600'
+                            }`}
+                          ></div>
+                        ))}
+                      </div>
+                      <span className="ml-2 text-xs text-gray-400">
+                        {skill.proficiency === 1
+                          ? 'Beginner'
+                          : skill.proficiency === 2
+                          ? 'Intermediate'
+                          : skill.proficiency === 3
+                          ? 'Advanced'
+                          : skill.proficiency === 4
+                          ? 'Expert'
+                          : 'Master'}
+                      </span>
+                    </div>
+                    {/* Tooltip arrow */}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-800/95"></div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
-
-        {/* Skill Name Tooltip */}
-        {hoveredSkill && (
-          <div
-            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800/90 backdrop-blur-lg rounded-xl p-4 border border-indigo-500/20 shadow-xl z-50"
-            style={{
-              animation: 'fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-            }}
-          >
-            <h3 className="text-lg font-bold text-white mb-1">{hoveredSkill.name}</h3>
-            <p className="text-sm text-gray-300">{hoveredSkill.category}</p>
-            <div className="mt-2 flex items-center">
-              <div className="text-xs text-gray-400 mr-2">Proficiency:</div>
-              <div className="flex space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                      i < hoveredSkill.proficiency ? 'bg-indigo-500 scale-110' : 'bg-gray-600'
-                    }`}
-                  ></div>
-                ))}
-              </div>
-              <span className="ml-2 text-xs text-gray-400">
-                {hoveredSkill.proficiency === 1
-                  ? 'Beginner'
-                  : hoveredSkill.proficiency === 2
-                  ? 'Intermediate'
-                  : hoveredSkill.proficiency === 3
-                  ? 'Advanced'
-                  : hoveredSkill.proficiency === 4
-                  ? 'Expert'
-                  : 'Master'}
-              </span>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Add keyframes for animations */}
