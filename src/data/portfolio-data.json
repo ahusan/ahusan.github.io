@@ -1,0 +1,754 @@
+{
+  "personal": {
+    "name": "Ahusan Mohamed",
+    "email": "email@ahusan.dev",
+    "phone": "+9609855168",
+    "location": "Maldives",
+    "title": "Software Developer",
+    "roles": [
+      "Software Developer",
+      "Frontend Engineer",
+      "Backend Developer",
+      "DevOps Enthusiast",
+      "Programmer",
+      "Web Developer",
+      "Full Stack Developer",
+      "Software Engineer",
+      "Cloud Engineer",
+      "CISCO certified Network Engineer"
+    ],
+    "bio": "A passionate developer with expertise in building modern web applications, focusing on creating exceptional user experiences with clean, efficient code.",
+    "profileImage": "/15189738.jpg",
+    "socialLinks": {
+      "github": "https://github.com/ahusan",
+      "linkedin": "https://www.linkedin.com/in/ahusan/",
+      "blog": "https://blog.ahusan.dev",
+      "email": "mailto:email@ahusan.dev"
+    },
+    "resume": "/resume.pdf"
+  },
+  "projects": [
+    {
+      "id": "ssr-reservation-system",
+      "name": "SSR Reservation System",
+      "period": "September 2024 to March 2025",
+      "status": "active",
+      "images": ["/compass-1.png", "/compass-2.png"],
+      "description": "Developed a reservation system for Sun Siyam Resorts to enable staff and resellers to automatically check availability, manage bookings, and update pricing across their resort properties. Integrated with Opera PMS and Meili search for seamless operations.",
+      "category": "Web Application",
+      "technologies": [
+        "Next.js",
+        "Prisma",
+        "Mantine UI",
+        "Opera PMS",
+        "Meili Search",
+        "Digital Ocean",
+        "Docker",
+        "CI/CD"
+      ],
+      "features": [
+        "Real-time availability checking",
+        "Automated booking management",
+        "Dynamic pricing updates",
+        "Opera PMS integration",
+        "Advanced search capabilities"
+      ]
+    },
+    {
+      "id": "maldives-com-website",
+      "name": "Maldives.com Website",
+      "period": "March 2023 to Present",
+      "status": "active",
+      "images": ["/maldives1.png", "/maldives2.png", "/maldives3.png"],
+      "description": "Led development efforts to enhance and optimize the Maldives.com tourism platform, implementing modern web technologies to improve performance, user experience, and content management capabilities.",
+      "category": "Tourism Platform",
+      "technologies": [
+        "Next.js",
+        "Strapi",
+        "Tailwind CSS",
+        "GraphQL",
+        "Docker",
+        "CI/CD",
+        "AWS",
+        "Git"
+      ]
+    },
+    {
+      "id": "fsm-website",
+      "name": "FSM Website",
+      "period": "July 2021 to Dec 2021",
+      "status": "completed",
+      "images": ["/fsm-front.png", "/fsm-cms.png"],
+      "description": "As a developer, I was instrumental in driving the transformation of the FSM website during a recent company rebrand.",
+      "category": "Corporate Website",
+      "technologies": [
+        "Figma",
+        "React",
+        "ASP .NET Framework",
+        "Tailwind CSS",
+        "MySQL",
+        "Docker",
+        "Portainer",
+        "Azure",
+        "Github",
+        "Nginx",
+        "Docker Compose"
+      ]
+    },
+    {
+      "id": "travgo-maldives-platform",
+      "name": "Travgo Maldives Platform",
+      "period": "Oct 2020 to Feb 2021",
+      "status": "completed",
+      "images": ["/travgo-front.png", "/travgo-pms.png"],
+      "description": "I was responsible for developing a custom online platform specifically tailored to meet the needs of Travgo Maldives, with the objective of boosting their online presence and showcasing the various styles of vacations available in the Maldives.",
+      "category": "Travel Platform",
+      "technologies": ["Figma", "React", "Firebase", "Tailwind CSS", "Github"]
+    },
+    {
+      "id": "ecommerce-platform",
+      "name": "Ecommerce Platform",
+      "period": "July 2021 to Jan 2022",
+      "status": "completed",
+      "images": ["/ecom-front.png", "/ecom-cms.png", "/ecom-cms2.png"],
+      "description": "The use of an ecommerce delivery platform is to provide an online platform for businesses to sell their products and manage their deliveries efficiently. This platform can be used by customers to browse products, place orders, make payments, and track their deliveries.",
+      "category": "E-commerce",
+      "technologies": [
+        "Figma",
+        "React",
+        "Fast API",
+        "Tailwind CSS",
+        "Postgres",
+        "JWT",
+        "Python",
+        "Github"
+      ]
+    },
+    {
+      "id": "matcon-website",
+      "name": "Matcon Website",
+      "period": "Mar 2023 to Oct 2023",
+      "status": "completed",
+      "images": ["/matcon-front.png", "/matcon-front2.png"],
+      "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, and Firebase.",
+      "category": "Corporate Website",
+      "technologies": ["Figma", "React", "Next JS", "Tailwind CSS", "Firebase", "Github"]
+    },
+    {
+      "id": "bespoke-maldives-website",
+      "name": "Bespoke Maldives Website",
+      "period": "July 2023 to Nov 2023",
+      "status": "completed",
+      "images": ["/bespoke-1.png", "/bespoke-2.png", "/bespoke-3.png"],
+      "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, Vercel and Firebase.",
+      "category": "Tourism Website",
+      "technologies": ["Figma", "React", "Next JS", "Tailwind CSS", "Firebase", "Vercel", "Github"]
+    },
+    {
+      "id": "matcon-mail-migration",
+      "name": "Matcon Mail Migration",
+      "period": "Oct 2023 to Oct 2023",
+      "status": "completed",
+      "images": ["/matcon-home.webp"],
+      "description": "The mail migration was done using a specific technology stack tailored to the client's requirements and including Google Workspace, Google Mail, and Google Drive.",
+      "category": "IT Infrastructure",
+      "technologies": ["Google Workspace", "Google Mail", "Google Drive", "Server Management"]
+    },
+    {
+      "id": "mcg-networking",
+      "name": "Maldives Consulting Group Networking",
+      "period": "Aug 2023 to Sep 2023",
+      "status": "completed",
+      "images": ["/mcg-1.jpg"],
+      "description": "The project included of setting up and improving their current technologies and network infrastructure.",
+      "category": "Network Infrastructure",
+      "technologies": [
+        "Ubiquity",
+        "UniFi",
+        "Core Network",
+        "Full Office Wifi",
+        "WAN Setup",
+        "Network Attached Storage (NAS)",
+        "Server Management",
+        "Technical Support",
+        "Network Security",
+        "Network Monitoring"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "position": "Software Developer",
+      "company": "SME Finance Development Corporation (SDFC)",
+      "period": "July 2023 to Present",
+      "duration": "1+ years",
+      "location": "Maldives",
+      "website": "https://sdfc.mv/",
+      "logo": "/SDFC_Logo_B.png",
+      "description": "As a current employee of SME Finance Development Corporation, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth.",
+      "responsibilities": [
+        "Developing and maintaining web applications using modern frameworks",
+        "Implementing business logic and database optimization",
+        "Collaborating with cross-functional teams",
+        "Code review and mentoring junior developers"
+      ],
+      "technologies": [
+        "Remix JS",
+        "React JS",
+        "Vercel",
+        "Tailwind CSS",
+        "Mantine UI",
+        "REST API",
+        "Github",
+        "Prisma ORM",
+        "Amazon OCR",
+        "Docker",
+        "Postgres SQL",
+        "Next JS",
+        "Azure"
+      ],
+      "achievements": [
+        "Successfully delivered multiple client projects",
+        "Improved application performance by implementing modern technologies",
+        "Led technical decision making for new projects"
+      ]
+    },
+    {
+      "position": "Information Systems Engineer",
+      "company": "Bank of Maldives",
+      "period": "June 2020 to July 2023",
+      "duration": "3+ years",
+      "location": "Maldives",
+      "website": "https://bankofmaldives.com.mv/",
+      "logo": "/bml-logo.jpg",
+      "description": "Bank of Maldives employee dedicated to leveraging technology for business growth. Post-employment, I'll pursue certifications and explore entrepreneurial opportunities for continued growth.",
+      "responsibilities": [
+        "Maintained and developed banking applications",
+        "Managed DevOps processes and deployments",
+        "Provided technical support for critical systems",
+        "Database administration and optimization"
+      ],
+      "technologies": [
+        "DevOps",
+        "Laravel",
+        "Vue JS",
+        "PHP",
+        "Javascript",
+        "Bit Bucket",
+        "Digital Ocean",
+        "Azure",
+        "Docker",
+        "Portainer",
+        "Technical Support",
+        "Server Management",
+        "Bug Fixing",
+        "MS SQL Server"
+      ],
+      "achievements": [
+        "Maintained 99.9% uptime for critical banking systems",
+        "Successfully migrated legacy systems to modern infrastructure",
+        "Implemented automated deployment processes"
+      ]
+    },
+    {
+      "position": "Information Technology Technician",
+      "company": "Waste Management Corporation (WAMCO)",
+      "period": "Aug 2017 to June 2020",
+      "duration": "3 years",
+      "location": "Maldives",
+      "website": "https://wamco.com.mv/",
+      "logo": "/wamco-logo.png",
+      "description": "In my previous role, I served as a technical engineer providing critical support to the Information Technology (IT) team at Waste Management Corporation (WAMCO).",
+      "responsibilities": [
+        "Network administration and troubleshooting",
+        "Database administration and maintenance",
+        "Technical support for staff and systems",
+        "Server management and optimization"
+      ],
+      "technologies": [
+        "Networking",
+        "DB Admin",
+        "Google Cloud",
+        "PHP",
+        "Javascript",
+        "Github Pages",
+        "Digital Ocean",
+        "AWS",
+        "Technical Support",
+        "Server Management"
+      ]
+    },
+    {
+      "position": "Information Technology Support",
+      "company": "Villa College",
+      "period": "Feb 2016 to Aug 2017",
+      "duration": "1.5 years",
+      "location": "Maldives",
+      "website": "https://villacollege.edu.mv/",
+      "logo": "/villa-logo.jpg",
+      "description": "During my tenure at Villa College, I provided comprehensive IT services to both staff and clients, leveraging my technical expertise and communication skills to ensure that all users were able to effectively utilize the college's IT systems.",
+      "responsibilities": [
+        "IT support for faculty and students",
+        "Network maintenance and troubleshooting",
+        "Database administration",
+        "System maintenance and updates"
+      ],
+      "technologies": ["Networking", "DB Admin", "Technical Support", "Server Management"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's Degree in Computer Science",
+      "institution": "Maldives National University",
+      "period": "2017 to 2020",
+      "duration": "3 years",
+      "location": "Maldives",
+      "website": "https://mnu.edu.mv/",
+      "description": "Graduated from Maldives National University with a Bachelors Degree in Computer Science.",
+      "relevantCoursework": [
+        "Data Structures and Algorithms",
+        "Software Engineering",
+        "Database Systems",
+        "Computer Networks",
+        "Web Development",
+        "Programming Languages"
+      ]
+    },
+    {
+      "degree": "Diploma in Information Technology",
+      "institution": "Maldives National University",
+      "period": "2013 to 2015",
+      "duration": "2 years",
+      "location": "Maldives",
+      "website": "https://mnu.edu.mv/",
+      "description": "Graduated from Maldives National University with a Diploma in Information Technology.",
+      "relevantCoursework": [
+        "Computer Fundamentals",
+        "Programming Basics",
+        "Networking Fundamentals",
+        "Database Basics",
+        "Web Technologies"
+      ]
+    }
+  ],
+  "skills": {
+    "programmingLanguages": [
+      {
+        "name": "JavaScript",
+        "proficiency": 5,
+        "yearsOfExperience": "5+",
+        "icon": "https://shields.io/badge/-javascript-111827?style=for-the-badge&logo=javascript"
+      },
+      {
+        "name": "Python",
+        "proficiency": 4,
+        "yearsOfExperience": "3+",
+        "icon": "https://img.shields.io/badge/python-111827?style=for-the-badge&logo=python&logoColor=ffdd54"
+      },
+      {
+        "name": "TypeScript",
+        "proficiency": 4,
+        "yearsOfExperience": "2+",
+        "icon": "https://shields.io/badge/-typescript-111827?style=for-the-badge&logo=typescript"
+      },
+      {
+        "name": "PHP",
+        "proficiency": 3,
+        "yearsOfExperience": "4+",
+        "icon": "https://shields.io/badge/-php-111827?style=for-the-badge&logo=php"
+      },
+      {
+        "name": "C#",
+        "proficiency": 2,
+        "yearsOfExperience": "1+",
+        "icon": "https://shields.io/badge/-Csharp-111827?style=for-the-badge&logo=c"
+      }
+    ],
+    "frameworksAndRuntime": [
+      {
+        "name": "React",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-react-111827?style=for-the-badge&logo=react"
+      },
+      {
+        "name": "Next.js",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-Next-111827?style=for-the-badge&logo=next.js"
+      },
+      {
+        "name": "Node.js",
+        "proficiency": 4,
+        "icon": "https://img.shields.io/badge/node.js-111827?style=for-the-badge&logo=node.js&logoColor=white"
+      },
+      {
+        "name": "Express.js",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-express.js-111827?style=for-the-badge&logo=express"
+      },
+      {
+        "name": "Remix",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-remix-111827?style=for-the-badge&logo=remix"
+      },
+      {
+        "name": "Laravel",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-laravel-111827?style=for-the-badge&logo=laravel"
+      },
+      {
+        "name": "Vue.js",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-vue-111827?style=for-the-badge&logo=vue.js"
+      },
+      {
+        "name": "React Native",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-react%20native-111827?style=for-the-badge&logo=react"
+      },
+      {
+        "name": "FastAPI",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-fastapi-111827?style=for-the-badge&logo=fastapi"
+      }
+    ],
+    "frontendTechnologies": [
+      {
+        "name": "HTML5",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-html-111827?style=for-the-badge&logo=html5"
+      },
+      {
+        "name": "CSS3",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-css-111827?style=for-the-badge&logo=css3"
+      },
+      {
+        "name": "Tailwind CSS",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-tailwind css-111827?style=for-the-badge&logo=tailwind-css"
+      },
+      {
+        "name": "Sass",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-sass-111827?style=for-the-badge&logo=sass"
+      },
+      {
+        "name": "Bootstrap",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-bootstrap-111827?style=for-the-badge&logo=bootstrap"
+      },
+      {
+        "name": "Mantine UI",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-mantine ui-111827?style=for-the-badge&logo=mantine"
+      },
+      {
+        "name": "Figma",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-figma-111827?style=for-the-badge&logo=figma"
+      },
+      {
+        "name": "WordPress",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-wordpress-111827?style=for-the-badge&logo=wordpress"
+      }
+    ],
+    "databasesAndData": [
+      {
+        "name": "MySQL",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-mysql-111827?style=for-the-badge&logo=mysql"
+      },
+      {
+        "name": "PostgreSQL",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-postgres-111827?style=for-the-badge&logo=postgresql"
+      },
+      {
+        "name": "Prisma ORM",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-prisma-111827?style=for-the-badge&logo=prisma"
+      },
+      {
+        "name": "Firebase",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-firebase-111827?style=for-the-badge&logo=firebase"
+      },
+      {
+        "name": "SQLite",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-sqlite-111827?style=for-the-badge&logo=sqlite"
+      },
+      {
+        "name": "Microsoft SQL Server",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-Microsoft%20SQL%20Sever-111827?style=for-the-badge&logo=microsoft%20sql%20server"
+      }
+    ],
+    "devopsAndCloud": [
+      {
+        "name": "Docker",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-docker-111827?style=for-the-badge&logo=docker"
+      },
+      {
+        "name": "Digital Ocean",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-digital%20ocean-111827?style=for-the-badge&logo=digitalocean"
+      },
+      {
+        "name": "Nginx",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-nginx-111827?style=for-the-badge&logo=nginx"
+      },
+      {
+        "name": "Azure",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-Azure-111827?style=for-the-badge&logo=microsoftazure"
+      },
+      {
+        "name": "AWS",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-AWS-111827?style=for-the-badge&logo=amazon"
+      },
+      {
+        "name": "Google Cloud",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-Google%20Cloud-111827?style=for-the-badge&logo=google-cloud"
+      },
+      {
+        "name": "Portainer",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-portainer-111827?style=for-the-badge&logo=portainer"
+      }
+    ],
+    "developmentTools": [
+      {
+        "name": "Git",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-git-111827?style=for-the-badge&logo=git"
+      },
+      {
+        "name": "GitHub",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-github-111827?style=for-the-badge&logo=github"
+      },
+      {
+        "name": "GitHub Pages",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-github%20pages-111827?style=for-the-badge&logo=github"
+      },
+      {
+        "name": "Bitbucket",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-bitbucket-111827?style=for-the-badge&logo=bitbucket"
+      },
+      {
+        "name": "Postman",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-postman-111827?style=for-the-badge&logo=postman"
+      },
+      {
+        "name": "JWT",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-jwt-111827?style=for-the-badge&logo=json-web-tokens"
+      }
+    ],
+    "operatingSystems": [
+      {
+        "name": "Windows",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-windows-111827?style=for-the-badge&logo=windows"
+      },
+      {
+        "name": "Ubuntu",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-ubuntu-111827?style=for-the-badge&logo=ubuntu"
+      },
+      {
+        "name": "Linux",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-linux-111827?style=for-the-badge&logo=linux"
+      },
+      {
+        "name": "Debian",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-debian-111827?style=for-the-badge&logo=debian"
+      },
+      {
+        "name": "Manjaro",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-manjaro-111827?style=for-the-badge&logo=manjaro"
+      },
+      {
+        "name": "Fedora",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-fedora-111827?style=for-the-badge&logo=fedora"
+      },
+      {
+        "name": "macOS",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-macos-111827?style=for-the-badge&logo=macos"
+      }
+    ],
+    "technicalSkills": [
+      {
+        "name": "Troubleshooting",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-Troubleshooting-111827?style=for-the-badge&logo=devops"
+      },
+      {
+        "name": "Technical Support",
+        "proficiency": 5,
+        "icon": "https://shields.io/badge/-Technical%20Support-111827?style=for-the-badge&logo=devops"
+      },
+      {
+        "name": "Team Management",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-Team%20Management-111827?style=for-the-badge"
+      },
+      {
+        "name": "Networking",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-Networking-111827?style=for-the-badge"
+      },
+      {
+        "name": "Database Administration",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-DB%20administration-111827?style=for-the-badge&logo=mysql&logoColor=white"
+      },
+      {
+        "name": "Server Management",
+        "proficiency": 4,
+        "icon": "https://shields.io/badge/-Server%20Management-111827?style=for-the-badge&logo=linux"
+      },
+      {
+        "name": "Active Directory Management",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-Active%20Directory%20Management-111827?style=for-the-badge&logo=microsoft"
+      },
+      {
+        "name": "DevOps",
+        "proficiency": 3,
+        "icon": "https://shields.io/badge/-devops-111827?style=for-the-badge&logo=devops"
+      }
+    ]
+  },
+  "certifications": {
+    "certificates": [
+      {
+        "name": "CISCO - CCNA R&S - Scaling Network",
+        "issuer": "Cisco",
+        "file": "/certificates/CISCO - CCNA R&S - Scaling Network.pdf",
+        "type": "pdf",
+        "category": "Networking"
+      },
+      {
+        "name": "CISCO - Introduction to Cyber Security",
+        "issuer": "Cisco",
+        "file": "/certificates/CISCO - Introduction to Cyber Security.pdf",
+        "type": "pdf",
+        "category": "Cybersecurity"
+      },
+      {
+        "name": "CISCO - Python Essentials 1",
+        "issuer": "Cisco",
+        "file": "/certificates/CISCO - Python Essentials 1.pdf",
+        "type": "pdf",
+        "category": "Programming"
+      },
+      {
+        "name": "CISCO - Python Essentials 2",
+        "issuer": "Cisco",
+        "file": "/certificates/CISCO - Python Essentials 2.pdf",
+        "type": "pdf",
+        "category": "Programming"
+      },
+      {
+        "name": "IBM Data Science Methodology",
+        "issuer": "IBM",
+        "file": "/certificates/IBM DS0103EN Certificate _ Data Science Methodologies.pdf",
+        "type": "pdf",
+        "category": "Data Science"
+      },
+      {
+        "name": "IBM Data Science 101",
+        "issuer": "IBM",
+        "file": "/certificates/IBM DS0101EN Certificate _ Data Science 101.pdf",
+        "type": "pdf",
+        "category": "Data Science"
+      },
+      {
+        "name": "IBM Docker Essentials",
+        "issuer": "IBM",
+        "file": "/certificates/IBM CO0101EN Certificate _ Docker Essentials.pdf",
+        "type": "pdf",
+        "category": "DevOps"
+      },
+      {
+        "name": "AWS - Intro to Containers",
+        "issuer": "AWS",
+        "file": "/certificates/AWS - Intro to containers cert.pdf",
+        "type": "pdf",
+        "category": "Cloud"
+      }
+    ],
+    "digitalBadges": [
+      {
+        "id": "ebd9a819-d9d2-4e4c-b701-5a8b8788eb81",
+        "name": "Introduction to Cyber Security",
+        "issuer": "Cisco",
+        "platform": "Credly",
+        "category": "Cybersecurity"
+      },
+      {
+        "id": "6950660b-13cb-4a6a-83b8-9aa54f185b44",
+        "name": "Data Science Methodologies",
+        "issuer": "IBM",
+        "platform": "Credly",
+        "category": "Data Science"
+      },
+      {
+        "id": "ebf7afa1-ac12-4d85-b3f3-16d791c8d421",
+        "name": "Docker Essentials",
+        "issuer": "IBM",
+        "platform": "Credly",
+        "category": "DevOps"
+      },
+      {
+        "id": "9c9959a5-c61d-4630-8a35-437cb940c315",
+        "name": "Data Science 101",
+        "issuer": "IBM",
+        "platform": "Credly",
+        "category": "Data Science"
+      },
+      {
+        "id": "d9c7a312-5ae3-476b-86ee-0efd900cba5b",
+        "name": "Python Essentials 1",
+        "issuer": "Cisco",
+        "platform": "Credly",
+        "category": "Programming"
+      },
+      {
+        "id": "3bd675e6-6a74-4334-a1c8-cd68e30dc713",
+        "name": "Python Essentials 2",
+        "issuer": "Cisco",
+        "platform": "Credly",
+        "category": "Programming"
+      }
+    ]
+  },
+  "statistics": {
+    "github": {
+      "statsUrl": "https://readme.ahusan.dev/api?username=ahusan&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&theme=aura&show_icons=true",
+      "topLanguagesUrl": "https://readme.ahusan.dev/api/top-langs?username=ahusan&langs_count=20&layout=compact&size_weight=0.5&count_weight=0.5&show_icons=true&theme=aura"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2024-01-01",
+    "version": "1.0.0",
+    "format": "json",
+    "source": "portfolio-website",
+    "description": "Comprehensive portfolio data for Ahusan Mohamed including personal information, projects, experience, skills, education, and certifications"
+  }
+}
