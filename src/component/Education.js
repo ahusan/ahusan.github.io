@@ -1,7 +1,7 @@
-import React from 'react';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
+import React from 'react';
 
-const Education = ({ education }) => {
+const Education = ({ education, githubStats }) => {
   return (
     <section id="education" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +15,7 @@ const Education = ({ education }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {education.map((edu, index) => (
+          {education.map(edu => (
             <div
               key={edu.name}
               className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2"
@@ -83,14 +83,14 @@ const Education = ({ education }) => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
-                src="https://readme.ahusan.dev/api?username=ahusan&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&theme=aura&show_icons=true"
+                src={githubStats?.statsUrl}
                 alt="GitHub Stats"
                 className="max-w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-indigo-500/20">
               <img
-                src="https://readme.ahusan.dev/api/top-langs?username=ahusan&langs_count=20&layout=compact&size_weight=0.5&count_weight=0.5&show_icons=true&theme=aura"
+                src={githubStats?.topLanguagesUrl}
                 alt="GitHub Top Languages"
                 className="max-w-full h-auto rounded-lg"
               />

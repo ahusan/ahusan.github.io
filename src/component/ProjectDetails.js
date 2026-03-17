@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Layout from './Layout';
-import Header from './Header';
 
 const ProjectDetails = ({ projects }) => {
   const { projectId } = useParams();
@@ -12,10 +11,10 @@ const ProjectDetails = ({ projects }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Find the project with matching name (converted to URL-friendly format)
+    // Find project by canonical id first, then by generated legacy slug.
     if (projects) {
       const foundProject = projects.find(
-        p => p.name.toLowerCase().replace(/\s+/g, '-') === projectId
+        p => p.id === projectId || p.name.toLowerCase().replace(/\s+/g, '-') === projectId
       );
       setProject(foundProject);
       setLoading(false);
@@ -293,7 +292,6 @@ const ProjectDetails = ({ projects }) => {
   if (loading) {
     return (
       <Layout>
-        <Header />
         <div className="min-h-screen flex items-center justify-center">
           <div className="animate-pulse flex space-x-4">
             <div className="h-12 w-12 bg-indigo-500 rounded-full"></div>
@@ -310,7 +308,6 @@ const ProjectDetails = ({ projects }) => {
   if (!project) {
     return (
       <Layout>
-        <Header />
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Project Not Found</h2>
@@ -331,7 +328,6 @@ const ProjectDetails = ({ projects }) => {
 
   return (
     <Layout>
-      <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Back Button */}
         <Link
@@ -523,8 +519,8 @@ const ProjectDetails = ({ projects }) => {
             <div className="mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700">
               <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>
               <div className="space-y-4">
-                {project.stack &&
-                  project.stack.map((tech, techIndex) => (
+                {(project.stack || project.technologies) &&
+                  (project.stack || project.technologies).map((tech, techIndex) => (
                     <div key={techIndex} className="flex items-center space-x-3">
                       {project.stackImages && project.stackImages[tech] ? (
                         <img

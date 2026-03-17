@@ -1,84 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 // We'll use an iframe approach for PDF rendering
 
-// Certificate data
-const certificates = [
-  {
-    name: 'CISCO - CCNA R&S - Scaling Network',
-    file: '/certificates/CISCO - CCNA R&S - Scaling Network.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'CISCO - Introduction to Cyber Security',
-    file: '/certificates/CISCO - Introduction to Cyber Security.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'CISCO - Python Essentials 1',
-    file: '/certificates/CISCO - Python Essentials 1.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'CISCO - Python Essentials 2',
-    file: '/certificates/CISCO - Python Essentials 2.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'IBM Data Science Methodology',
-    file: '/certificates/IBM DS0103EN Certificate _ Data Science Methodologies.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'IBM Data Science 101',
-    file: '/certificates/IBM DS0101EN Certificate _ Data Science 101.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'IBM Docker Essentials',
-    file: '/certificates/IBM CO0101EN Certificate _ Docker Essentials.pdf',
-    type: 'pdf',
-  },
-  {
-    name: 'AWS - Intro to Containers',
-    file: '/certificates/AWS - Intro to containers cert.pdf',
-    type: 'pdf',
-  },
-];
-
-// Individual Credly badges
-const credlyBadges = [
-  {
-    id: 'ebd9a819-d9d2-4e4c-b701-5a8b8788eb81',
-    name: 'Introduction to Cyber Security',
-    issuer: 'Cisco',
-  },
-  {
-    id: '6950660b-13cb-4a6a-83b8-9aa54f185b44',
-    name: 'Data Science Methodologies',
-    issuer: 'IBM',
-  },
-  {
-    id: 'ebf7afa1-ac12-4d85-b3f3-16d791c8d421',
-    name: 'Docker Essentials',
-    issuer: 'IBM',
-  },
-  {
-    id: '9c9959a5-c61d-4630-8a35-437cb940c315',
-    name: 'Data Science 101',
-    issuer: 'IBM',
-  },
-  {
-    id: 'd9c7a312-5ae3-476b-86ee-0efd900cba5b',
-    name: 'Python Essentials 1',
-    issuer: 'Cisco',
-  },
-  {
-    id: '3bd675e6-6a74-4334-a1c8-cd68e30dc713',
-    name: 'Python Essentials 2',
-    issuer: 'Cisco',
-  },
-];
-
 // Custom Badge component
 const CredlyBadge = ({ badgeId, width = '100%', height = '270' }) => {
   const badgeRef = useRef(null);
@@ -117,7 +39,7 @@ const CredlyBadge = ({ badgeId, width = '100%', height = '270' }) => {
   );
 };
 
-function Certifications() {
+function Certifications({ certificates = [], digitalBadges = [] }) {
   const [activeCert, setActiveCert] = useState(0);
   const [showBadges, setShowBadges] = useState(false);
   const [activeIssuer, setActiveIssuer] = useState('All');
@@ -135,13 +57,14 @@ function Certifications() {
   };
 
   // Get unique issuers for filtering
-  const issuers = ['All', ...new Set(credlyBadges.map(badge => badge.issuer))];
+  const issuers = ['All', ...new Set(digitalBadges.map(badge => badge.issuer))];
 
   // Filter badges by issuer
   const filteredBadges =
     activeIssuer === 'All'
-      ? credlyBadges
-      : credlyBadges.filter(badge => badge.issuer === activeIssuer);
+      ? digitalBadges
+      : digitalBadges.filter(badge => badge.issuer === activeIssuer);
+  const hasCertificates = certificates.length > 0;
 
   return (
     <section id="certifications" className="py-20">
@@ -245,7 +168,7 @@ function Certifications() {
 
           {/* Right Content Area */}
           <div className="lg:col-span-2 bg-gray-900 p-4 rounded-lg">
-            {!showBadges ? (
+            {!showBadges && hasCertificates ? (
               // PDF Viewer
               <div className="flex justify-center">
                 <iframe
@@ -253,6 +176,10 @@ function Certifications() {
                   title={certificates[activeCert].name}
                   className="w-full h-[600px] border-0 rounded"
                 />
+              </div>
+            ) : !showBadges ? (
+              <div className="flex items-center justify-center h-[600px] text-gray-400">
+                No certificates available.
               </div>
             ) : (
               // Badges Grid View

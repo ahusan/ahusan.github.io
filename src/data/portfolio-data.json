@@ -29,11 +29,189 @@
   },
   "projects": [
     {
+      "id": "gym-tracker-pwa",
+      "name": "Gym Log - Personal Fitness Tracker PWA",
+      "period": "2025 to Present",
+      "status": "active",
+      "type": "Progressive Web Application",
+      "role": "Full-Stack Developer & Designer",
+      "client": "Personal Project",
+      "images": [],
+      "description": "Built a Progressive Web App to maintain gym consistency using habit-building rules and streak tracking. Self-hosted on home infrastructure with installable PWA capabilities for quick mobile access. Implements the '2-day rule' philosophy—never miss two days in a row—with smart session tracking, weekly goals, and protected rest days. Demonstrates full-stack development, PWA best practices, and self-hosting expertise.",
+      "category": "Personal Tools / PWA",
+      "technologies": [
+        "React",
+        "PWA",
+        "Service Workers",
+        "LocalStorage",
+        "Responsive Design",
+        "Docker",
+        "Self-Hosted",
+        "Home Server"
+      ],
+      "features": [
+        "Progressive Web App with offline support and home screen installation",
+        "Current streak tracking and session counting",
+        "2-day rule enforcement with visual warnings",
+        "Weekly progress tracking (0/5 sessions visualization)",
+        "28-day calendar history view",
+        "Personal habit rules: express sessions, protected rest days, and consistency reminders",
+        "Mobile-first responsive design",
+        "Self-hosted on home infrastructure for full control and zero cloud costs"
+      ],
+      "links": {
+        "live": "https://gym.ahusan.dev/"
+      },
+      "demoUrl": "https://gym.ahusan.dev/"
+    },
+    {
+      "id": "homelab-infrastructure",
+      "name": "Homelab Infrastructure & Automation",
+      "period": "2023 to Present",
+      "status": "active",
+      "type": "Infrastructure & DevOps",
+      "role": "DevOps Engineer & System Architect",
+      "client": "Homelab Infrastructure & Automation",
+      "images": [],
+      "description": "Architected and maintain a comprehensive homelab infrastructure running on Proxmox with Docker orchestration. Includes media management (Jellyfin), automated content acquisition (*arr stack), torrent management (qBittorrent), NAS integration (Asustor), CI/CD pipelines, and custom maintenance tools. Demonstrates enterprise-level DevOps practices, automation, self-hosting, and infrastructure-as-code principles on personal hardware—achieving professional-grade services at zero recurring cloud costs.",
+      "category": "DevOps / Self-Hosted Infrastructure",
+      "technologies": [
+        "Proxmox",
+        "Docker",
+        "Docker Compose",
+        "Linux",
+        "Nginx",
+        "Jellyfin",
+        "Sonarr",
+        "Radarr",
+        "qBittorrent",
+        "Asustor NAS",
+        "CI/CD",
+        "GitHub Actions",
+        "Shell Scripting",
+        "Automation"
+      ],
+      "features": [
+        "Proxmox virtualization cluster for isolated service environments",
+        "Docker containerization for all services with compose orchestration",
+        "Jellyfin media server for streaming and media library management",
+        "Automated media management: *arr stack (Sonarr, Radarr) with qBittorrent integration",
+        "Asustor NAS integration for centralized storage and automated downloads",
+        "CI/CD pipelines using GitHub Actions for automated builds and deployments",
+        "Custom maintenance tools and monitoring scripts",
+        "Reverse proxy setup with Nginx for secure external access",
+        "Automated backup and disaster recovery procedures",
+        "Zero recurring cloud costs while maintaining professional-grade availability"
+      ],
+      "links": {},
+      "outcomes": "Successfully deployed and maintained a production-grade infrastructure on home hardware, demonstrating enterprise DevOps capabilities while achieving 100% cost savings compared to cloud hosting. The automated CI/CD pipeline reduced deployment time by 90% and eliminated manual errors. The homelab serves as a testing ground for new technologies and provides reliable services including media streaming, automated downloads, and custom applications—all running 24/7 with 99.9% uptime."
+    },
+    {
+      "id": "farudhun-news-portal",
+      "name": "Farudhun News Portal",
+      "period": "2024 to Present",
+      "status": "active",
+      "images": [],
+      "description": "Lead developer and maintainer for Farudhun.com, a major Dhivehi-language news and media platform serving daily readership across the Maldives. Responsible for full-stack development, infrastructure optimization, and ongoing feature delivery. Recently achieved an 80% cost reduction (from $100 to $20/month) through strategic optimization of hosting, caching, and media delivery—without compromising performance or availability.",
+      "category": "Media Platform / Production Website",
+      "technologies": [
+        "Laravel",
+        "Blade Templates",
+        "PHP",
+        "MySQL",
+        "Digital Ocean",
+        "AWS S3",
+        "Nginx"
+      ],
+      "features": [
+        "Real-time news publishing and content management",
+        "Multi-section content organization (news, reports, business, sports, world, columns)",
+        "Dhivehi language support with proper RTL text rendering",
+        "Responsive design optimized for mobile and desktop",
+        "S3-based media storage and CDN delivery for images/videos",
+        "Infrastructure cost optimization: reduced monthly expenses by 80%",
+        "Performance optimization: caching strategies and database tuning",
+        "SEO-optimized for local Maldivian search visibility",
+        "High-availability deployment on Digital Ocean"
+      ],
+      "links": {
+        "live": "https://farudhun.com/"
+      }
+    },
+    {
+      "id": "cleaninstall-node",
+      "name": "CleanInstall Node",
+      "period": "March 2025 to Present",
+      "status": "active",
+      "images": [],
+      "description": "Built and published an open-source Node.js CLI tool that intelligently cleans node_modules, lock files, and build artifacts across monorepos and workspaces. The package solves disk space issues for developers managing multiple projects, with workspace detection, glob patterns, dry-run mode, and auto-reinstall. Published on npm with MIT license and achieving 34+ monthly downloads.",
+      "category": "Open Source / Developer Tools",
+      "technologies": [
+        "Node.js",
+        "JavaScript",
+        "Commander.js",
+        "Glob",
+        "Jest",
+        "npm"
+      ],
+      "features": [
+        "Workspace-aware monorepo support (pnpm, yarn, npm)",
+        "Glob pattern matching for flexible cleanup rules",
+        "Dry-run and interactive modes for safe operation",
+        "Auto-detect package manager and reinstall dependencies",
+        "Cross-platform compatibility",
+        "Published on npm registry with CI/CD",
+        "34+ monthly downloads and growing"
+      ],
+      "links": {
+        "npm": "https://www.npmjs.com/package/cleaninstall-node",
+        "github": "https://github.com/ahusan/cleaninstall-node",
+        "documentation": "https://github.com/ahusan/cleaninstall-node#readme"
+      }
+    },
+    {
+      "id": "allied-workflow-platform",
+      "name": "Allied Workflow Platform",
+      "period": "August 2025 to Present",
+      "status": "active",
+      "images": [
+        "/allied-logo-2026.svg"
+      ],
+      "description": "Allied needed a dynamic, configurable workflow system that could integrate cleanly with existing portals and operational systems. I am leading development of that platform as a Senior Developer using NestJS, React, DaisyUI, and a microservice architecture to support scalable process automation.",
+      "category": "Workflow Platform",
+      "technologies": [
+        "NestJS",
+        "React",
+        "DaisyUI",
+        "Microservice Architecture"
+      ]
+    },
+    {
+      "id": "sme-digital-rebranded-website",
+      "name": "SME Digital Rebranded Website",
+      "period": "2025",
+      "status": "completed",
+      "images": [
+        "/smedigital-01.png",
+        "/smedigital-02.png"
+      ],
+      "description": "Before leaving (then SDFC, now SME Digital), the company needed a complete digital refresh to align with its new brand direction and modernize content operations. I built the rebranded website from scratch in Next.js with Strapi CMS and HeroUI, delivering a faster, easier-to-manage platform.",
+      "category": "Corporate Website",
+      "technologies": [
+        "Next.js",
+        "Strapi CMS",
+        "HeroUI"
+      ]
+    },
+    {
       "id": "ssr-reservation-system",
       "name": "SSR Reservation System",
       "period": "September 2024 to March 2025",
       "status": "active",
-      "images": ["/compass-1.png", "/compass-2.png"],
+      "images": [
+        "/compass-1.png",
+        "/compass-2.png"
+      ],
       "description": "Developed a reservation system for Sun Siyam Resorts to enable staff and resellers to automatically check availability, manage bookings, and update pricing across their resort properties. Integrated with Opera PMS and Meili search for seamless operations.",
       "category": "Web Application",
       "technologies": [
@@ -57,9 +235,13 @@
     {
       "id": "maldives-com-website",
       "name": "Maldives.com Website",
-      "period": "March 2023 to Present",
+      "period": "March 2024 to Present",
       "status": "active",
-      "images": ["/maldives1.png", "/maldives2.png", "/maldives3.png"],
+      "images": [
+        "/maldives1.png",
+        "/maldives2.png",
+        "/maldives3.png"
+      ],
       "description": "Led development efforts to enhance and optimize the Maldives.com tourism platform, implementing modern web technologies to improve performance, user experience, and content management capabilities.",
       "category": "Tourism Platform",
       "technologies": [
@@ -78,7 +260,10 @@
       "name": "FSM Website",
       "period": "July 2021 to Dec 2021",
       "status": "completed",
-      "images": ["/fsm-front.png", "/fsm-cms.png"],
+      "images": [
+        "/fsm-front.png",
+        "/fsm-cms.png"
+      ],
       "description": "As a developer, I was instrumental in driving the transformation of the FSM website during a recent company rebrand.",
       "category": "Corporate Website",
       "technologies": [
@@ -100,17 +285,30 @@
       "name": "Travgo Maldives Platform",
       "period": "Oct 2020 to Feb 2021",
       "status": "completed",
-      "images": ["/travgo-front.png", "/travgo-pms.png"],
+      "images": [
+        "/travgo-front.png",
+        "/travgo-pms.png"
+      ],
       "description": "I was responsible for developing a custom online platform specifically tailored to meet the needs of Travgo Maldives, with the objective of boosting their online presence and showcasing the various styles of vacations available in the Maldives.",
       "category": "Travel Platform",
-      "technologies": ["Figma", "React", "Firebase", "Tailwind CSS", "Github"]
+      "technologies": [
+        "Figma",
+        "React",
+        "Firebase",
+        "Tailwind CSS",
+        "Github"
+      ]
     },
     {
       "id": "ecommerce-platform",
       "name": "Ecommerce Platform",
       "period": "July 2021 to Jan 2022",
       "status": "completed",
-      "images": ["/ecom-front.png", "/ecom-cms.png", "/ecom-cms2.png"],
+      "images": [
+        "/ecom-front.png",
+        "/ecom-cms.png",
+        "/ecom-cms2.png"
+      ],
       "description": "The use of an ecommerce delivery platform is to provide an online platform for businesses to sell their products and manage their deliveries efficiently. This platform can be used by customers to browse products, place orders, make payments, and track their deliveries.",
       "category": "E-commerce",
       "technologies": [
@@ -129,37 +327,68 @@
       "name": "Matcon Website",
       "period": "Mar 2023 to Oct 2023",
       "status": "completed",
-      "images": ["/matcon-front.png", "/matcon-front2.png"],
+      "images": [
+        "/matcon-front.png",
+        "/matcon-front2.png"
+      ],
       "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, and Firebase.",
       "category": "Corporate Website",
-      "technologies": ["Figma", "React", "Next JS", "Tailwind CSS", "Firebase", "Github"]
+      "technologies": [
+        "Figma",
+        "React",
+        "Next JS",
+        "Tailwind CSS",
+        "Firebase",
+        "Github"
+      ]
     },
     {
       "id": "bespoke-maldives-website",
       "name": "Bespoke Maldives Website",
       "period": "July 2023 to Nov 2023",
       "status": "completed",
-      "images": ["/bespoke-1.png", "/bespoke-2.png", "/bespoke-3.png"],
+      "images": [
+        "/bespoke-1.png",
+        "/bespoke-2.png",
+        "/bespoke-3.png"
+      ],
       "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, Vercel and Firebase.",
       "category": "Tourism Website",
-      "technologies": ["Figma", "React", "Next JS", "Tailwind CSS", "Firebase", "Vercel", "Github"]
+      "technologies": [
+        "Figma",
+        "React",
+        "Next JS",
+        "Tailwind CSS",
+        "Firebase",
+        "Vercel",
+        "Github"
+      ]
     },
     {
       "id": "matcon-mail-migration",
       "name": "Matcon Mail Migration",
       "period": "Oct 2023 to Oct 2023",
       "status": "completed",
-      "images": ["/matcon-home.webp"],
+      "images": [
+        "/matcon-home.webp"
+      ],
       "description": "The mail migration was done using a specific technology stack tailored to the client's requirements and including Google Workspace, Google Mail, and Google Drive.",
       "category": "IT Infrastructure",
-      "technologies": ["Google Workspace", "Google Mail", "Google Drive", "Server Management"]
+      "technologies": [
+        "Google Workspace",
+        "Google Mail",
+        "Google Drive",
+        "Server Management"
+      ]
     },
     {
       "id": "mcg-networking",
       "name": "Maldives Consulting Group Networking",
       "period": "Aug 2023 to Sep 2023",
       "status": "completed",
-      "images": ["/mcg-1.jpg"],
+      "images": [
+        "/mcg-1.jpg"
+      ],
       "description": "The project included of setting up and improving their current technologies and network infrastructure.",
       "category": "Network Infrastructure",
       "technologies": [
@@ -178,13 +407,41 @@
   ],
   "experience": [
     {
-      "position": "Software Developer",
-      "company": "SME Finance Development Corporation (SDFC)",
-      "period": "July 2023 to Present",
+      "position": "Senior Developer",
+      "company": "Allied Insurance Company of the Maldives Ltd.",
+      "period": "August 2025 to Present",
       "duration": "1+ years",
       "location": "Maldives",
+      "website": "https://allied.mv/",
+      "logo": "/allied-logo-2026.svg",
+      "description": "As a current employee of Allied Insurance Company of the Maldives Ltd., I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth.",
+      "responsibilities": [
+        "Developing and maintaining workflow systems using modern frameworks",
+        "Implementing business logic and database optimization",
+        "Collaborating with cross-functional teams",
+        "Code review and mentoring junior developers",
+        "Building and maintaining microservice architecture"
+      ],
+      "technologies": [
+        "NestJS",
+        "React",
+        "DaisyUI",
+        "Microservice Architecture",
+        "Docker",
+        "CI/CD",
+        "Git",
+        "GitLab",
+        "Jujutsu SCM"
+      ]
+    },
+    {
+      "position": "Software Developer",
+      "company": "SME Finance Development Corporation (SDFC)",
+      "period": "July 2023 to August 2025",
+      "duration": "2 years",
+      "location": "Maldives",
       "website": "https://sdfc.mv/",
-      "logo": "/SDFC_Logo_B.png",
+      "logo": "/smedigital-logo.png",
       "description": "As a current employee of SME Finance Development Corporation, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth.",
       "responsibilities": [
         "Developing and maintaining web applications using modern frameworks",
@@ -293,7 +550,12 @@
         "Database administration",
         "System maintenance and updates"
       ],
-      "technologies": ["Networking", "DB Admin", "Technical Support", "Server Management"]
+      "technologies": [
+        "Networking",
+        "DB Admin",
+        "Technical Support",
+        "Server Management"
+      ]
     }
   ],
   "education": [

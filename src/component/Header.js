@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MoonIcon, SunIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -78,18 +78,13 @@ const Header = () => {
 
   const scrollToSection = id => {
     if (isHomePage) {
-      console.log(`Attempting to scroll to section: ${id}`);
       const element = document.getElementById(id);
-      console.log(`Element found:`, element);
 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         setIsMenuOpen(false);
-      } else {
-        console.error(`Element with id "${id}" not found`);
       }
     } else {
-      // If not on homepage, navigate to homepage and then scroll
       window.location.href = `/#${id}`;
     }
   };
@@ -117,7 +112,6 @@ const Header = () => {
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log(`Button clicked for section: ${item}`);
                   scrollToSection(item);
                 }}
                 className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
@@ -136,7 +130,6 @@ const Header = () => {
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log(`Button clicked for section: ${item}`);
                   scrollToSection(item);
                 }}
                 className={`text-gray-300 hover:text-white capitalize transition-colors duration-300 cursor-pointer relative ${
@@ -178,7 +171,6 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-colors duration-300 cursor-pointer"
-              onClick={e => console.log('Resume link clicked')}
             >
               Resume
             </a>
@@ -207,7 +199,6 @@ const Header = () => {
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log(`Mobile button clicked for section: ${item}`);
                   scrollToSection(item);
                 }}
                 className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
@@ -219,42 +210,22 @@ const Header = () => {
                 {item}
               </button>
             ))}
-            {/* Mobile Projects Button */}
-            {isHomePage ? (
-              <button
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log(`Mobile button clicked for section: projects`);
-                  scrollToSection('projects');
-                }}
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === 'projects'
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                projects
-              </button>
-            ) : (
-              <Link
-                to="/projects"
-                className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
-                  activeSection === 'projects'
-                    ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
-                    : 'text-gray-300'
-                }`}
-              >
-                projects
-              </Link>
-            )}
+            <Link
+              to="/projects"
+              className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
+                activeSection === 'projects'
+                  ? 'bg-gray-700 text-white font-medium border-l-2 border-indigo-500'
+                  : 'text-gray-300'
+              }`}
+            >
+              projects
+            </Link>
             {['experience', 'education', 'certifications'].map(item => (
               <button
                 key={item}
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log(`Mobile button clicked for section: ${item}`);
                   scrollToSection(item);
                 }}
                 className={`block w-full text-left px-3 py-2 hover:bg-gray-700 hover:text-white capitalize transition-colors duration-300 cursor-pointer ${
@@ -281,7 +252,6 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-300 cursor-pointer"
-              onClick={e => console.log('Mobile resume link clicked')}
             >
               Resume
             </a>

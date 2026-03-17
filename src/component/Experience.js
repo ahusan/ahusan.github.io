@@ -8,9 +8,9 @@ const Experience = ({ workExperience }) => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Work Experience</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-lg">
-            Throughout my career, I have had the opportunity to work with several major
-            corporations, each providing unique challenges and opportunities for professional
-            growth.
+            Proven track record architecting and shipping production systems across fintech,
+            hospitality, and enterprise environments—delivering measurable impact through technical
+            excellence and strategic ownership.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const Experience = ({ workExperience }) => {
                         <div className="w-32 h-32 rounded-full bg-white p-2 shadow-lg">
                           <img
                             src={process.env.PUBLIC_URL + job.image}
-                            alt={job.name}
+                            alt={`${job.company || job.name} logo`}
                             className="w-full h-full object-contain rounded-full"
                           />
                         </div>
