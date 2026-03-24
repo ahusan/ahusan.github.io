@@ -36,7 +36,9 @@
       "type": "Progressive Web Application",
       "role": "Full-Stack Developer & Designer",
       "client": "Personal Project",
-      "images": [],
+      "images": [
+        "/gym-log.png"
+      ],
       "description": "Built a Progressive Web App to maintain gym consistency using habit-building rules and streak tracking. Self-hosted on home infrastructure with installable PWA capabilities for quick mobile access. Implements the '2-day rule' philosophy—never miss two days in a row—with smart session tracking, weekly goals, and protected rest days. Demonstrates full-stack development, PWA best practices, and self-hosting expertise.",
       "category": "Personal Tools / PWA",
       "technologies": [
@@ -72,7 +74,14 @@
       "type": "Infrastructure & DevOps",
       "role": "DevOps Engineer & System Architect",
       "client": "Homelab Infrastructure & Automation",
-      "images": [],
+      "images": [
+        "/home-lab-2.png",
+        "/home-lab-3.png",
+        "/home-lab-4.png",
+        "/home-lab-5.png",
+        "/home-lab-6.png",
+        "/home-lab-7.png"
+      ],
       "description": "Architected and maintain a comprehensive homelab infrastructure running on Proxmox with Docker orchestration. Includes media management (Jellyfin), automated content acquisition (*arr stack), torrent management (qBittorrent), NAS integration (Asustor), CI/CD pipelines, and custom maintenance tools. Demonstrates enterprise-level DevOps practices, automation, self-hosting, and infrastructure-as-code principles on personal hardware—achieving professional-grade services at zero recurring cloud costs.",
       "category": "DevOps / Self-Hosted Infrastructure",
       "technologies": [
@@ -111,7 +120,10 @@
       "name": "Farudhun News Portal",
       "period": "2024 to Present",
       "status": "active",
-      "images": [],
+      "images": [
+        "/farudhun-1.png",
+        "/farudhun-2.png"
+      ],
       "description": "Lead developer and maintainer for Farudhun.com, a major Dhivehi-language news and media platform serving daily readership across the Maldives. Responsible for full-stack development, infrastructure optimization, and ongoing feature delivery. Recently achieved an 80% cost reduction (from $100 to $20/month) through strategic optimization of hosting, caching, and media delivery—without compromising performance or availability.",
       "category": "Media Platform / Production Website",
       "technologies": [
