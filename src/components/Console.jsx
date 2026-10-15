@@ -107,8 +107,10 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
           return print(
             out(`name     ${project.name}`),
             out(`when     ${shortPeriod(project.period)}`),
+            out(`role     ${project.role}`),
             out(`stack    ${project.technologies.slice(0, 4).join(', ')}`),
-            out(`result   ${project.summary}`)
+            ...project.caseStudy.metrics.map(m => out(`metric   ${m.value} ${m.label}`)),
+            out(`result   ${project.caseStudy.outcome}`)
           );
         }
         print(out(`opening ${project.name}…`));

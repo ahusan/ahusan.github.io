@@ -87,10 +87,20 @@ function ProjectChapter({ project }) {
     <>
       <h2 className="chapter-title">{project.name}</h2>
       <p className="chapter-lede">{project.summary}</p>
+      {project.caseStudy.metrics.length > 0 && (
+        <dl className="metrics metrics-compact">
+          {project.caseStudy.metrics.map(m => (
+            <div key={m.label}>
+              <dt>{m.label}</dt>
+              <dd>{m.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
       <hr />
       <ul className="chapter-points">
-        {(project.features || [project.description]).slice(0, 3).map(f => (
-          <li key={f}>{f.replace(/\s*\(.*?\)/g, '')}</li>
+        {project.caseStudy.approach.slice(-3).map(step => (
+          <li key={step}>{step}</li>
         ))}
       </ul>
       <p className="meta">{[project.role, shortPeriod(project.period)].filter(Boolean).join(', ')}</p>

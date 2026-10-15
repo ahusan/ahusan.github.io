@@ -24,6 +24,7 @@ export default function Project() {
 
   if (!project) return <NotFound />;
 
+  const cs = project.caseStudy;
   const next = projects[(index + 1) % projects.length];
   const links = Object.entries(project.links || {});
   const [hero, ...gallery] = project.images || [];
@@ -67,6 +68,17 @@ export default function Project() {
         )}
       </header>
 
+      {cs.metrics.length > 0 && (
+        <dl className="metrics">
+          {cs.metrics.map(m => (
+            <div key={m.label}>
+              <dt>{m.label}</dt>
+              <dd>{m.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
       {hero && (
         <figure className="project-hero">
           <img src={hero} alt={`${project.name}, main screen`} decoding="async" />
@@ -74,28 +86,17 @@ export default function Project() {
       )}
 
       <div className="project-body">
-        <div className="prose">
-          {project.context && <p className="prose-lead">{project.context}</p>}
-          <p>{project.description}</p>
-          {(project.story || []).map(para => (
-            <p key={para.slice(0, 40)}>{para}</p>
-          ))}
-          {project.outcomes && (
-            <>
-              <h2>Outcome</h2>
-              <p>{project.outcomes}</p>
-            </>
-          )}
-          {project.features && (
-            <>
-              <h2>What it does</h2>
-              <ul>
-                {project.features.map(f => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-            </>
-          )}
+        <div className="prose case">
+          <h2>The challenge</h2>
+          <p className="prose-lead">{cs.challenge}</p>
+          <h2>What I did</h2>
+          <ol className="case-steps">
+            {cs.approach.map(step => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <h2>Outcome</h2>
+          <p className="prose-lead">{cs.outcome}</p>
         </div>
         <aside className="project-aside">
           <h2>Built with</h2>

@@ -294,9 +294,8 @@ a:hover {
   margin: 0;
   padding: 0;
   list-style: none;
-  font: 500 0.75rem/1.45 var(--mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font: 400 0.8125rem/1.5 var(--mono);
+  color: var(--ink-2);
 }
 
 .chapter-points li {
@@ -1343,6 +1342,77 @@ kbd {
   font-weight: 400;
   font-size: 0.5em;
   color: var(--ink-2);
+}
+
+/* Case study: key numbers, then challenge, steps and outcome. */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1.5rem 2rem;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+}
+
+.metrics div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--magenta);
+}
+
+.metrics dt {
+  order: 1;
+  color: var(--ink-2);
+  font: 400 0.8125rem/1.4 var(--mono);
+}
+
+.metrics dd {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 750;
+  font-variation-settings: 'wdth' 112;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.metrics-compact {
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 1rem;
+  margin: 0.25rem 0;
+}
+
+.metrics-compact div {
+  border-top-color: var(--chapter);
+}
+
+.metrics-compact dd {
+  color: var(--chapter);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+}
+
+.case h2:first-child {
+  margin-top: 0;
+}
+
+.case-steps {
+  counter-reset: step;
+  margin: 0 0 1.25em;
+  padding: 0;
+  list-style: none;
+}
+
+.case-steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.case-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--magenta);
+  font: 500 0.875rem/1.7 var(--mono);
 }
 
 /* ---------- 404 ---------- */
