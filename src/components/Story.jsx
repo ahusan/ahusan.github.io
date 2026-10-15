@@ -132,7 +132,7 @@ function ExperienceChapter() {
                 {role.company}
               </a>
             </h3>
-            <p className="waypoint-note">{(role.achievements || role.responsibilities)[0]}</p>
+            <p className="waypoint-note">{role.achievements[0]}</p>
           </li>
         ))}
       </ol>

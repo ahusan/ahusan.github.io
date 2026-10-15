@@ -586,41 +586,33 @@
       "location": "Maldives",
       "website": "https://allied.mv/",
       "logo": "/allied-logo-2026.svg",
-      "description": "As a current employee of Allied Insurance Company of the Maldives Ltd., I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth.",
-      "responsibilities": [
-        "Developing and maintaining workflow systems using modern frameworks",
-        "Implementing business logic and database optimization",
-        "Collaborating with cross-functional teams",
-        "Code review and mentoring junior developers",
-        "Building and maintaining microservice architecture"
-      ],
+      "description": "Contributing to an integrated workflow management platform that unifies customer and client operations across multiple internal systems.",
       "technologies": [
+        "TypeScript",
         "NestJS",
         "React",
         "DaisyUI",
         "Microservice Architecture",
         "Docker",
-        "CI/CD",
-        "Git",
-        "GitLab",
-        "Jujutsu SCM"
+        "GitLab CI",
+        "Jujutsu (jj)",
+        "Jira"
+      ],
+      "achievements": [
+        "Building scalable, type-safe APIs and UI components with NestJS and React.",
+        "Implemented advanced form features, including nested validation schemas and dynamic autocomplete, in strictly typed TypeScript.",
+        "Working in agile sprints, with task tracking and coordination in Jira."
       ]
     },
     {
       "position": "Software Developer",
-      "company": "SME Finance Development Corporation (SDFC)",
+      "company": "SME Development Finance Corporation (SDFC)",
       "period": "July 2023 to August 2025",
       "duration": "2 years",
       "location": "Maldives",
       "website": "https://sdfc.mv/",
       "logo": "/smedigital-logo.png",
-      "description": "As a current employee of SME Finance Development Corporation, I am committed to staying up-to-date with the latest tools and technologies that can help optimize business operations and drive growth.",
-      "responsibilities": [
-        "Developing and maintaining web applications using modern frameworks",
-        "Implementing business logic and database optimization",
-        "Collaborating with cross-functional teams",
-        "Code review and mentoring junior developers"
-      ],
+      "description": "Built in-house software across monitoring, document processing and credit analysis.",
       "technologies": [
         "Remix JS",
         "React JS",
@@ -637,9 +629,9 @@
         "Azure"
       ],
       "achievements": [
-        "Successfully delivered multiple client projects",
-        "Improved application performance by implementing modern technologies",
-        "Led technical decision making for new projects"
+        "Developed OCR and text-extraction software for processing documents.",
+        "Built dashboards for a range of monitoring needs.",
+        "Contributed to credit analysis applications with a focus on data security."
       ]
     },
     {
@@ -650,13 +642,7 @@
       "location": "Maldives",
       "website": "https://bankofmaldives.com.mv/",
       "logo": "/bml-logo.jpg",
-      "description": "Bank of Maldives employee dedicated to leveraging technology for business growth. Post-employment, I'll pursue certifications and explore entrepreneurial opportunities for continued growth.",
-      "responsibilities": [
-        "Maintained and developed banking applications",
-        "Managed DevOps processes and deployments",
-        "Provided technical support for critical systems",
-        "Database administration and optimization"
-      ],
+      "description": "Developed and maintained banking applications and the infrastructure under them.",
       "technologies": [
         "DevOps",
         "Laravel",
@@ -674,26 +660,20 @@
         "MS SQL Server"
       ],
       "achievements": [
-        "Maintained 99.9% uptime for critical banking systems",
-        "Successfully migrated legacy systems to modern infrastructure",
-        "Implemented automated deployment processes"
+        "Maintained 99.9% uptime for critical banking systems.",
+        "Improved the speed and security of the Dollar Sale Portal, and built a staff communication portal.",
+        "Fixed Internet Banking bugs, maintained Docker hosts, ran code reviews and managed releases."
       ]
     },
     {
-      "position": "Information Technology Technician",
+      "position": "IT Support Technician",
       "company": "Waste Management Corporation (WAMCO)",
       "period": "Aug 2017 to June 2020",
       "duration": "3 years",
       "location": "Maldives",
       "website": "https://wamco.com.mv/",
       "logo": "/wamco-logo.png",
-      "description": "In my previous role, I served as a technical engineer providing critical support to the Information Technology (IT) team at Waste Management Corporation (WAMCO).",
-      "responsibilities": [
-        "Network administration and troubleshooting",
-        "Database administration and maintenance",
-        "Technical support for staff and systems",
-        "Server management and optimization"
-      ],
+      "description": "Supported WAMCO's IT team across networks, servers and on-site installations.",
       "technologies": [
         "Networking",
         "DB Admin",
@@ -705,28 +685,31 @@
         "AWS",
         "Technical Support",
         "Server Management"
+      ],
+      "achievements": [
+        "Installed network equipment, servers and Axis network cameras.",
+        "Performed on-site server installations at remote locations.",
+        "Provided technical support to staff."
       ]
     },
     {
-      "position": "Information Technology Support",
+      "position": "IT Officer",
       "company": "Villa College",
       "period": "Feb 2016 to Aug 2017",
       "duration": "1.5 years",
       "location": "Maldives",
       "website": "https://villacollege.edu.mv/",
       "logo": "/villa-logo.jpg",
-      "description": "During my tenure at Villa College, I provided comprehensive IT services to both staff and clients, leveraging my technical expertise and communication skills to ensure that all users were able to effectively utilize the college's IT systems.",
-      "responsibilities": [
-        "IT support for faculty and students",
-        "Network maintenance and troubleshooting",
-        "Database administration",
-        "System maintenance and updates"
-      ],
+      "description": "IT support for staff and students at Villa College QI Campus.",
       "technologies": [
         "Networking",
         "DB Admin",
         "Technical Support",
         "Server Management"
+      ],
+      "achievements": [
+        "Troubleshot hardware, software and network issues.",
+        "Installed software and tested equipment and programs."
       ]
     }
   ],
@@ -766,305 +749,199 @@
     }
   ],
   "skills": {
-    "programmingLanguages": [
+    "languages": [
       {
-        "name": "JavaScript",
-        "proficiency": 5,
-        "yearsOfExperience": "5+",
-        "icon": "https://shields.io/badge/-javascript-111827?style=for-the-badge&logo=javascript"
+        "name": "TypeScript"
       },
       {
-        "name": "Python",
-        "proficiency": 4,
-        "yearsOfExperience": "3+",
-        "icon": "https://img.shields.io/badge/python-111827?style=for-the-badge&logo=python&logoColor=ffdd54"
+        "name": "JavaScript"
       },
       {
-        "name": "TypeScript",
-        "proficiency": 4,
-        "yearsOfExperience": "2+",
-        "icon": "https://shields.io/badge/-typescript-111827?style=for-the-badge&logo=typescript"
+        "name": "Dart"
       },
       {
-        "name": "PHP",
-        "proficiency": 3,
-        "yearsOfExperience": "4+",
-        "icon": "https://shields.io/badge/-php-111827?style=for-the-badge&logo=php"
+        "name": "Rust"
       },
       {
-        "name": "C#",
-        "proficiency": 2,
-        "yearsOfExperience": "1+",
-        "icon": "https://shields.io/badge/-Csharp-111827?style=for-the-badge&logo=c"
+        "name": "Python"
+      },
+      {
+        "name": "PHP"
       }
     ],
-    "frameworksAndRuntime": [
+    "frontend": [
       {
-        "name": "React",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-react-111827?style=for-the-badge&logo=react"
+        "name": "React"
       },
       {
-        "name": "Next.js",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-Next-111827?style=for-the-badge&logo=next.js"
+        "name": "Next.js"
       },
       {
-        "name": "Node.js",
-        "proficiency": 4,
-        "icon": "https://img.shields.io/badge/node.js-111827?style=for-the-badge&logo=node.js&logoColor=white"
+        "name": "React Router"
       },
       {
-        "name": "Express.js",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-express.js-111827?style=for-the-badge&logo=express"
+        "name": "Vue"
       },
       {
-        "name": "Remix",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-remix-111827?style=for-the-badge&logo=remix"
+        "name": "Vite"
       },
       {
-        "name": "Laravel",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-laravel-111827?style=for-the-badge&logo=laravel"
+        "name": "Tailwind CSS"
       },
       {
-        "name": "Vue.js",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-vue-111827?style=for-the-badge&logo=vue.js"
+        "name": "Radix UI"
       },
       {
-        "name": "React Native",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-react%20native-111827?style=for-the-badge&logo=react"
+        "name": "Framer Motion"
       },
       {
-        "name": "FastAPI",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-fastapi-111827?style=for-the-badge&logo=fastapi"
+        "name": "Three.js"
       }
     ],
-    "frontendTechnologies": [
+    "backend": [
       {
-        "name": "HTML5",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-html-111827?style=for-the-badge&logo=html5"
+        "name": "NestJS"
       },
       {
-        "name": "CSS3",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-css-111827?style=for-the-badge&logo=css3"
+        "name": "Node.js"
       },
       {
-        "name": "Tailwind CSS",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-tailwind css-111827?style=for-the-badge&logo=tailwind-css"
+        "name": "Express"
       },
       {
-        "name": "Sass",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-sass-111827?style=for-the-badge&logo=sass"
+        "name": "FastAPI"
       },
       {
-        "name": "Bootstrap",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-bootstrap-111827?style=for-the-badge&logo=bootstrap"
+        "name": "Laravel"
       },
       {
-        "name": "Mantine UI",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-mantine ui-111827?style=for-the-badge&logo=mantine"
+        "name": "Strapi"
       },
       {
-        "name": "Figma",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-figma-111827?style=for-the-badge&logo=figma"
-      },
-      {
-        "name": "WordPress",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-wordpress-111827?style=for-the-badge&logo=wordpress"
+        "name": "GraphQL"
       }
     ],
-    "databasesAndData": [
+    "data": [
       {
-        "name": "MySQL",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-mysql-111827?style=for-the-badge&logo=mysql"
+        "name": "PostgreSQL"
       },
       {
-        "name": "PostgreSQL",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-postgres-111827?style=for-the-badge&logo=postgresql"
+        "name": "Drizzle ORM"
       },
       {
-        "name": "Prisma ORM",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-prisma-111827?style=for-the-badge&logo=prisma"
+        "name": "Prisma"
       },
       {
-        "name": "Firebase",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-firebase-111827?style=for-the-badge&logo=firebase"
+        "name": "MySQL"
       },
       {
-        "name": "SQLite",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-sqlite-111827?style=for-the-badge&logo=sqlite"
+        "name": "MongoDB"
       },
       {
-        "name": "Microsoft SQL Server",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-Microsoft%20SQL%20Sever-111827?style=for-the-badge&logo=microsoft%20sql%20server"
+        "name": "Redis"
+      },
+      {
+        "name": "Firestore"
+      },
+      {
+        "name": "Meilisearch"
+      },
+      {
+        "name": "Zod"
       }
     ],
-    "devopsAndCloud": [
+    "mobileDesktop": [
       {
-        "name": "Docker",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-docker-111827?style=for-the-badge&logo=docker"
+        "name": "Flutter"
       },
       {
-        "name": "Digital Ocean",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-digital%20ocean-111827?style=for-the-badge&logo=digitalocean"
+        "name": "Firebase"
       },
       {
-        "name": "Nginx",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-nginx-111827?style=for-the-badge&logo=nginx"
-      },
-      {
-        "name": "Azure",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-Azure-111827?style=for-the-badge&logo=microsoftazure"
-      },
-      {
-        "name": "AWS",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-AWS-111827?style=for-the-badge&logo=amazon"
-      },
-      {
-        "name": "Google Cloud",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-Google%20Cloud-111827?style=for-the-badge&logo=google-cloud"
-      },
-      {
-        "name": "Portainer",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-portainer-111827?style=for-the-badge&logo=portainer"
+        "name": "Rust with Slint"
       }
     ],
-    "developmentTools": [
+    "ai": [
       {
-        "name": "Git",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-git-111827?style=for-the-badge&logo=git"
+        "name": "Claude Code"
       },
       {
-        "name": "GitHub",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-github-111827?style=for-the-badge&logo=github"
+        "name": "OpenAI API"
       },
       {
-        "name": "GitHub Pages",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-github%20pages-111827?style=for-the-badge&logo=github"
-      },
-      {
-        "name": "Bitbucket",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-bitbucket-111827?style=for-the-badge&logo=bitbucket"
-      },
-      {
-        "name": "Postman",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-postman-111827?style=for-the-badge&logo=postman"
-      },
-      {
-        "name": "JWT",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-jwt-111827?style=for-the-badge&logo=json-web-tokens"
+        "name": "LangChain"
       }
     ],
-    "operatingSystems": [
+    "infrastructure": [
       {
-        "name": "Windows",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-windows-111827?style=for-the-badge&logo=windows"
+        "name": "Docker"
       },
       {
-        "name": "Ubuntu",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-ubuntu-111827?style=for-the-badge&logo=ubuntu"
+        "name": "Cloudflare Workers"
       },
       {
-        "name": "Linux",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-linux-111827?style=for-the-badge&logo=linux"
+        "name": "DigitalOcean"
       },
       {
-        "name": "Debian",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-debian-111827?style=for-the-badge&logo=debian"
+        "name": "Vercel"
       },
       {
-        "name": "Manjaro",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-manjaro-111827?style=for-the-badge&logo=manjaro"
+        "name": "AWS"
       },
       {
-        "name": "Fedora",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-fedora-111827?style=for-the-badge&logo=fedora"
+        "name": "Proxmox"
       },
       {
-        "name": "macOS",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-macos-111827?style=for-the-badge&logo=macos"
+        "name": "Nginx"
+      },
+      {
+        "name": "Linux"
       }
     ],
-    "technicalSkills": [
+    "workflow": [
       {
-        "name": "Troubleshooting",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-Troubleshooting-111827?style=for-the-badge&logo=devops"
+        "name": "Jujutsu (jj)"
       },
       {
-        "name": "Technical Support",
-        "proficiency": 5,
-        "icon": "https://shields.io/badge/-Technical%20Support-111827?style=for-the-badge&logo=devops"
+        "name": "Git"
       },
       {
-        "name": "Team Management",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-Team%20Management-111827?style=for-the-badge"
+        "name": "GitHub Actions"
       },
       {
-        "name": "Networking",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-Networking-111827?style=for-the-badge"
+        "name": "GitLab CI"
       },
       {
-        "name": "Database Administration",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-DB%20administration-111827?style=for-the-badge&logo=mysql&logoColor=white"
+        "name": "pnpm"
       },
       {
-        "name": "Server Management",
-        "proficiency": 4,
-        "icon": "https://shields.io/badge/-Server%20Management-111827?style=for-the-badge&logo=linux"
+        "name": "Turborepo"
       },
       {
-        "name": "Active Directory Management",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-Active%20Directory%20Management-111827?style=for-the-badge&logo=microsoft"
+        "name": "Vitest"
       },
       {
-        "name": "DevOps",
-        "proficiency": 3,
-        "icon": "https://shields.io/badge/-devops-111827?style=for-the-badge&logo=devops"
+        "name": "Jest"
+      },
+      {
+        "name": "Biome"
+      },
+      {
+        "name": "Jira"
+      }
+    ],
+    "networking": [
+      {
+        "name": "Cisco networking (CCNA)"
+      },
+      {
+        "name": "UniFi"
+      },
+      {
+        "name": "Server administration"
+      },
+      {
+        "name": "Active Directory"
       }
     ]
   },

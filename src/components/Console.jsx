@@ -83,6 +83,8 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
   }
 
   function run(raw) {
+    // A new command interrupts a traceroute that's still printing.
+    timers.current.forEach(clearTimeout);
     const line = raw.trim();
     print({ kind: 'cmd', text: line });
     if (!line) return;

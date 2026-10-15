@@ -1,14 +1,15 @@
 import portfolioData from './portfolio-data.json';
 
 const SKILL_CATEGORY_LABELS = {
-  programmingLanguages: 'Languages',
-  frameworksAndRuntime: 'Frameworks',
-  frontendTechnologies: 'Frontend',
-  databasesAndData: 'Data',
-  devopsAndCloud: 'Infrastructure and cloud',
-  developmentTools: 'Tooling',
-  operatingSystems: 'Operating systems',
-  technicalSkills: 'Operations',
+  languages: 'Languages',
+  frontend: 'Frontend',
+  backend: 'Backend',
+  data: 'Data',
+  mobileDesktop: 'Mobile and desktop',
+  ai: 'AI',
+  infrastructure: 'Infrastructure',
+  workflow: 'Workflow and tooling',
+  networking: 'Networking and IT',
 };
 
 export const personal = portfolioData.personal;
