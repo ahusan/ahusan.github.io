@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Chart from '../components/Chart';
+import Plotter from '../components/Plotter';
 import {
   certificates,
   education,
@@ -29,14 +29,12 @@ function Hero() {
             Download résumé
           </a>
         </div>
+        <p className="hero-hint">
+          The chart is live. Point at it to plot a position, or press <kbd>/</kbd> and type{' '}
+          <code>traceroute ahusan</code>.
+        </p>
       </div>
-      <figure className="hero-chart">
-        <Chart />
-        <figcaption>
-          <span>Central Maldives</span>
-          <span>Soundings in metres</span>
-        </figcaption>
-      </figure>
+      <Plotter />
     </section>
   );
 }

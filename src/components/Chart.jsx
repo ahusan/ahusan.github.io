@@ -2,15 +2,33 @@ import { memo } from 'react';
 
 // A stylised nautical chart of the central Maldives. Atoll positions are real
 // (lat/lon); their reef outlines are generated, seeded so they never change.
-// 1 viewBox unit = 0.01°. West edge 72.4°E, north edge 5.4°N.
+// 1 viewBox unit = 0.01°. West edge 72.4°E, north edge 5.4°N. The visible window
+// (VY..VY+VH, matching the 6:5 frame) is centred a little north of Malé.
 const W = 160;
 const H = 280;
 const LON0 = 72.4;
 const LAT0 = 5.4;
 const x = lon => (lon - LON0) * 100;
 const y = lat => (LAT0 - lat) * 100;
+const VY = y(4.95);
+const VH = (W * 5) / 6;
 
-const MALE = { lat: 4.175, lon: 73.509 };
+export const MALE = { lat: 4.175, lon: 73.509 };
+
+// viewBox units -> degrees, for the plotter's cursor readout.
+export const toLatLon = (vx, vy) => ({ lat: LAT0 - vy / 100, lon: LON0 + vx / 100 });
+
+// Traceroute path: from the visitor (off the north-west corner) across the atolls to Malé.
+// One hop per role, oldest first; the last hop is Malé.
+const ROUTE = [
+  [4.97, 72.38],
+  [4.83, 72.98],
+  [4.31, 73.03],
+  [4.06, 73.24],
+  [4.45, 73.36],
+  [MALE.lat, MALE.lon],
+];
+export const HOP_MS = 700;
 
 // [name, lat, lon, rx°, ry°, rotation°]
 const ATOLLS = [
@@ -88,24 +106,47 @@ const atolls = ATOLLS.map(([name, lat, lon, rxd, ryd, rot]) => {
 
 // Open-water depth soundings, kept clear of the atolls.
 const soundings = [];
-while (soundings.length < 34) {
+while (soundings.length < 22) {
   const sx = 4 + rand() * (W - 8);
-  const sy = 4 + rand() * (H - 8);
+  const sy = VY + 6 + rand() * (VH - 12);
   const clear = ATOLLS.every(
     ([, lat, lon, rxd, ryd]) => Math.hypot((sx - x(lon)) / (rxd * 190), (sy - y(lat)) / (ryd * 190)) > 1
   );
-  if (clear) soundings.push({ sx, sy, depth: Math.round(300 + rand() * 2400) });
+  const spaced = soundings.every(o => Math.hypot(o.sx - sx, o.sy - sy) > 14);
+  if (clear && spaced) soundings.push({ sx, sy, depth: Math.round(300 + rand() * 2400) });
 }
 
-const LAT_TICKS = [5, 4.5, 4, 3.5, 3];
+const LAT_TICKS = [4.5, 4];
 const LON_TICKS = [72.5, 73, 73.5];
 const dms = v => `${Math.floor(v)}°${String(Math.round((v % 1) * 60)).padStart(2, '0')}′`;
 
-function Chart() {
+function Route() {
+  return (
+    <g className="chart-route">
+      {ROUTE.slice(1).map(([lat, lon], i) => {
+        const [plat, plon] = ROUTE[i];
+        const delay = { '--i': i };
+        return (
+          <g key={i}>
+            <path
+              className="chart-route-leg"
+              d={`M${x(plon)} ${y(plat)}L${x(lon)} ${y(lat)}`}
+              pathLength="1"
+              style={delay}
+            />
+            <circle className="chart-route-hop" cx={x(lon)} cy={y(lat)} r="1.4" style={delay} />
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+function Chart({ trace = 0 }) {
   return (
     <svg
       className="chart"
-      viewBox={`0 0 ${W} ${H}`}
+      viewBox={`0 ${VY} ${W} ${VH}`}
       preserveAspectRatio="xMidYMid slice"
       role="img"
       aria-label="Chart of the central Maldives atolls with Malé marked"
@@ -137,6 +178,8 @@ function Chart() {
         </g>
       ))}
 
+      {trace > 0 && <Route key={trace} />}
+
       <g className="chart-marker" transform={`translate(${x(MALE.lon)} ${y(MALE.lat)})`}>
         <circle className="chart-marker-ring" r="3.2" />
         <circle className="chart-marker-dot" r="0.9" />
@@ -155,7 +198,7 @@ function Chart() {
           </text>
         ))}
         {LON_TICKS.map(lon => (
-          <text key={lon} x={x(lon) + 1} y={H - 2}>
+          <text key={lon} x={x(lon) + 1} y={VY + VH - 2}>
             {dms(lon)} E
           </text>
         ))}

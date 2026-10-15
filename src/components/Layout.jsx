@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { personal } from '../data/portfolioData';
+import { setTheme, useTheme } from '../theme';
 
 const NAV = [
   ['Work', '/#work'],
@@ -20,6 +21,7 @@ function useScrollRestore() {
 
 export default function Layout() {
   useScrollRestore();
+  const theme = useTheme();
   return (
     <>
       <a className="skip" href="#main">
@@ -35,6 +37,14 @@ export default function Layout() {
               {label}
             </Link>
           ))}
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={() => setTheme(theme === 'day' ? 'night' : 'day')}
+            aria-label={`Switch to ${theme === 'day' ? 'night' : 'day'} chart`}
+          >
+            {theme === 'day' ? 'Night' : 'Day'}
+          </button>
           <a className="nav-resume" href={personal.resume} download>
             Résumé
           </a>

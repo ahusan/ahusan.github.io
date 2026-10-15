@@ -12,14 +12,33 @@
 
   --sans: 'Archivo', system-ui, sans-serif;
   --serif: 'Newsreader', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
   --gutter: clamp(1rem, 4vw, 3rem);
   --max: 78rem;
 
   color-scheme: light dark;
 }
 
+:root[data-theme='night'] {
+  --paper: #08182a;
+  --water: #0c2136;
+  --shoal: #123050;
+  --contour: #2f5f80;
+  --ink: #d9e6ec;
+  --ink-2: #93a9b8;
+  --rule: #1d3a55;
+  --magenta: #f06ab8;
+  --land: #5f5428;
+
+  color-scheme: dark;
+}
+
+:root[data-theme='day'] {
+  color-scheme: light;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='day']) {
     --paper: #08182a;
     --water: #0c2136;
     --shoal: #123050;
@@ -29,6 +48,7 @@
     --rule: #1d3a55;
     --magenta: #f06ab8;
     --land: #5f5428;
+    color-scheme: dark;
   }
 }
 
@@ -140,6 +160,19 @@ a:hover {
   text-decoration: none;
 }
 
+.theme-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--magenta);
+}
+
 .nav-resume {
   color: var(--magenta);
   font-weight: 600;
@@ -234,9 +267,9 @@ a:hover {
 .hero-chart {
   position: relative;
   margin: 0;
-  aspect-ratio: 4 / 5;
-  max-height: 78svh;
+  aspect-ratio: 6 / 5;
   width: 100%;
+  cursor: crosshair;
   background: var(--water);
   border: 1px solid var(--ink);
   outline: 5px solid var(--paper);
@@ -419,10 +452,175 @@ a:hover {
     min-height: 0;
   }
 
-  .hero-chart {
-    aspect-ratio: 5 / 4;
+  .plotter {
     margin: 0.5rem 6px 0;
-    width: calc(100% - 12px);
+  }
+}
+
+/* ---------- Plotter: readout, console, traceroute ---------- */
+
+.hero-hint {
+  max-width: 34em;
+  margin-top: 2rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+kbd,
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+}
+
+kbd {
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--ink-2);
+  border-bottom-width: 2px;
+}
+
+code {
+  color: var(--magenta);
+}
+
+.plotter {
+  --console-bg: #0b1d30;
+  --console-ink: #cfe0e8;
+  --console-dim: #7d98ad;
+  --console-hot: #ff7cc6;
+  min-width: 0;
+}
+
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-top: 12px;
+  padding: 0.45rem 0.75rem;
+  background: var(--console-bg);
+  color: var(--console-ink);
+  font: 500 0.75rem/1.4 var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.console {
+  background: var(--console-bg);
+  color: var(--console-ink);
+  font: 400 0.8125rem/1.55 var(--mono);
+  border-top: 1px solid #1d3a55;
+  cursor: text;
+}
+
+.console-log {
+  height: 8.5rem;
+  overflow-y: auto;
+  padding: 0.6rem 0.75rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #2f5f80 transparent;
+}
+
+.console-log p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.console-cmd::before {
+  content: 'ahusan@male:~$ ';
+  color: var(--console-hot);
+}
+
+.console-out {
+  color: var(--console-dim);
+}
+
+.console-err {
+  color: #ffb36b;
+}
+
+.console-input {
+  display: flex;
+  gap: 0.6ch;
+  align-items: baseline;
+  padding: 0.25rem 0.75rem 0.5rem;
+}
+
+.console-input label {
+  color: var(--console-hot);
+  white-space: nowrap;
+}
+
+.console-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--console-ink);
+  font: inherit;
+  caret-color: var(--console-hot);
+}
+
+.console-input input:focus {
+  outline: none;
+}
+
+.console-input input::placeholder {
+  color: #4f6d84;
+}
+
+.console:focus-within {
+  box-shadow: inset 0 0 0 1px var(--console-hot);
+}
+
+.console-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem 0.7rem;
+  border-top: 1px solid #1d3a55;
+}
+
+.console-chips button {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #2f5f80;
+  background: transparent;
+  color: var(--console-ink);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.console-chips button:hover {
+  border-color: var(--console-hot);
+  color: var(--console-hot);
+}
+
+.chart-route-leg {
+  fill: none;
+  stroke: var(--magenta);
+  stroke-width: 0.7;
+  stroke-linecap: round;
+}
+
+.chart-route-hop {
+  fill: var(--paper);
+  stroke: var(--magenta);
+  stroke-width: 0.6;
+}
+
+/* 0.7s per hop matches HOP_MS in Chart.jsx, so console lines land with each hop. */
+@media (prefers-reduced-motion: no-preference) {
+  .chart-route-leg {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: survey 0.7s linear forwards;
+    animation-delay: calc(var(--i) * 0.7s);
+  }
+
+  .chart-route-hop {
+    opacity: 0;
+    animation: surface 0.15s ease-out forwards;
+    animation-delay: calc((var(--i) + 1) * 0.7s);
   }
 }
 
@@ -604,6 +802,23 @@ a:hover {
   top: 0.5rem;
   bottom: 0.5rem;
   border-left: 2px dashed var(--magenta);
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .course::before {
+      transform-origin: top;
+      animation: chart-course linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 70%;
+    }
+  }
+}
+
+@keyframes chart-course {
+  from {
+    transform: scaleY(0);
+  }
 }
 
 .waypoint {
