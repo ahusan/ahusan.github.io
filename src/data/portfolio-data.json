@@ -224,7 +224,8 @@
         ],
         "outcome": "In active development since August 2025.",
         "metrics": []
-      }
+      },
+      "links": {}
     },
     {
       "id": "sme-digital-rebranded-website",
@@ -250,7 +251,8 @@
         ],
         "outcome": "A faster site that's easier to manage, delivered before I moved on.",
         "metrics": []
-      }
+      },
+      "links": {}
     },
     {
       "id": "ssr-reservation-system",
@@ -285,7 +287,8 @@
         ],
         "outcome": "One tool for availability, bookings and pricing across Sun Siyam's properties, rolled out after real-world testing.",
         "metrics": []
-      }
+      },
+      "links": {}
     },
     {
       "id": "maldives-com-website",
@@ -363,7 +366,7 @@
       ],
       "summary": "A rebrand website and CMS for Fuel Supply Maldives on React and .NET.",
       "links": {
-        "live": "https://fuel.mv/"
+        "live": "https://www.fsm.mv/"
       },
       "role": "Developer",
       "caseStudy": {
@@ -373,7 +376,7 @@
           "Hosted it on Azure with automatic scaling and load balancing, in Docker containers managed through Portainer.",
           "Kept performance and security at the front, in line with FSM's focus on quality and safety."
         ],
-        "outcome": "Launched with the rebrand at fuel.mv.",
+        "outcome": "Launched with the rebrand at fsm.mv.",
         "metrics": []
       }
     },
@@ -394,9 +397,7 @@
         "Github"
       ],
       "summary": "A travel agency site showcasing Maldives holiday styles, built on React and Firebase.",
-      "links": {
-        "live": "https://travgomaldives.com/"
-      },
+      "links": {},
       "role": "Designer and developer",
       "caseStudy": {
         "challenge": "TravGo Maldives, a licensed travel agency in Malé, needed a stronger online presence, and its bookings were handled by hand.",
@@ -442,7 +443,8 @@
         ],
         "outcome": "A platform that covers the whole order flow, from browsing to delivery.",
         "metrics": []
-      }
+      },
+      "links": {}
     },
     {
       "id": "matcon-website",
@@ -540,7 +542,8 @@
         ],
         "outcome": "Moved to Google Workspace with minimal disruption to the business.",
         "metrics": []
-      }
+      },
+      "links": {}
     },
     {
       "id": "mcg-networking",
@@ -574,7 +577,8 @@
         ],
         "outcome": "A secure, monitored network built to grow, with support after handover.",
         "metrics": []
-      }
+      },
+      "links": {}
     }
   ],
   "experience": [

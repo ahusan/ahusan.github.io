@@ -23,3 +23,15 @@ default; the header toggle or `theme day` switches to the paper chart. Tokens ar
 
 Project screenshots are WebP, max 1800px wide. Convert new ones with
 `npx sharp-cli -i shot.png -o public -f webp -q 78 resize 1800 --withoutEnlargement`.
+
+## Résumé
+
+`public/resume.pdf` is printed from `resume/resume.html`. Edit the HTML, then regenerate with Chrome
+(it needs network access for the Google Fonts):
+
+```bash
+google-chrome --headless --no-pdf-header-footer --virtual-time-budget=8000 \
+  --print-to-pdf=public/resume.pdf "file://$PWD/resume/resume.html"
+```
+
+Check the PDF uses Merriweather and Open Sans; if the fonts hadn't loaded it falls back to a system serif.

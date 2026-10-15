@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ahusan Mohamed, résumé</title>
+    <!--
+      Source for public/resume.pdf. Regenerate with any Chrome or Chromium:
+        chrome --headless --no-pdf-header-footer --virtual-time-budget=5000 \
+          --print-to-pdf=public/resume.pdf resume/resume.html
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=block"
+    />
+    <style>
+      @page {
+        size: letter;
+        margin: 0.7in 0.72in 0.6in;
+      }
+
+      :root {
+        --green: #38761d;
+        --ink: #000;
+        --body: #555;
+        --muted: #666;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--body);
+        font: 300 8.6pt/1.5 'Merriweather', Georgia, serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      p,
+      ul,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      .sheet {
+        display: grid;
+        grid-template-columns: 1fr 2.25in;
+        column-gap: 0.32in;
+      }
+
+      header {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 2.25in;
+        column-gap: 0.32in;
+        margin-bottom: 0.42in;
+      }
+
+      h1 {
+        color: var(--ink);
+        font: 700 30pt/1.1 'Merriweather', Georgia, serif;
+        letter-spacing: -0.01em;
+      }
+
+      .tagline {
+        margin-top: 0.12in;
+        color: #000;
+        font: 400 8pt 'Open Sans', sans-serif;
+      }
+
+      .contact {
+        padding-top: 0.05in;
+        font: 400 8pt/1.5 'Open Sans', sans-serif;
+      }
+
+      .contact a {
+        display: block;
+        color: var(--green);
+      }
+
+      .contact strong {
+        display: block;
+        color: #000;
+        font-weight: 700;
+      }
+
+      h2 {
+        margin: 0.16in 0 0.04in;
+        color: var(--green);
+        font: 700 12pt/1.2 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        break-after: avoid;
+      }
+
+      section:first-child > h2,
+      aside section:first-child > h2 {
+        margin-top: 0;
+      }
+
+      .role {
+        break-inside: avoid;
+        margin-bottom: 0.1in;
+      }
+
+      .role h3 {
+        color: var(--green);
+        font: 700 8.6pt/1.4 'Merriweather', Georgia, serif;
+      }
+
+      .role h3 em {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .when {
+        margin: 0.03in 0 0.05in;
+        color: var(--muted);
+        font: 400 6.8pt 'Open Sans', sans-serif;
+        text-transform: uppercase;
+      }
+
+      .role ul {
+        margin-top: 0.05in;
+        padding-left: 0.42in;
+      }
+
+      .role li {
+        margin-bottom: 0.015in;
+      }
+
+      aside ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      aside li::before {
+        content: '●';
+        margin-right: 0.35em;
+        font-size: 0.75em;
+        vertical-align: 0.12em;
+      }
+
+      aside h3 {
+        color: var(--green);
+        font: 700 8.6pt/1.4 'Merriweather', Georgia, serif;
+      }
+
+      .projects li {
+        margin-bottom: 0.06in;
+      }
+
+      .projects li::before {
+        content: none;
+      }
+
+      .projects strong {
+        color: var(--green);
+        font-weight: 700;
+      }
+
+      .projects em {
+        color: var(--green);
+      }
+
+      .projects a {
+        color: #1155cc;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <header>
+        <div>
+          <h1>Ahusan Mohamed</h1>
+          <p class="tagline">With 10 years of experience in the dynamic technology industry.</p>
+        </div>
+        <div class="contact">
+          <a href="https://www.linkedin.com/in/ahusan/">LinkedIn</a>
+          <a href="https://portfolio.ahusan.dev/">Portfolio</a>
+          <a href="https://github.com/ahusan">GitHub</a>
+          <strong>(960) 985-5168</strong>
+          <strong>email@ahusan.dev</strong>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <h2>Experience</h2>
+
+          <div class="role">
+            <h3>Allied Insurance Company of the Maldives Pvt Ltd <em>— Senior Developer</em></h3>
+            <p class="when">August 2025 – Present</p>
+            <p>
+              Contributing to an integrated workflow management platform that unifies customer and client operations
+              across multiple internal systems.
+            </p>
+            <ul>
+              <li>Building scalable, type-safe APIs and UI components with NestJS and React.</li>
+              <li>
+                Implemented advanced form features, including nested validation schemas and dynamic autocomplete, in
+                strictly typed TypeScript.
+              </li>
+              <li>Working in agile sprints, with task tracking and coordination in Jira.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>SME Development Finance Corporation <em>— Software Developer</em></h3>
+            <p class="when">July 2023 – August 2025</p>
+            <p>In-house software across monitoring, document processing and credit analysis.</p>
+            <ul>
+              <li>Developed OCR and text-extraction software for processing documents.</li>
+              <li>Built dashboards for a range of monitoring needs.</li>
+              <li>Contributed to credit analysis applications with a focus on data security.</li>
+              <li>Rebuilt the company website for its rebrand as SME Digital, in Next.js with Strapi CMS.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Bank of Maldives <em>— Information Systems Engineer</em></h3>
+            <p class="when">June 2020 – July 2023</p>
+            <ul>
+              <li>Improved the speed and security of the Dollar Sale Portal, and built a staff communication portal.</li>
+              <li>Fixed Internet Banking bugs and maintained the Docker hosts behind critical systems.</li>
+              <li>Maintained 99.9% uptime for critical banking systems.</li>
+              <li>Conducted code reviews, managed feature releases and provided post-release support.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Waste Management Corporation Limited <em>— IT Support Technician</em></h3>
+            <p class="when">Aug 2017 – June 2020</p>
+            <ul>
+              <li>Installed network equipment, servers and Axis network cameras.</li>
+              <li>Performed on-site server installations at remote locations.</li>
+              <li>Provided technical support to staff.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Villa College QI Campus <em>— IT Officer</em></h3>
+            <p class="when">Feb 2016 – Aug 2017</p>
+            <ul>
+              <li>Troubleshot hardware, software and network issues.</li>
+              <li>Installed software and tested equipment and programs.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+
+          <div class="role">
+            <h3>Maldives National University <em>— Computer Science Degree</em></h3>
+            <p class="when">July 2017 – October 2020</p>
+            <p>Degree project: an IoT-based application for agriculture using React, Firebase and Node-RED.</p>
+            <ul>
+              <li>Automated farming tasks and improved data-collection accuracy.</li>
+              <li>Real-time insights for optimised farming and productivity.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <h3>Maldives National University <em>— Information Technology Diploma</em></h3>
+            <p class="when">July 2013 – October 2015</p>
+            <p>Diploma project: movie rental software in Visual Basic, with a movie database and rental payments.</p>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section>
+          <h2>Skills</h2>
+          <ul>
+            <li>Agile Development</li>
+            <li>Development Support</li>
+            <li>Troubleshooting/Bug Fixing</li>
+            <li>Application Development</li>
+            <li>Project Management</li>
+            <li>UI/UX Development</li>
+            <li>Development and Operations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Tech Stack</h2>
+          <ul>
+            <li>TypeScript, JavaScript</li>
+            <li>React, Next.js, React Router</li>
+            <li>NestJS, Node.js, Express</li>
+            <li>Python, FastAPI</li>
+            <li>PHP, Laravel</li>
+            <li>Vue, Tailwind CSS</li>
+            <li>Flutter, Dart</li>
+            <li>Rust, Slint</li>
+            <li>PostgreSQL, Drizzle, Prisma</li>
+            <li>MySQL, MongoDB, Redis</li>
+            <li>Strapi, GraphQL</li>
+            <li>Docker, Proxmox, Nginx</li>
+            <li>Cloudflare Workers</li>
+            <li>AWS, DigitalOcean, Vercel</li>
+            <li>GitHub Actions, GitLab CI</li>
+            <li>Git, Jujutsu (jj)</li>
+            <li>Turborepo, pnpm</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Certifications</h2>
+          <h3>Cisco</h3>
+          <ul>
+            <li>Introduction to Cyber Security</li>
+            <li>Python Essentials 1</li>
+            <li>Python Essentials 2</li>
+            <li>CCNA R&amp;S - Scaling Networks</li>
+          </ul>
+          <h3>IBM</h3>
+          <ul>
+            <li>Data Science Foundation - Level 1</li>
+            <li>Docker Essentials - A Developer Introduction</li>
+            <li>Data Science Methodologies</li>
+          </ul>
+          <h3>AWS</h3>
+          <ul>
+            <li>Introduction to Containers</li>
+          </ul>
+        </section>
+
+        <section class="projects">
+          <h2>Projects</h2>
+          <ul>
+            <li>
+              <strong>Maldives.com</strong> — <em>Tourism platform: +35% conversion, 40% faster first load</em>
+              (<a href="https://www.maldives.com/">maldives.com</a>)
+            </li>
+            <li>
+              <strong>Farudhun.com</strong> — <em>Dhivehi news platform: hosting costs cut by 80%</em>
+              (<a href="https://farudhun.com/">farudhun.com</a>)
+            </li>
+            <li>
+              <strong>Reservation System</strong> — <em>Multi-resort bookings for Sun Siyam, synced with Opera PMS</em>
+            </li>
+            <li>
+              <strong>CleanInstall Node</strong> — <em>Open-source npm CLI for monorepo cleanup</em>
+              (<a href="https://www.npmjs.com/package/cleaninstall-node">npm</a>)
+            </li>
+            <li>
+              <strong>FSM Rebranded Website</strong> — <em>Content management website with user-based permission roles</em>
+              (<a href="https://www.fsm.mv/">fsm.mv</a>)
+            </li>
+            <li>
+              <strong>Matcon Website</strong> — <em>Content management website</em>
+              (<a href="https://matcon.mv/">matcon.mv</a>)
+            </li>
+            <li>
+              <strong>Events Application</strong> — <em>Event management</em>
+              (<a href="https://event.hummingbird.travel/">Hummingbird Events</a>)
+            </li>
+            <li><strong>Travgo Maldives</strong> — <em>Travel booking and content platform</em></li>
+            <li><strong>Homelab</strong> — <em>Proxmox and Docker infrastructure at 99.9% uptime</em></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>
