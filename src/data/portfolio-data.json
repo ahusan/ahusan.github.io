@@ -4,7 +4,7 @@
     "email": "email@ahusan.dev",
     "phone": "+9609855168",
     "location": "Maldives",
-    "title": "Software Developer",
+    "title": "Senior Developer",
     "roles": [
       "Software Developer",
       "Frontend Engineer",
@@ -17,7 +17,7 @@
       "Cloud Engineer",
       "CISCO certified Network Engineer"
     ],
-    "bio": "A passionate developer with expertise in building modern web applications, focusing on creating exceptional user experiences with clean, efficient code.",
+    "bio": "I build and run production software from Malé: banking systems, news platforms, resort reservations and the infrastructure underneath them.",
     "profileImage": "/15189738.jpg",
     "socialLinks": {
       "github": "https://github.com/ahusan",
@@ -37,7 +37,7 @@
       "role": "Full-Stack Developer & Designer",
       "client": "Personal Project",
       "images": [
-        "/gym-log.png"
+        "/gym-log.webp"
       ],
       "description": "Built a Progressive Web App to maintain gym consistency using habit-building rules and streak tracking. Self-hosted on home infrastructure with installable PWA capabilities for quick mobile access. Implements the '2-day rule' philosophy—never miss two days in a row—with smart session tracking, weekly goals, and protected rest days. Demonstrates full-stack development, PWA best practices, and self-hosting expertise.",
       "category": "Personal Tools / PWA",
@@ -64,7 +64,8 @@
       "links": {
         "live": "https://gym.ahusan.dev/"
       },
-      "demoUrl": "https://gym.ahusan.dev/"
+      "demoUrl": "https://gym.ahusan.dev/",
+      "summary": "An installable PWA that tracks gym streaks with a never-miss-twice rule."
     },
     {
       "id": "homelab-infrastructure",
@@ -75,14 +76,11 @@
       "role": "DevOps Engineer & System Architect",
       "client": "Homelab Infrastructure & Automation",
       "images": [
-        "/home-lab-2.png",
-        "/home-lab-3.png",
-        "/home-lab-4.png",
-        "/home-lab-5.png",
-        "/home-lab-6.png",
-        "/home-lab-7.png"
+        "/home-lab-7.webp",
+        "/home-lab-5.webp",
+        "/home-lab-6.webp"
       ],
-      "description": "Architected and maintain a comprehensive homelab infrastructure running on Proxmox with Docker orchestration. Includes media management (Jellyfin), automated content acquisition (*arr stack), torrent management (qBittorrent), NAS integration (Asustor), CI/CD pipelines, and custom maintenance tools. Demonstrates enterprise-level DevOps practices, automation, self-hosting, and infrastructure-as-code principles on personal hardware—achieving professional-grade services at zero recurring cloud costs.",
+      "description": "Architected and maintain a comprehensive homelab infrastructure running on Proxmox with Docker orchestration. Includes a Jellyfin media server, NAS integration (Asustor), CI/CD pipelines, and custom maintenance tools. Demonstrates enterprise-level DevOps practices, automation, self-hosting, and infrastructure-as-code principles on personal hardware—achieving professional-grade services at zero recurring cloud costs.",
       "category": "DevOps / Self-Hosted Infrastructure",
       "technologies": [
         "Proxmox",
@@ -91,9 +89,6 @@
         "Linux",
         "Nginx",
         "Jellyfin",
-        "Sonarr",
-        "Radarr",
-        "qBittorrent",
         "Asustor NAS",
         "CI/CD",
         "GitHub Actions",
@@ -104,8 +99,7 @@
         "Proxmox virtualization cluster for isolated service environments",
         "Docker containerization for all services with compose orchestration",
         "Jellyfin media server for streaming and media library management",
-        "Automated media management: *arr stack (Sonarr, Radarr) with qBittorrent integration",
-        "Asustor NAS integration for centralized storage and automated downloads",
+        "Asustor NAS integration for centralized storage",
         "CI/CD pipelines using GitHub Actions for automated builds and deployments",
         "Custom maintenance tools and monitoring scripts",
         "Reverse proxy setup with Nginx for secure external access",
@@ -113,7 +107,9 @@
         "Zero recurring cloud costs while maintaining professional-grade availability"
       ],
       "links": {},
-      "outcomes": "Successfully deployed and maintained a production-grade infrastructure on home hardware, demonstrating enterprise DevOps capabilities while achieving 100% cost savings compared to cloud hosting. The automated CI/CD pipeline reduced deployment time by 90% and eliminated manual errors. The homelab serves as a testing ground for new technologies and provides reliable services including media streaming, automated downloads, and custom applications—all running 24/7 with 99.9% uptime."
+      "outcomes": "Successfully deployed and maintained a production-grade infrastructure on home hardware, demonstrating enterprise DevOps capabilities while achieving 100% cost savings compared to cloud hosting. The automated CI/CD pipeline reduced deployment time by 90% and eliminated manual errors. The homelab serves as a testing ground for new technologies and provides reliable services including media streaming and custom applications—all running 24/7 with 99.9% uptime.",
+      "summary": "A Proxmox and Docker cluster at home running my own services around the clock, deployed through CI/CD.",
+      "featured": 4
     },
     {
       "id": "farudhun-news-portal",
@@ -121,8 +117,8 @@
       "period": "2024 to Present",
       "status": "active",
       "images": [
-        "/farudhun-1.png",
-        "/farudhun-2.png"
+        "/farudhun-1.webp",
+        "/farudhun-2.webp"
       ],
       "description": "Lead developer and maintainer for Farudhun.com, a major Dhivehi-language news and media platform serving daily readership across the Maldives. Responsible for full-stack development, infrastructure optimization, and ongoing feature delivery. Recently achieved an 80% cost reduction (from $100 to $20/month) through strategic optimization of hosting, caching, and media delivery—without compromising performance or availability.",
       "category": "Media Platform / Production Website",
@@ -148,7 +144,9 @@
       ],
       "links": {
         "live": "https://farudhun.com/"
-      }
+      },
+      "summary": "Cut hosting costs by 80% for a national Dhivehi news site without giving up speed or uptime.",
+      "featured": 1
     },
     {
       "id": "cleaninstall-node",
@@ -179,7 +177,8 @@
         "npm": "https://www.npmjs.com/package/cleaninstall-node",
         "github": "https://github.com/ahusan/cleaninstall-node",
         "documentation": "https://github.com/ahusan/cleaninstall-node#readme"
-      }
+      },
+      "summary": "An npm CLI that clears node_modules, lock files and build output across monorepos."
     },
     {
       "id": "allied-workflow-platform",
@@ -196,7 +195,8 @@
         "React",
         "DaisyUI",
         "Microservice Architecture"
-      ]
+      ],
+      "summary": "A configurable workflow platform that plugs into Allied's portals and operations."
     },
     {
       "id": "sme-digital-rebranded-website",
@@ -204,8 +204,8 @@
       "period": "2025",
       "status": "completed",
       "images": [
-        "/smedigital-01.png",
-        "/smedigital-02.png"
+        "/smedigital-01.webp",
+        "/smedigital-02.webp"
       ],
       "description": "Before leaving (then SDFC, now SME Digital), the company needed a complete digital refresh to align with its new brand direction and modernize content operations. I built the rebranded website from scratch in Next.js with Strapi CMS and HeroUI, delivering a faster, easier-to-manage platform.",
       "category": "Corporate Website",
@@ -213,7 +213,8 @@
         "Next.js",
         "Strapi CMS",
         "HeroUI"
-      ]
+      ],
+      "summary": "A from-scratch rebrand site on Next.js and Strapi for SME Digital."
     },
     {
       "id": "ssr-reservation-system",
@@ -221,8 +222,8 @@
       "period": "September 2024 to March 2025",
       "status": "active",
       "images": [
-        "/compass-1.png",
-        "/compass-2.png"
+        "/compass-1.webp",
+        "/compass-2.webp"
       ],
       "description": "Developed a reservation system for Sun Siyam Resorts to enable staff and resellers to automatically check availability, manage bookings, and update pricing across their resort properties. Integrated with Opera PMS and Meili search for seamless operations.",
       "category": "Web Application",
@@ -242,6 +243,19 @@
         "Dynamic pricing updates",
         "Opera PMS integration",
         "Advanced search capabilities"
+      ],
+      "summary": "Availability, bookings and pricing for Sun Siyam's resorts in one tool, synced with Opera PMS.",
+      "featured": 2,
+      "context": "A comprehensive reservation system developed for Sun Siyam Resorts to allow staff and resellers to manage bookings, check availability, and update pricing across their resort properties. The system provides a centralized platform for streamlining resort operations and sales.",
+      "story": [
+        "The SSR Reservation System project began with extensive research into the specific operational challenges faced by Sun Siyam Resorts. I collaborated closely with their management team to understand the complexities of their multi-property business model and identify key pain points in their existing booking processes.",
+        "I designed a modern, intuitive interface using Mantine UI components that simplified complex booking workflows while ensuring the system remained powerful enough for professional users. The design process included multiple feedback sessions with actual end-users to refine the experience.",
+        "One of the most challenging aspects was developing a robust integration with the Opera Property Management System. I created a reliable synchronization mechanism that maintains data consistency between systems while handling edge cases gracefully.",
+        "I implemented Next.js for the frontend, taking advantage of its server-side rendering capabilities to optimize performance for users with varying internet speeds. This approach also enhanced SEO for public-facing components of the system.",
+        "For the database layer, I utilized Prisma ORM to establish a clean, type-safe data access layer that simplified complex queries while maintaining excellent performance. This choice significantly accelerated development and reduced potential bugs.",
+        "I incorporated Meili Search to power the availability search functionality, which allows users to quickly find suitable rooms across multiple properties based on complex criteria like date ranges, room types, and pricing parameters.",
+        "The deployment architecture leveraged Docker containers on Digital Ocean, creating a scalable and maintainable infrastructure that can handle peak booking periods without performance degradation.",
+        "Post-launch, I provided comprehensive training sessions for resort staff and implemented a phased rollout strategy that allowed for real-world testing and refinement before full deployment across all properties and sales channels."
       ]
     },
     {
@@ -250,9 +264,9 @@
       "period": "March 2024 to Present",
       "status": "active",
       "images": [
-        "/maldives1.png",
-        "/maldives2.png",
-        "/maldives3.png"
+        "/maldives1.webp",
+        "/maldives2.webp",
+        "/maldives3.webp"
       ],
       "description": "Led development efforts to enhance and optimize the Maldives.com tourism platform, implementing modern web technologies to improve performance, user experience, and content management capabilities.",
       "category": "Tourism Platform",
@@ -265,7 +279,23 @@
         "CI/CD",
         "AWS",
         "Git"
-      ]
+      ],
+      "summary": "Faster pages and simpler content editing for the country's flagship tourism site.",
+      "featured": 3,
+      "context": "Maldives.com is a premier travel and tourism platform showcasing the beautiful island nation of Maldives to travelers worldwide. The website serves as a comprehensive resource for visitors, offering information about resorts, activities, travel guides, and booking options.",
+      "story": [
+        "When I joined the Maldives.com enhancement project, the website was already an established tourism platform with a solid user base. My role was to identify performance bottlenecks, modernize the technology stack, and introduce new features that would significantly improve user experience while maintaining the site's strong brand presence.",
+        "I began by conducting a comprehensive audit of the existing platform, identifying key areas for improvement including slow load times, outdated UI components, and limited content management capabilities. Based on this analysis, I developed a strategic enhancement plan that would modernize the platform without disrupting existing functionality.",
+        "One of my major contributions was implementing a new GraphQL data layer to replace inefficient REST API calls. This optimization reduced data transfer by 60% and dramatically improved page load speeds, particularly benefiting users in regions with slower internet connections who represent a significant portion of the site's traffic.",
+        "I introduced modern responsive design patterns using Tailwind CSS, completely rebuilding the mobile experience from the ground up. Since mobile traffic accounts for over 60% of site visits, this enhancement alone resulted in measurable improvements in user engagement and conversion rates.",
+        "Performance optimization became my primary focus throughout the project. I implemented advanced techniques including code splitting, lazy loading, and intelligent image optimization. These enhancements collectively reduced initial load times by 40% and significantly improved Core Web Vitals scores across all pages.",
+        "I replaced the existing content management system with Strapi, introducing custom content types and workflow automation that reduced the marketing team's content update time by 75%. This new system gave them unprecedented creative freedom while maintaining content consistency across the platform.",
+        "To ensure reliable deployments of new features, I established robust CI/CD pipelines using GitHub Actions and Docker containers. This infrastructure enabled seamless feature rollouts and provided consistent environments for testing and production.",
+        "The results of my enhancements were significant: a 35% increase in conversion rates, 40% reduction in bounce rate, improved search engine rankings for key tourism keywords, and overwhelmingly positive feedback from both users and the internal team regarding the platform's improved performance and usability."
+      ],
+      "links": {
+        "live": "https://maldives.com"
+      }
     },
     {
       "id": "fsm-website",
@@ -273,8 +303,8 @@
       "period": "July 2021 to Dec 2021",
       "status": "completed",
       "images": [
-        "/fsm-front.png",
-        "/fsm-cms.png"
+        "/fsm-front.webp",
+        "/fsm-cms.webp"
       ],
       "description": "As a developer, I was instrumental in driving the transformation of the FSM website during a recent company rebrand.",
       "category": "Corporate Website",
@@ -290,7 +320,19 @@
         "Github",
         "Nginx",
         "Docker Compose"
-      ]
+      ],
+      "summary": "A rebrand website and CMS for Fuel Supply Maldives on React and .NET.",
+      "context": "Fuel Supply Maldives (FSM) is a company that specializes in the supply and distribution of petroleum products in the Maldives. The company offers a range of services, including:",
+      "story": [
+        "For the Fuel Supply Maldives website, I decided to use React and .NET Framework as the core technologies. I chose React for its performance and scalability on the frontend, while .NET Framework provided the robust backend infrastructure the project needed.",
+        "To ensure seamless deployment and management, I implemented Azure Cloud Services, which gave us reliable and secure cloud hosting with automatic scaling and load balancing capabilities.",
+        "I set up Git for version control, which was essential for tracking changes and collaborating with the client. This ensured we were always working with the most current version of the website throughout development.",
+        "Throughout the project, I kept Fuel Supply Maldives' core values at the forefront - quality, safety, and environmental responsibility. I optimized the site for speed and performance while maintaining high standards of security and reliability.",
+        "Building the Fuel Supply Maldives website was an exciting challenge that required careful planning, development, and testing. I'm proud of the result - a powerful digital platform that helps the company better connect with their customers and showcase their services effectively."
+      ],
+      "links": {
+        "live": "https://fuel.mv/"
+      }
     },
     {
       "id": "travgo-maldives-platform",
@@ -298,8 +340,8 @@
       "period": "Oct 2020 to Feb 2021",
       "status": "completed",
       "images": [
-        "/travgo-front.png",
-        "/travgo-pms.png"
+        "/travgo-front.webp",
+        "/travgo-pms.webp"
       ],
       "description": "I was responsible for developing a custom online platform specifically tailored to meet the needs of Travgo Maldives, with the objective of boosting their online presence and showcasing the various styles of vacations available in the Maldives.",
       "category": "Travel Platform",
@@ -309,7 +351,20 @@
         "Firebase",
         "Tailwind CSS",
         "Github"
-      ]
+      ],
+      "summary": "A travel agency site showcasing Maldives holiday styles, built on React and Firebase.",
+      "context": "TravGo Maldives is registered and licensed travel agency by the Ministry of Economic Development and Tourism Ministry of the Maldives located in Male'. TravGo is established to help all the people around the world to visit and explorer the beauty of Maldives and make their dreams come true with convenience and affordability. Based on our research, we have identified that TravGo Maldives needs help with the following:",
+      "story": [
+        "When approaching the TravGo Maldives project, I began with thorough user research to understand their target audience. Based on my findings, I designed a user-friendly interface that makes navigation intuitive and provides visitors with clear information about travel packages and booking options.",
+        "One of my key contributions was developing a custom booking system using Firebase Functions. I automated their previously manual process, making it efficient and error-free so customers can book travel packages without the frustrations they previously experienced.",
+        "I carefully crafted the website design to align with TravGo Maldives' brand image, incorporating their brand colors, logo, and fonts. I aimed for a visual style that feels professional, modern, and visually appealing to enhance their credibility in the market.",
+        "To improve their online visibility, I implemented SEO best practices throughout the site. This optimization has significantly improved their search engine rankings and attracted more organic traffic to their business.",
+        "By addressing these key areas, I delivered a website that truly meets TravGo Maldives' business needs. The site is user-friendly, efficient, visually appealing, and optimized for search engines - all contributing to their goals of reaching more customers and strengthening their brand image.",
+        "Working on this project was particularly rewarding as I saw how the technical solutions I implemented directly translated to business improvements. The streamlined booking process alone saved their team countless hours and improved customer satisfaction significantly."
+      ],
+      "links": {
+        "live": "https://travgomaldives.com/"
+      }
     },
     {
       "id": "ecommerce-platform",
@@ -317,9 +372,9 @@
       "period": "July 2021 to Jan 2022",
       "status": "completed",
       "images": [
-        "/ecom-front.png",
-        "/ecom-cms.png",
-        "/ecom-cms2.png"
+        "/ecom-front.webp",
+        "/ecom-cms.webp",
+        "/ecom-cms2.webp"
       ],
       "description": "The use of an ecommerce delivery platform is to provide an online platform for businesses to sell their products and manage their deliveries efficiently. This platform can be used by customers to browse products, place orders, make payments, and track their deliveries.",
       "category": "E-commerce",
@@ -332,6 +387,18 @@
         "JWT",
         "Python",
         "Github"
+      ],
+      "summary": "Ordering, payments and delivery tracking for local businesses on React and FastAPI.",
+      "context": "The use of an ecommerce delivery platform is to provide an online platform for businesses to sell their products and manage their deliveries efficiently. This platform can be used by customers to browse products, place orders, make payments, and track their deliveries. The use of React JS for the frontend, FastAPI for the backend, PostgreSQL for the database, and Git for version control provides a scalable and robust solution for businesses to manage their ecommerce operations.",
+      "story": [
+        "My first step in creating this ecommerce delivery platform was thorough planning. I mapped out all the essential features including user authentication, product catalog, shopping cart functionality, payment gateway integration, order management, and delivery tracking. This planning phase was crucial to establish clear requirements and timelines.",
+        "I set up a development environment with Node.js, React JS, FastAPI, PostgreSQL, and Git. I created a project structure that would support the complex interactions needed between frontend and backend systems.",
+        "For the user interface design, I used Figma to create detailed mockups. I focused on creating an intuitive layout with thoughtful color schemes, typography, and navigation patterns before converting these designs into React components.",
+        "I built the backend using FastAPI, a Python-based web framework that I selected for its performance and ease of creating RESTful APIs. I defined endpoints for all the core functionalities and integrated PostgreSQL as the database to ensure data persistence and reliability.",
+        "Connecting the frontend and backend was a critical phase where I used Axios to handle HTTP requests between the React components and FastAPI endpoints. I implemented comprehensive error handling and data validation to ensure robust communication between the two systems.",
+        "Testing was a priority throughout development. I wrote unit tests for React components using Jest and tested the backend with Pytest. This rigorous testing approach helped me identify and resolve issues early in the development cycle.",
+        "For deployment, I chose Digital Ocean's cloud platform for its reliability and scalability. I set up continuous integration and deployment pipelines to streamline updates and ensure the platform would remain stable even with heavy traffic.",
+        "Building this ecommerce platform was one of my most comprehensive projects, requiring expertise across the full stack. The result was a robust, scalable solution that effectively meets both business operational needs and customer expectations for a smooth shopping experience."
       ]
     },
     {
@@ -340,8 +407,8 @@
       "period": "Mar 2023 to Oct 2023",
       "status": "completed",
       "images": [
-        "/matcon-front.png",
-        "/matcon-front2.png"
+        "/matcon-front.webp",
+        "/matcon-front2.webp"
       ],
       "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, and Firebase.",
       "category": "Corporate Website",
@@ -352,7 +419,21 @@
         "Tailwind CSS",
         "Firebase",
         "Github"
-      ]
+      ],
+      "summary": "Company website for an engineering consultancy, on Next.js and Firebase.",
+      "context": "MATCON provides project management and engineering design consultancy services for civil, structural, transport, and coastal engineering projects.",
+      "story": [
+        "I began the Matcon project by having in-depth discussions with the client to fully understand their requirements and goals. This initial discovery phase was essential for me to understand not just what they wanted, but why they wanted it and how it would serve their business objectives.",
+        "With a clear understanding of their needs, I designed the website's user interface and created interactive prototypes. I shared these with the client early in the process, which allowed me to gather feedback and make adjustments before moving into development.",
+        "For the development phase, I chose React JS as the primary technology. I built the site with features including content management, responsive design, and performance optimization to ensure a great user experience on all devices.",
+        "I conducted thorough testing across multiple browsers and devices to ensure the website functioned flawlessly. This attention to detail caught several edge cases that might have affected certain users.",
+        "When it came time for deployment, I set up the website on Google Cloud Platform and configured all necessary settings including proper domain mapping and SSL certificates for security.",
+        "After launch, I provided ongoing maintenance and support, ensuring the website remained secure and up-to-date. I also trained the client's team on how to manage content on the site.",
+        "Throughout the project, I maintained open communication with the client, with regular check-ins and progress updates. This collaborative approach ensured the final website met all their requirements and exceeded their expectations."
+      ],
+      "links": {
+        "live": "https://matcon.mv/"
+      }
     },
     {
       "id": "bespoke-maldives-website",
@@ -360,9 +441,9 @@
       "period": "July 2023 to Nov 2023",
       "status": "completed",
       "images": [
-        "/bespoke-1.png",
-        "/bespoke-2.png",
-        "/bespoke-3.png"
+        "/bespoke-1.webp",
+        "/bespoke-2.webp",
+        "/bespoke-3.webp"
       ],
       "description": "The website was developed using a specific technology stack tailored to the client's requirements and included modern web technologies such as React JS, Node.js, Vercel and Firebase.",
       "category": "Tourism Website",
@@ -374,7 +455,21 @@
         "Firebase",
         "Vercel",
         "Github"
-      ]
+      ],
+      "summary": "A tourism site for Bespoke Maldives on Next.js, hosted on Vercel.",
+      "context": "Strategy-led communications and creative consultancy harnessing data and patterns of behaviour in people and organisations.",
+      "story": [
+        "When Bespoke Maldives approached me about their website project, I began by conducting in-depth discovery sessions to understand their unique position in the luxury travel market and their specific goals for the website.",
+        "I created detailed wireframes and design mockups in Figma, focusing on capturing the exclusive feel of their brand while ensuring the user experience would be intuitive and engaging for their high-end clientele.",
+        "For development, I chose Next.js with React to deliver optimal performance and SEO benefits. I implemented Tailwind CSS for styling, which allowed me to create a consistent and responsive design system that looks stunning on all devices.",
+        "I built custom components for their property showcases, incorporating subtle animations and high-resolution imagery to create an immersive experience that highlights the luxury aspects of their offerings.",
+        "I integrated Firebase for authentication and data management, creating a secure and scalable backend that could handle their content needs while providing excellent performance for users around the world.",
+        "Throughout development, I maintained a close feedback loop with the client, sharing progress regularly and incorporating their input to ensure the final product perfectly aligned with their vision.",
+        "After launching the site, I provided detailed analytics setup and training for their team so they could track performance and make data-driven decisions about future website enhancements."
+      ],
+      "links": {
+        "live": "https://bespoke-main.web.app/"
+      }
     },
     {
       "id": "matcon-mail-migration",
@@ -391,6 +486,17 @@
         "Google Mail",
         "Google Drive",
         "Server Management"
+      ],
+      "summary": "Moved Matcon's mail and shared files to Google Workspace.",
+      "context": "MATCON provides project management and engineering design consultancy services for civil, structural, transport, and coastal engineering projects.",
+      "story": [
+        "I started the Matcon mail migration project by sitting down with key stakeholders to fully understand their requirements and pain points with their existing email system. This helped me identify their specific needs for security, storage, and collaboration features.",
+        "Based on these discussions, I developed a comprehensive migration plan that minimized disruption to their daily operations. I carefully selected Google Workspace as the optimal solution for their engineering consultancy needs.",
+        "Before making any changes, I created complete backups of all existing mail data, ensuring we had a safety net in case of any unexpected issues during migration.",
+        "I executed the migration to Google Workspace in phases, starting with a small test group to identify and resolve any potential issues before rolling out to the entire organization.",
+        "After completing the technical migration, I conducted thorough testing of all email functions, calendar sharing, and document collaboration features to ensure everything worked as expected across different devices and platforms.",
+        "I provided hands-on training for the Matcon team, showing them how to take advantage of Google Workspace's powerful features to improve their workflow and collaboration processes.",
+        "Throughout the entire project, I maintained constant communication with the client, providing progress updates and quickly addressing any concerns that arose. This approach resulted in a smooth transition with minimal disruption to their business."
       ]
     },
     {
@@ -399,7 +505,7 @@
       "period": "Aug 2023 to Sep 2023",
       "status": "completed",
       "images": [
-        "/mcg-1.jpg"
+        "/mcg-1.webp"
       ],
       "description": "The project included of setting up and improving their current technologies and network infrastructure.",
       "category": "Network Infrastructure",
@@ -414,6 +520,17 @@
         "Technical Support",
         "Network Security",
         "Network Monitoring"
+      ],
+      "summary": "Rebuilt office networking for Maldives Consulting Group on UniFi, from WAN to Wi-Fi.",
+      "context": "Strategy-led communications and creative consultancy harnessing data and patterns of behaviour in people and organisations.",
+      "story": [
+        "After MCG Consultancy confirmed the networking project, I immediately arranged meetings with their leadership team to understand their specific networking needs, security requirements, and growth projections.",
+        "I created a detailed network design that addressed their current pain points while building in scalability for future expansion. My plan included specific hardware recommendations and a phased implementation approach to minimize business disruption.",
+        "Before implementing any changes, I documented their existing network thoroughly and created a backup strategy to ensure we could quickly restore operations if unexpected issues arose.",
+        "I implemented the new network infrastructure methodically, starting with core components and gradually expanding to user-facing elements. I paid special attention to security configurations and performance optimization.",
+        "Throughout the implementation, I conducted continuous testing to verify that each component was functioning correctly before proceeding to the next phase. This approach caught several potential issues early when they were easy to resolve.",
+        "Once the new network was fully operational, I provided comprehensive documentation and conducted training sessions for the IT staff who would be managing the system day-to-day.",
+        "I continued to provide support after the project completion, being available to quickly address any questions or concerns that arose as the team adjusted to their new networking environment."
       ]
     }
   ],
@@ -1019,7 +1136,7 @@
     }
   },
   "metadata": {
-    "lastUpdated": "2024-01-01",
+    "lastUpdated": "2026-10-15",
     "version": "1.0.0",
     "format": "json",
     "source": "portfolio-website",

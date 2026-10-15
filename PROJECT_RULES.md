@@ -29,16 +29,14 @@ This document outlines the rules, standards, and best practices to follow when d
 - Use functional components with hooks instead of class components
 - Use destructuring for props
 - Use the React 19 features appropriately
-- Avoid inline styles; use Tailwind CSS classes
+- Avoid inline styles; use classes from `src/styles.css`
 - Keep components small and reusable
 - Use proper prop validation
 
-### CSS/Tailwind
+### CSS
 
-- Follow Tailwind CSS v4 best practices
-- Use utility classes instead of custom CSS when possible
-- Group related Tailwind classes logically
-- For complex components, consider using Tailwind's composition pattern
+- Plain CSS in `src/styles.css`; use the colour and type tokens defined on `:root`
+- Every colour must have a value in both the light and dark (`prefers-color-scheme`) token sets
 
 ## Git Workflow
 

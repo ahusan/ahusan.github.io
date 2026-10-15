@@ -1,68 +1,25 @@
 {
   "name": "ahusan.github.io",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "homepage": "https://ahusan.github.io",
+  "type": "module",
+  "homepage": "https://portfolio.ahusan.dev",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
-    "@heroicons/react": "^2.2.0",
-    "lottie-react": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.0.1",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router": "^7.2.0",
-    "react-router-dom": "^7.2.0",
-    "react-scripts": "5.0.1",
-    "tailwindcss": "^3.4.1",
-    "web-vitals": "^3.5.1"
-  },
-  "scripts": {
-    "predeploy": "craco build",
-    "deploy": "gh-pages -d build",
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=your-token-here"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0",
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/addon-links": "^8.0.0",
-    "@storybook/blocks": "^8.0.0",
-    "@storybook/preset-create-react-app": "^8.0.0",
-    "@storybook/react": "^8.0.0",
-    "@storybook/react-webpack5": "^8.0.0",
-    "@storybook/testing-library": "^0.2.2",
-    "babel-plugin-named-exports-order": "^0.0.2",
-    "chromatic": "^10.2.2",
+    "@vitejs/plugin-react": "^4.3.4",
     "gh-pages": "^6.1.1",
-    "prop-types": "^15.8.1",
-    "storybook": "^8.0.0",
-    "webpack": "^5.89.0"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "ahusan.github.io@0.1.0"
+    "vite": "^6.0.0"
+  }
 }
