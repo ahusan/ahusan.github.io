@@ -1,80 +1,14 @@
 import { Link } from 'react-router-dom';
-import Plotter from '../components/Plotter';
-import {
-  certificates,
-  education,
-  experience,
-  featuredProjects,
-  otherProjects,
-  personal,
-  shortPeriod,
-  skills,
-} from '../data/portfolioData';
+import Story from '../components/Story';
+import { certificates, education, otherProjects, shortPeriod } from '../data/portfolioData';
 
-function Hero() {
+function MoreProjects() {
   return (
-    <section className="hero">
-      <div className="hero-text">
-        <h1>Ahusan Mohamed</h1>
-        <p className="hero-lede">
-          Senior developer at Allied Insurance in Malé. Over ten years I’ve gone from fixing
-          networks and servers to building the software that runs on them: banking systems, a
-          national news site, resort reservations and workflow platforms.
-        </p>
-        <div className="hero-actions">
-          <a className="button button-primary" href={personal.socialLinks.email}>
-            Email me
-          </a>
-          <a className="button" href={personal.resume} download>
-            Download résumé
-          </a>
-        </div>
-        <p className="hero-hint">
-          The plotter is live. Point at the chart for a position fix, type in the console, or press{' '}
-          <kbd>/</kbd> from anywhere on the page.
-        </p>
-      </div>
-      <Plotter />
-    </section>
-  );
-}
-
-function FeaturedProject({ project }) {
-  return (
-    <article className="feature">
-      <Link to={`/project/${project.id}`} className="feature-image" tabIndex={-1} aria-hidden="true">
-        <span className="feature-bar">
-          {project.links?.live ? new URL(project.links.live).hostname.replace(/^www\./, '') : `~/${project.id}`}
-        </span>
-        <img src={project.images[0]} alt="" loading="lazy" decoding="async" />
-      </Link>
-      <div className="feature-body">
-        <h3>
-          <Link to={`/project/${project.id}`}>{project.name}</Link>
-        </h3>
-        <p className="feature-summary">{project.summary}</p>
-        <p className="meta">
-          {[project.role, shortPeriod(project.period)].filter(Boolean).join(', ')}
-        </p>
-        <p className="stack-line">{project.technologies.slice(0, 6).join(', ')}</p>
-      </div>
-    </article>
-  );
-}
-
-function Work() {
-  return (
-    <section id="work" className="section">
+    <section className="section">
       <header className="section-head">
-        <h2>Selected work</h2>
-        <p>Production systems people rely on every day, and what changed once they shipped.</p>
+        <h2>More projects</h2>
+        <p>Client sites, infrastructure jobs and tools, newest first.</p>
       </header>
-      <div className="features">
-        {featuredProjects.map(p => (
-          <FeaturedProject key={p.id} project={p} />
-        ))}
-      </div>
-      <h3 className="subhead">More projects</h3>
       <ul className="project-list">
         {otherProjects.map(p => (
           <li key={p.id}>
@@ -86,55 +20,6 @@ function Work() {
           </li>
         ))}
       </ul>
-    </section>
-  );
-}
-
-function Experience() {
-  return (
-    <section id="experience" className="section">
-      <header className="section-head">
-        <h2>Where I’ve worked</h2>
-        <p>Every role has been in the Maldives, and each one moved closer to the code.</p>
-      </header>
-      <ol className="course">
-        {experience.map(role => (
-          <li key={role.company} className="waypoint">
-            <p className="waypoint-period">{role.period}</p>
-            <h3>
-              {role.position},{' '}
-              <a href={role.website} target="_blank" rel="noreferrer">
-                {role.company}
-              </a>
-            </h3>
-            <ul className="waypoint-notes">
-              {(role.achievements || role.responsibilities.slice(0, 2)).map(note => (
-                <li key={note}>{note}</li>
-              ))}
-            </ul>
-            <p className="stack-line">{role.technologies.join(', ')}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
-function Stack() {
-  return (
-    <section id="stack" className="section section-shoal">
-      <header className="section-head">
-        <h2>Stack</h2>
-        <p>What I reach for, from the database to the network cable.</p>
-      </header>
-      <dl className="stack-grid">
-        {skills.map(group => (
-          <div key={group.name}>
-            <dt>{group.name}</dt>
-            <dd>{group.items.join(', ')}</dd>
-          </div>
-        ))}
-      </dl>
     </section>
   );
 }
@@ -172,39 +57,12 @@ function Credentials() {
   );
 }
 
-function Contact() {
-  const { socialLinks, email } = personal;
-  return (
-    <section id="contact" className="section contact">
-      <h2>Have a system that needs building, or rescuing?</h2>
-      <p>I’m happy to talk about roles, contracts and hard problems.</p>
-      <a className="contact-email" href={socialLinks.email}>
-        {email}
-      </a>
-      <ul className="contact-links">
-        <li>
-          <a href={socialLinks.linkedin}>LinkedIn</a>
-        </li>
-        <li>
-          <a href={socialLinks.github}>GitHub</a>
-        </li>
-        <li>
-          <a href={socialLinks.blog}>Blog</a>
-        </li>
-      </ul>
-    </section>
-  );
-}
-
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Work />
-      <Experience />
-      <Stack />
+      <Story />
+      <MoreProjects />
       <Credentials />
-      <Contact />
     </>
   );
 }

@@ -15,8 +15,24 @@ const VH = (W * 5) / 6;
 
 export const MALE = { lat: 4.175, lon: 73.509 };
 
-// viewBox units -> degrees, for the plotter's cursor readout.
+// viewBox units -> degrees, for the cursor readout.
 export const toLatLon = (vx, vy) => ({ lat: LAT0 - vy / 100, lon: LON0 + vx / 100 });
+
+// 4.175 -> "4°10.50′N"
+export const fmt = (deg, pos, neg) => {
+  const a = Math.abs(deg);
+  const d = Math.floor(a);
+  return `${d}°${((a - d) * 60).toFixed(2).padStart(5, '0')}′${deg >= 0 ? pos : neg}`;
+};
+
+// Bearing (°) and range (nautical miles) from a position to Malé. Flat-earth
+// approximation; at this scale it's off by well under 1%.
+export function bearingRange({ lat, lon }) {
+  const dy = (MALE.lat - lat) * 60;
+  const dx = (MALE.lon - lon) * 60 * Math.cos((lat * Math.PI) / 180);
+  const brg = ((Math.atan2(dx, dy) * 180) / Math.PI + 360) % 360;
+  return { brg: Math.round(brg), rng: Math.hypot(dx, dy) };
+}
 
 // Traceroute path: from the visitor (off the north-west corner) across the atolls to Malé.
 // One hop per role, oldest first; the last hop is Malé.
@@ -142,9 +158,10 @@ function Route() {
   );
 }
 
-function Chart({ trace = 0 }) {
+function Chart({ trace = 0, ...svgProps }) {
   return (
     <svg
+      {...svgProps}
       className="chart"
       viewBox={`0 ${VY} ${W} ${VH}`}
       preserveAspectRatio="xMidYMid slice"
