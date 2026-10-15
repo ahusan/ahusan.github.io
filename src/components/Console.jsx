@@ -41,14 +41,14 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
   const theme = useTheme();
   const [lines, setLines] = useState(WELCOME);
   const [input, setInput] = useState('');
-  // Lines printed by scrolling stay quiet for screen readers until someone uses the console.
-  const [used, setUsed] = useState(false);
   const history = useRef({ list: [], at: 0 });
   const timers = useRef([]);
+  // True while a traceroute someone asked for is still printing; scroll commands wait.
+  const userBusy = useRef(false);
   const logRef = useRef(null);
   const inputRef = useRef(null);
 
-  const print = (...out) => setLines(prev => [...prev, ...out.map(l => ({ ...l, id: ++lineId }))].slice(-80));
+  const printLines = (...out) => setLines(prev => [...prev, ...out.map(l => ({ ...l, id: ++lineId }))].slice(-80));
   const out = text => ({ kind: 'out', text });
 
   useEffect(() => {
@@ -69,8 +69,9 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  function traceroute() {
+  function traceroute(print, auto) {
     timers.current.forEach(clearTimeout);
+    userBusy.current = !auto;
     const hops = [...experience].reverse();
     print(out(`traceroute to ahusan, ${hops.length} hops max`));
     onTrace?.();
@@ -78,17 +79,23 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
       setTimeout(() => {
         const label = `${String(i + 1).padStart(2)}  ${host(role.website).padEnd(23)}${shortPeriod(role.period)}`;
         print(out(i === hops.length - 1 ? `${label}  ← here` : label));
+        if (i === hops.length - 1) userBusy.current = false;
       }, (i + 1) * HOP_MS)
     );
   }
 
-  function run(raw) {
+  // auto: run by scrolling. Those runs stay out of history, are hidden from screen readers
+  // (the same content is in the chapter itself) and never interrupt a user's traceroute.
+  function run(raw, { auto = false } = {}) {
+    if (auto && userBusy.current) return;
+    const print = (...ls) => printLines(...ls.map(l => ({ ...l, quiet: auto })));
     // A new command interrupts a traceroute that's still printing.
     timers.current.forEach(clearTimeout);
+    userBusy.current = false;
     const line = raw.trim();
     print({ kind: 'cmd', text: line });
     if (!line) return;
-    history.current = { list: [...history.current.list, line], at: history.current.list.length + 1 };
+    if (!auto) history.current = { list: [...history.current.list, line], at: history.current.list.length + 1 };
     const [cmd, ...args] = line.split(/\s+/);
     const arg = args.join(' ');
 
@@ -124,7 +131,7 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
         return print(...skills.map(s => out(`${s.name.padEnd(26)}${s.items.length}`)));
       case 'traceroute':
       case 'tracert':
-        return traceroute();
+        return traceroute(print, auto);
       case 'ping':
         return print(
           out(`PING ahusan (${fmt(MALE.lat, 'N', 'S')} ${fmt(MALE.lon, 'E', 'W')})`),
@@ -147,7 +154,6 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
         window.location.href = personal.socialLinks.email;
         return;
       case 'clear':
-        timers.current.forEach(clearTimeout);
         return setLines([]);
       case 'sudo':
         return print({ kind: 'err', text: 'ahusan is not in the sudoers file. This incident will be reported.' });
@@ -160,10 +166,7 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
 
   useImperativeHandle(ref, () => ({ run }));
 
-  function userRun(cmd) {
-    setUsed(true);
-    run(cmd);
-  }
+  const userRun = cmd => run(cmd);
 
   function onKeyDown(e) {
     const h = history.current;
@@ -194,9 +197,9 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
       <div className="console-head" aria-hidden="true">
         {readout}
       </div>
-      <div className="console-log" ref={logRef} role="log" aria-live={used ? 'polite' : 'off'}>
+      <div className="console-log" ref={logRef} role="log">
         {lines.map(l => (
-          <p key={l.id} className={`console-${l.kind}`}>
+          <p key={l.id} className={`console-${l.kind}`} aria-hidden={l.quiet || undefined}>
             {l.text}
           </p>
         ))}

@@ -223,6 +223,18 @@ a:hover {
 
 /* ---------- Story: chapters on the left, pinned radar and console on the right ---------- */
 
+/* Chapter colour for text. Neon on the night display; darkened on the day chart so it
+   stays readable on paper. The radar ring and sweep keep the neon --chapter. */
+.story,
+.chapter {
+  --chapter-text: var(--chapter);
+}
+
+:root[data-theme='day'] .story,
+:root[data-theme='day'] .chapter {
+  --chapter-text: color-mix(in srgb, var(--chapter) 40%, #0f2740);
+}
+
 .story {
   display: grid;
   grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
@@ -265,7 +277,7 @@ a:hover {
 }
 
 .chapter-title {
-  color: var(--chapter);
+  color: var(--chapter-text);
   font-size: clamp(2rem, 3.4vw, 3.25rem);
   font-weight: 750;
   font-variation-settings: 'wdth' 110;
@@ -305,7 +317,7 @@ a:hover {
 
 .chapter-points li::before {
   content: '→';
-  color: var(--chapter);
+  color: var(--chapter-text);
 }
 
 .chapter-links {
@@ -378,7 +390,7 @@ kbd {
 
 .stage-channel {
   left: 0;
-  color: var(--chapter);
+  color: var(--chapter-text);
 }
 
 .stage-clock {
@@ -845,7 +857,7 @@ kbd {
 }
 
 .chapter .waypoint-period {
-  color: var(--chapter);
+  color: var(--chapter-text);
   font-size: 0.9375rem;
 }
 
@@ -862,7 +874,7 @@ kbd {
 }
 
 /* Small screens: the radar pins to the top, chapters scroll beneath, no console. */
-@media (max-width: 64rem) {
+@media (max-width: 63.99rem) {
   .story {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -881,6 +893,12 @@ kbd {
   .chapter {
     min-height: 70svh;
     padding: 2rem 0 4rem;
+    /* Land anchor links below the pinned radar, not behind it. */
+    scroll-margin-top: 46svh;
+  }
+
+  .chapter-hint {
+    display: none;
   }
 
   .radar {
@@ -1386,7 +1404,7 @@ kbd {
 }
 
 .metrics-compact dd {
-  color: var(--chapter);
+  color: var(--chapter-text);
   font-size: clamp(1.5rem, 2.2vw, 2rem);
 }
 

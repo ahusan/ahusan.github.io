@@ -205,7 +205,8 @@ export default function Story() {
   useEffect(() => {
     const io = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && setActive(Number(e.target.dataset.index))),
-      { rootMargin: '-50% 0px -50% 0px' }
+      // On small screens the radar pins over the top half, so trigger lower down.
+      { rootMargin: window.matchMedia('(max-width: 63.99rem)').matches ? '-70% 0px -30% 0px' : '-50% 0px -50% 0px' }
     );
     chapterRefs.current.forEach(el => io.observe(el));
     return () => io.disconnect();
@@ -239,7 +240,7 @@ export default function Story() {
   // On arrival: run the chapter's command (unless someone is typing) and scramble its title in.
   useEffect(() => {
     const chapter = CHAPTERS[active];
-    if (document.activeElement?.id !== 'console-cmd') consoleRef.current?.run(chapter.cmd);
+    if (document.activeElement?.id !== 'console-cmd') consoleRef.current?.run(chapter.cmd, { auto: true });
     if (reducedMotion()) return;
     const el = chapterRefs.current[active];
     const anims = [];
@@ -272,6 +273,20 @@ export default function Story() {
 
   return (
     <section className="story" ref={storyRef} style={{ '--chapter': CHAPTERS[active].color }}>
+      <div className="story-chapters">
+        {CHAPTERS.map((chapter, i) => (
+          <article
+            key={chapter.id}
+            id={chapter.id}
+            ref={el => (chapterRefs.current[i] = el)}
+            data-index={i}
+            className={`chapter${i === active ? ' is-active' : ''}`}
+            style={{ '--chapter': chapter.color }}
+          >
+            <ChapterBody chapter={chapter} />
+          </article>
+        ))}
+      </div>
       <div className="story-stage">
         <p className="stage-channel" aria-hidden="true">
           {String(active + 1).padStart(2, '0')} / {String(CHAPTERS.length).padStart(2, '0')}
@@ -289,20 +304,6 @@ export default function Story() {
             <span className="scrubber-head" style={{ '--p': progress }} />
           </div>
         </div>
-      </div>
-      <div className="story-chapters">
-        {CHAPTERS.map((chapter, i) => (
-          <article
-            key={chapter.id}
-            id={chapter.id}
-            ref={el => (chapterRefs.current[i] = el)}
-            data-index={i}
-            className={`chapter${i === active ? ' is-active' : ''}`}
-            style={{ '--chapter': chapter.color }}
-          >
-            <ChapterBody chapter={chapter} />
-          </article>
-        ))}
       </div>
     </section>
   );

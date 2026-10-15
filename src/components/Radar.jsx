@@ -79,7 +79,10 @@ export default function Radar({ chapters, active, trace, onPosition }) {
         utils.set(chartG, { opacity: 0 });
       };
       utils.set(pings, { r: 0, opacity: 0 });
-      if (calm) return swap();
+      if (calm) {
+        utils.set(dots, { r: 0, opacity: 0 });
+        return swap();
+      }
       // Cover the display with dots from the centre out, swap the picture, then uncover.
       keep(
         createTimeline({ defaults: { ease: 'outQuad', duration: 240 } })
