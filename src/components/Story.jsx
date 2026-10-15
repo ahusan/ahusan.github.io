@@ -71,8 +71,8 @@ function Intro() {
           <span>{personal.email}</span>
           <span className="copy-chip-state">{copied ? 'Copied' : 'Copy'}</span>
         </button>
-        <a className="button" href={personal.resume} download>
-          Download résumé
+        <a className="button" href={personal.resume} target="_blank" rel="noreferrer">
+          View résumé
         </a>
       </div>
       <p className="chapter-hint">

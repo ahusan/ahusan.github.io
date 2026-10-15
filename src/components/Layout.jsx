@@ -51,7 +51,7 @@ export default function Layout() {
           >
             {theme === 'day' ? 'Night' : 'Day'}
           </button>
-          <a className="nav-resume" href={personal.resume} download>
+          <a className="nav-resume" href={personal.resume} target="_blank" rel="noreferrer">
             Résumé
           </a>
         </nav>

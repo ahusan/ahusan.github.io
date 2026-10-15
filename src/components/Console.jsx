@@ -20,7 +20,7 @@ const COMMANDS = {
   traceroute: 'trace my career to Malé',
   ping: 'check if I am around',
   theme: 'switch day or night',
-  resume: 'download my résumé',
+  resume: 'open my résumé',
   contact: 'get in touch',
   clear: 'clear the console',
 };
@@ -137,9 +137,9 @@ const Console = forwardRef(function Console({ onTrace, readout }, ref) {
         return print(out(`${next} display`));
       }
       case 'resume': {
-        print(out('downloading résumé.pdf'));
-        const a = Object.assign(document.createElement('a'), { href: personal.resume, download: '' });
-        return a.click();
+        print(out('opening résumé.pdf in a new tab'));
+        window.open(personal.resume, '_blank', 'noopener');
+        return;
       }
       case 'contact':
       case 'email':
