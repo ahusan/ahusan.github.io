@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import { personal } from '../data/portfolioData';
 import { setTheme, useTheme } from '../theme';
 
@@ -10,17 +10,23 @@ const NAV = [
   ['Contact', '/#contact'],
 ];
 
-// Scroll to #hash after navigation, or to top on a new page.
+const scrollToHash = hash => document.getElementById(hash.slice(1))?.scrollIntoView();
+
+// Scroll to #hash after navigation, or to top on a new page. Back/forward (POP) is left
+// to the browser so it restores the previous position.
 function useScrollRestore() {
   const { pathname, hash } = useLocation();
+  const navType = useNavigationType();
   useEffect(() => {
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    if (navType === 'POP') return;
+    if (hash) scrollToHash(hash);
     else window.scrollTo(0, 0);
-  }, [pathname, hash]);
+  }, [pathname, hash, navType]);
 }
 
 export default function Layout() {
   useScrollRestore();
+  const { pathname, hash } = useLocation();
   const theme = useTheme();
   return (
     <>
@@ -33,7 +39,7 @@ export default function Layout() {
         </Link>
         <nav aria-label="Main">
           {NAV.map(([label, to]) => (
-            <Link key={to} to={to}>
+            <Link key={to} to={to} onClick={() => pathname + hash === to && scrollToHash(hash)}>
               {label}
             </Link>
           ))}

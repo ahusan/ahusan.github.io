@@ -6,7 +6,9 @@
   <script>
     // GitHub Pages SPA redirect
     // Store the path so we can redirect after loading index.html
-    sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+    try {
+      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+    } catch (e) {}
   </script>
   <meta http-equiv="refresh" content="0;URL='/'">
 </head>

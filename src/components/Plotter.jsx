@@ -59,7 +59,9 @@ const COMMANDS = {
 
 const CHIPS = ['help', 'traceroute ahusan', 'ls', 'whoami', 'theme'];
 
-const WELCOME = [{ kind: 'out', text: 'Plotter ready. Type help, or pick a command below.' }];
+// Stable keys so the live log doesn't re-announce old lines once it starts trimming.
+let lineId = 0;
+const WELCOME = [{ id: 0, kind: 'out', text: 'Plotter ready. Type help, or pick a command below.' }];
 
 function findProject(query) {
   const q = query.toLowerCase();
@@ -80,7 +82,7 @@ export default function Plotter() {
   const touched = useRef(false);
   const time = useMaleTime();
 
-  const print = (...out) => setLines(prev => [...prev, ...out].slice(-80));
+  const print = (...out) => setLines(prev => [...prev, ...out.map(l => ({ ...l, id: ++lineId }))].slice(-80));
   const out = text => ({ kind: 'out', text });
 
   useEffect(() => {
@@ -89,27 +91,42 @@ export default function Plotter() {
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
 
-  // First visit per session: once the reefs have drawn, type and run the traceroute,
-  // then leave the prompt focused. Any key or click in the console cancels it.
+  // First visit per session: once the reefs have drawn, type and run the traceroute.
+  // Any key, click, scroll or wheel anywhere cancels it. Focus only moves to the prompt
+  // if nothing else has focus and the panel is fully on screen.
   useEffect(() => {
     let seen = true;
     try {
       seen = sessionStorage.getItem('plotter-demo') === '1';
-      sessionStorage.setItem('plotter-demo', '1');
     } catch {
       // No storage: skip the demo rather than replay it on every visit.
     }
     if (seen || reducedMotion()) return;
+    const cancel = () => (touched.current = true);
+    const events = ['keydown', 'pointerdown', 'wheel', 'scroll', 'touchstart'];
+    events.forEach(ev => window.addEventListener(ev, cancel, { passive: true }));
     const ids = [];
     const later = (fn, ms) => ids.push(setTimeout(() => touched.current || fn(), ms));
     const start = 2200;
     for (let i = 1; i <= DEMO.length; i++) later(() => setInput(DEMO.slice(0, i)), start + i * 55);
     later(() => {
+      try {
+        sessionStorage.setItem('plotter-demo', '1');
+      } catch {
+        // Ignore: see above.
+      }
       setInput('');
       runRef.current(DEMO);
-      if (finePointer()) inputRef.current?.focus({ preventScroll: true });
+      const box = inputRef.current?.closest('.plotter')?.getBoundingClientRect();
+      const onScreen = box && box.top >= 0 && box.bottom <= window.innerHeight;
+      if (finePointer() && onScreen && document.activeElement === document.body) {
+        inputRef.current.focus({ preventScroll: true });
+      }
     }, start + DEMO.length * 55 + 350);
-    return () => ids.forEach(clearTimeout);
+    return () => {
+      ids.forEach(clearTimeout);
+      events.forEach(ev => window.removeEventListener(ev, cancel));
+    };
   }, []);
 
   // "/" focuses the console from anywhere on the page.
@@ -205,11 +222,12 @@ export default function Plotter() {
       e.preventDefault();
       h.at = Math.max(0, Math.min(h.list.length, h.at + (e.key === 'ArrowUp' ? -1 : 1)));
       setInput(h.list[h.at] || '');
-    } else if (e.key === 'Tab' && input) {
+    } else if (e.key === 'Tab' && !e.shiftKey && input) {
       const [cmd, rest] = input.split(/\s+(.*)/);
       const pool = rest !== undefined && ['open', 'cd'].includes(cmd) ? projects.map(p => `${cmd} ${p.id}`) : Object.keys(COMMANDS);
       const match = pool.find(c => c.startsWith(input));
-      if (match) {
+      // Only swallow Tab when it completes something; otherwise it moves focus as usual.
+      if (match && match !== input) {
         e.preventDefault();
         setInput(match);
       }
@@ -252,13 +270,11 @@ export default function Plotter() {
         <section
           className="console"
           aria-label="Console"
-          onPointerDown={() => (touched.current = true)}
-          onKeyDown={() => (touched.current = true)}
           onClick={e => e.target.closest('button') || inputRef.current?.focus()}
         >
-          <div className="console-log" ref={logRef} aria-live="polite">
-            {lines.map((l, i) => (
-              <p key={i} className={`console-${l.kind}`}>
+          <div className="console-log" ref={logRef} role="log">
+            {lines.map(l => (
+              <p key={l.id} className={`console-${l.kind}`}>
                 {l.text}
               </p>
             ))}
