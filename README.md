@@ -9,8 +9,10 @@ Vite + React + React Router, plain CSS. All content is in `src/data/portfolio-da
 npm install
 npm run dev       # local dev server
 npm run build     # outputs to build/
-npm run deploy    # builds and publishes build/ to the gh-pages branch
 ```
+
+Deploys happen on push to `main`: DigitalOcean App Platform builds portfolio.ahusan.dev (behind
+Cloudflare), and `.github/workflows/deploy.yml` publishes the same build to ahusan.github.io.
 
 Design: a nautical chart of the central Maldives (`src/components/Chart.jsx`) with day and night
 palettes following the system colour scheme. Tokens are at the top of `src/styles.css`.
