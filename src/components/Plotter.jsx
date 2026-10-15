@@ -21,6 +21,26 @@ function bearingRange({ lat, lon }) {
   return { brg: Math.round(brg), rng: Math.hypot(dx, dy) };
 }
 
+const clock = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Indian/Maldives',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+});
+
+function useMaleTime() {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return clock.format(now);
+}
+
+const DEMO = 'traceroute ahusan';
+const finePointer = () => window.matchMedia('(pointer: fine)').matches;
+const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const host = url => new URL(url).hostname.replace(/^www\./, '');
 
 const COMMANDS = {
@@ -57,6 +77,8 @@ export default function Plotter() {
   const timers = useRef([]);
   const logRef = useRef(null);
   const inputRef = useRef(null);
+  const touched = useRef(false);
+  const time = useMaleTime();
 
   const print = (...out) => setLines(prev => [...prev, ...out].slice(-80));
   const out = text => ({ kind: 'out', text });
@@ -66,6 +88,29 @@ export default function Plotter() {
   }, [lines]);
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
+  // First visit per session: once the reefs have drawn, type and run the traceroute,
+  // then leave the prompt focused. Any key or click in the console cancels it.
+  useEffect(() => {
+    let seen = true;
+    try {
+      seen = sessionStorage.getItem('plotter-demo') === '1';
+      sessionStorage.setItem('plotter-demo', '1');
+    } catch {
+      // No storage: skip the demo rather than replay it on every visit.
+    }
+    if (seen || reducedMotion()) return;
+    const ids = [];
+    const later = (fn, ms) => ids.push(setTimeout(() => touched.current || fn(), ms));
+    const start = 2200;
+    for (let i = 1; i <= DEMO.length; i++) later(() => setInput(DEMO.slice(0, i)), start + i * 55);
+    later(() => {
+      setInput('');
+      runRef.current(DEMO);
+      if (finePointer()) inputRef.current?.focus({ preventScroll: true });
+    }, start + DEMO.length * 55 + 350);
+    return () => ids.forEach(clearTimeout);
+  }, []);
 
   // "/" focuses the console from anywhere on the page.
   useEffect(() => {
@@ -81,12 +126,12 @@ export default function Plotter() {
   function traceroute() {
     timers.current.forEach(clearTimeout);
     const hops = [...experience].reverse();
-    print(out(`traceroute to ahusan (${fmt(MALE.lat, 'N', 'S')} ${fmt(MALE.lon, 'E', 'W')}), ${hops.length} hops max`));
+    print(out(`traceroute to ahusan, ${hops.length} hops max`));
     setTrace(t => t + 1);
     timers.current = hops.map((role, i) =>
       setTimeout(() => {
-        const label = `${String(i + 1).padStart(2)}  ${host(role.website).padEnd(23)}${shortPeriod(role.period).padEnd(10)}`;
-        print(out(i === hops.length - 1 ? `${label}  ← you are here` : label));
+        const label = `${String(i + 1).padStart(2)}  ${host(role.website).padEnd(23)}${shortPeriod(role.period)}`;
+        print(out(i === hops.length - 1 ? `${label}  ← here` : label));
       }, (i + 1) * HOP_MS)
     );
   }
@@ -150,8 +195,12 @@ export default function Plotter() {
     }
   }
 
+  const runRef = useRef(run);
+  runRef.current = run;
+
   function onKeyDown(e) {
     const h = history.current;
+    if (e.key === 'Escape') return e.currentTarget.blur();
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
       e.preventDefault();
       h.at = Math.max(0, Math.min(h.list.length, h.at + (e.key === 'ArrowUp' ? -1 : 1)));
@@ -180,56 +229,70 @@ export default function Plotter() {
 
   return (
     <div className="plotter">
-      <figure className="hero-chart" onPointerMove={onPointerMove} onPointerLeave={() => setPos(MALE)}>
-        <Chart trace={trace} />
-        <figcaption>
-          <span>Central Maldives</span>
-          <span>Soundings in metres</span>
-        </figcaption>
-      </figure>
-      <div className="readout" aria-hidden="true">
+      <div className="plotter-bar">
+        <span>Central Maldives, soundings in metres</span>
         <span>
-          {fmt(pos.lat, 'N', 'S')} {fmt(pos.lon, 'E', 'W')}
+          Malé <span className="plotter-clock">{time}</span> UTC+5
         </span>
-        <span>{rng < 0.5 ? 'At Malé' : `BRG ${String(brg).padStart(3, '0')}° RNG ${rng.toFixed(1)} nm to Malé`}</span>
       </div>
-      <section className="console" aria-label="Console" onClick={e => e.target.closest('button') || inputRef.current?.focus()}>
-        <div className="console-log" ref={logRef} aria-live="polite">
-          {lines.map((l, i) => (
-            <p key={i} className={`console-${l.kind}`}>
-              {l.text}
-            </p>
-          ))}
+      <div className="plotter-body">
+        <div className="plotter-chart">
+          <figure className="hero-chart" onPointerMove={onPointerMove} onPointerLeave={() => setPos(MALE)}>
+            <Chart trace={trace} />
+          </figure>
+          <div className="readout" aria-hidden="true">
+            <span>
+              {fmt(pos.lat, 'N', 'S')} {fmt(pos.lon, 'E', 'W')}
+            </span>
+            <span>
+              {rng < 0.5 ? 'At Malé' : `BRG ${String(brg).padStart(3, '0')}° RNG ${rng.toFixed(1)} nm to Malé`}
+            </span>
+          </div>
         </div>
-        <form
-          className="console-input"
-          onSubmit={e => {
-            e.preventDefault();
-            run(input);
-            setInput('');
-          }}
+        <section
+          className="console"
+          aria-label="Console"
+          onPointerDown={() => (touched.current = true)}
+          onKeyDown={() => (touched.current = true)}
+          onClick={e => e.target.closest('button') || inputRef.current?.focus()}
         >
-          <label htmlFor="console-cmd">ahusan@male:~$</label>
-          <input
-            id="console-cmd"
-            ref={inputRef}
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={onKeyDown}
-            autoComplete="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            placeholder="press / to type"
-          />
-        </form>
-        <div className="console-chips">
-          {CHIPS.map(c => (
-            <button key={c} type="button" onClick={() => run(c)}>
-              {c}
-            </button>
-          ))}
-        </div>
-      </section>
+          <div className="console-log" ref={logRef} aria-live="polite">
+            {lines.map((l, i) => (
+              <p key={i} className={`console-${l.kind}`}>
+                {l.text}
+              </p>
+            ))}
+          </div>
+          <form
+            className="console-input"
+            onSubmit={e => {
+              e.preventDefault();
+              run(input);
+              setInput('');
+            }}
+          >
+            <label htmlFor="console-cmd">ahusan@male:~$</label>
+            <input
+              id="console-cmd"
+              ref={inputRef}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={onKeyDown}
+              autoComplete="off"
+              autoCapitalize="off"
+              spellCheck="false"
+              placeholder="press / to type"
+            />
+          </form>
+          <div className="console-chips">
+            {CHIPS.map(c => (
+              <button key={c} type="button" onClick={() => run(c)}>
+                {c}
+              </button>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

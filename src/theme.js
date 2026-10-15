@@ -1,20 +1,14 @@
 import { useSyncExternalStore } from 'react';
 
-// "day" | "night" chart palette. An explicit choice is stored on <html data-theme>
-// (and in localStorage); otherwise the system colour scheme decides.
-const media = window.matchMedia('(prefers-color-scheme: dark)');
-
+// "night" (the default instrument display) or "day" (paper chart). A choice is stored
+// on <html data-theme> and in localStorage.
 function current() {
-  return document.documentElement.dataset.theme || (media.matches ? 'night' : 'day');
+  return document.documentElement.dataset.theme || 'night';
 }
 
 function subscribe(cb) {
-  media.addEventListener('change', cb);
   window.addEventListener('themechange', cb);
-  return () => {
-    media.removeEventListener('change', cb);
-    window.removeEventListener('themechange', cb);
-  };
+  return () => window.removeEventListener('themechange', cb);
 }
 
 export function setTheme(theme) {

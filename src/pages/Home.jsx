@@ -30,8 +30,8 @@ function Hero() {
           </a>
         </div>
         <p className="hero-hint">
-          The chart is live. Point at it to plot a position, or press <kbd>/</kbd> and type{' '}
-          <code>traceroute ahusan</code>.
+          The plotter is live. Point at the chart for a position fix, type in the console, or press{' '}
+          <kbd>/</kbd> from anywhere on the page.
         </p>
       </div>
       <Plotter />
@@ -43,6 +43,9 @@ function FeaturedProject({ project }) {
   return (
     <article className="feature">
       <Link to={`/project/${project.id}`} className="feature-image" tabIndex={-1} aria-hidden="true">
+        <span className="feature-bar">
+          {project.links?.live ? new URL(project.links.live).hostname.replace(/^www\./, '') : `~/${project.id}`}
+        </span>
         <img src={project.images[0]} alt="" loading="lazy" decoding="async" />
       </Link>
       <div className="feature-body">
