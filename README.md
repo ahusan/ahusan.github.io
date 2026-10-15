@@ -11,8 +11,9 @@ npm run dev       # local dev server
 npm run build     # outputs to build/
 ```
 
-Deploys happen on push to `main`: DigitalOcean App Platform builds portfolio.ahusan.dev (behind
-Cloudflare), and `.github/workflows/deploy.yml` publishes the same build to ahusan.github.io.
+Deploys happen on push to `main`: `.github/workflows/deploy.yml` builds the site, commits the build
+to the `gh-pages` branch (DigitalOcean App Platform serves that branch as portfolio.ahusan.dev,
+behind Cloudflare) and publishes the same build to GitHub Pages at ahusan.github.io as a backup.
 
 Design: an ECDIS-style chart plotter. The hero is a generated chart of the central Maldives
 (`src/components/Chart.jsx`) with a live position readout and a console

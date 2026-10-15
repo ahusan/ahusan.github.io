@@ -1,6 +1,6 @@
-# Builds on every push to main. portfolio.ahusan.dev is served by DigitalOcean App Platform,
-# which builds from this repo itself; this workflow keeps the ahusan.github.io copy in sync
-# and catches broken builds. Requires Settings > Pages > Source = "GitHub Actions".
+# Builds on every push to main and publishes it twice:
+# - to the gh-pages branch, which DigitalOcean App Platform serves as portfolio.ahusan.dev
+# - to GitHub Pages (ahusan.github.io) as a backup. Needs Settings > Pages > Source = "GitHub Actions".
 name: Deploy
 
 on:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,6 +28,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # Adds a commit on top of gh-pages (history kept), which triggers the DigitalOcean deploy.
+      - name: Publish build to gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          npx --yes gh-pages@6 -d build -m "Deploy ${GITHUB_SHA::7}" \
+            -r "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build
